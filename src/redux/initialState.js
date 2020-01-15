@@ -15,6 +15,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2016/11/19/13/06/bed-1839183_1280.jpg',
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -24,6 +25,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -33,6 +36,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -42,6 +47,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'aenean-ru-bristique-5',
@@ -51,6 +58,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'aenean-ru-bristique-6',
@@ -60,6 +69,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/1267438/pexels-photo-1267438.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'aenean-ru-bristique-7',
@@ -69,6 +80,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/2705/bed-bedroom-room-furniture.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'aenean-ru-bristique-8',
@@ -78,6 +91,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/262048/pexels-photo-262048.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
     },
     {
       id: 'aenean-ru-bristique-9',
@@ -87,6 +102,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: '',
     },
     {
       id: 'aenean-ru-bristique-10',
