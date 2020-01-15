@@ -66,6 +66,10 @@
     .iconWrapper {
       color: $feature-active-iconWrapper;
 
+      &::before {
+        border-color: $primary;
+      }
+
       &::after {
         background-color: $feature-active-after;
         border-color: $feature-active-after;
