@@ -66,6 +66,10 @@
     .iconWrapper {
       color: #ffffff;
 
+      &::before {
+        border-color: $primary;
+      }
+
       &::after {
         background-color: $primary;
         border-color: $primary;
