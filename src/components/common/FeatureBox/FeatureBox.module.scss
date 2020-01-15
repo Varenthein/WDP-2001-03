@@ -1,0 +1,78 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  border: 1px solid #b6b6b6;
+  text-align: center;
+  margin-top: 40px;
+
+  .iconWrapper {
+    height: 60px;
+    transform: translateY(-50%);
+    color: $text-color;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      position: relative;
+      z-index: 9;
+    }
+
+    &::before {
+      content: "";
+      border: 1px solid #b6b6b6;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 76px;
+      height: 76px;
+      border-radius: 100%;
+      background-color: #ffffff;
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid #b6b6b6;
+    }
+  }
+
+  .content {
+    text-transform: uppercase;
+    color: rgb(42, 42, 42);
+    margin-top: -0.5rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+
+    h5 {
+      font-weight: 600;
+      margin: 0;
+    }
+
+    p {
+    }
+  }
+
+  &.active {
+    .iconWrapper {
+      color: #ffffff;
+
+      &::after {
+        background-color: $primary;
+        border-color: $primary;
+      }
+    }
+
+    .content {
+      color: $primary;
+    }
+  }
+}

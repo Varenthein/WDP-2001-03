@@ -1,0 +1,52 @@
+{
+  "env": {
+     "es6": true,
+     "browser": true,
+     "node": true,
+     "jest": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "plugins": [
+    "react"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "react-app"
+  ],
+  "rules": {
+    "indent": [
+      "error",
+      2,
+      {"SwitchCase": 1}
+    ],
+    "quotes": [
+      "error",
+      "single",
+      {"allowTemplateLiterals": true}
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "no-console": "warn",
+    "no-debugger": "error",
+    "jsx-a11y/anchor-is-valid": "off"
+  }
+}

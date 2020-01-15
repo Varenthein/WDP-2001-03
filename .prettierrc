@@ -1,0 +1,21 @@
+{
+  "printWidth": 88,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "options": {
+        "singleQuote": true,
+        "quoteProps": "as-needed",
+        "jsxSingleQuote": true,
+        "trailingComma": "es5",
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false,
+        "endOfLine": "lf",
+        "arrowParens": "avoid"
+      }
+    }
+  ]
+}

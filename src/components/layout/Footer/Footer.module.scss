@@ -1,0 +1,82 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  .footerMenu {
+    background-color: $footer-bg;
+    padding: 3rem 0;
+
+    .menuWrapper {
+      h6 {
+        color: #ffffff;
+        text-transform: uppercase;
+        margin: 0 0 1rem 0;
+      }
+
+      ul {
+        margin: 0 0 1.5rem 0;
+        padding: 0;
+        list-style: none;
+        li {
+          a {
+            font-size: 14px;
+            line-height: 30px;
+            color: rgb(169, 169, 169);
+
+            &:hover {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+
+    .paymentMethods {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
+
+  .bottomBar {
+    background-color: $footer-claim-bg;
+
+    :global(.container) > :global(.row) {
+      height: 95px;
+    }
+
+    .copyright {
+      p {
+        margin: 0;
+        color: rgb(169, 169, 169);
+        font-size: 14px;
+        line-height: 26px;
+      }
+    }
+
+    .socialMedia {
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+          display: inline-block;
+          margin-left: 1rem;
+
+          a {
+            color: rgb(169, 169, 169);
+            text-decoration: none;
+
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
