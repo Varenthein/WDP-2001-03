@@ -5,6 +5,17 @@
   border: 1px solid #e1e1e1;
   margin-bottom: 2rem;
 
+  &:hover{
+    .photo .buttons {
+      display:flex;
+      justify-content: space-between;
+    }
+    .actions .price> div{
+      background-color: $primary;
+    }
+  }
+
+
   .photo {
     position: relative;
     padding: 80% 10px 0 10px;
@@ -29,10 +40,14 @@
     }
 
     .buttons {
-      display: flex;
+      display:none;
+      width: 90%;
+      position: absolute;
       justify-content: space-between;
+      bottom:0;
     }
   }
+
 
   .content {
     text-align: center;
@@ -83,3 +98,4 @@
     align-items: center;
   }
 }
+
