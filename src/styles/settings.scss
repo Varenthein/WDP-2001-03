@@ -4,8 +4,7 @@ $primary: #d58e32;
 $white: #ffffff;
 $lightestGrey: #f4f5f7;
 $lighterGrey: #D8D8D8;
-$lightGrey: #A9A9A9;
-$grey: #434343;
+$grey: #A9A9A9;
 $darkGrey: #363636;
 $darkestGrey: #2a2a2a;
 
@@ -28,13 +27,13 @@ $outline-noHover-color: $white;
 
 /* Colors for FeatureBox component */
 
-$feature-border: $lightGrey;
+$feature-border: $grey;
 $feature-active-iconWrapper: $white;
 $feature-active-after: $primary;
 $feature-active-content: $primary;
-$feature-icon-before-border: $lightGrey;
+$feature-icon-before-border: $grey;
 $feature-icon-before-bg: $white;
-$feature-icon-after-border: $lightGrey;
+$feature-icon-after-border: $grey;
 
 /* Colors for ProductBox component */
 
@@ -63,8 +62,18 @@ $newFurn-dots-link-active-bg: $primary;
 $prodSearch-border: $darkestGrey;
 $prodSearch-icon-first: $primary;
 
-$header-topbar-bg: $grey;
-$header-bg: $darkGrey;
+/* Colors for CompanyClaim component */
+
+$company-bg: $darkGrey;
+$company-phone: $lighterGrey;
+$company-phone-icon: $primary;
+$company-cart: $white;
+$company-cart-bg: $primary;
+$company-cart-counter-bg: $darkGrey;
+$company-cart-counter-color: $lightestGrey;
+$company-cart-hover: $primary;
+
+$header-topbar-bg: $darkGrey;
 
 $footer-claim-bg: $darkestGrey;
 $footer-bg: $darkGrey;
