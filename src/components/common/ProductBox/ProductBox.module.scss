@@ -108,6 +108,13 @@
     border-radius: 50%;
 
   }
-
+  .oldprice{
+    text-decoration: line-through;
+    font-size: 13px;
+    line-height: 24px;
+    padding: 5px 10px;
+    font-weight: 400;
+    color:gray;
+  }
 }
 
