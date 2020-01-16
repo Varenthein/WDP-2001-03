@@ -1,13 +1,26 @@
+/* Global variables */
+
 $base-padding: 24px;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
-
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
+/* Global color variables - DO NOT USE IN OTHER FILES */
 
 $primary: #d58e32;
+$white: #ffffff;
+$lightestGrey: #f4f5f7;
+$lighterGrey: #D8D8D8;
+$lightGrey: #A9A9A9;
+$grey: #434343;
+$darkGrey: #363636;
+$darkestGrey: #2a2a2a;
 
-$text-color: #2a2a2a;
+$text-color: $darkestGrey;
 
-$form-border-color: #292929;
+$feature-border: $lighterGrey;
+
+$header-topbar-bg: $grey;
+$header-bg: $darkGrey;
+
+$footer-claim-bg: $darkestGrey;
+$footer-bg: $darkGrey;
+
+$form-border-color: $darkestGrey;
