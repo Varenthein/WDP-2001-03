@@ -15,7 +15,7 @@ $base-padding: 24px;
 
 $text-color: $darkestGrey;
 
-/* colors for Button component */
+/* Colors for Button component */
 
 $main-bg: $darkestGrey;
 $main-color: $white;
@@ -26,7 +26,15 @@ $outline-color: $darkestGrey;
 $outline-noHover-bg: $darkestGrey;
 $outline-noHover-color: $white;
 
-$feature-border: $lighterGrey;
+/* Colors for FeatureBox component */
+
+$feature-border: $lightGrey;
+$feature-active-iconWrapper: $white;
+$feature-active-after: $primary;
+$feature-active-content: $primary;
+$feature-icon-before-border: $lightGrey;
+$feature-icon-before-bg: $white;
+$feature-icon-after-border: $lightGrey;
 
 $header-topbar-bg: $grey;
 $header-bg: $darkGrey;
