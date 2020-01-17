@@ -51,12 +51,15 @@
     align-items: center;
     position: relative;
 
+
     input {
       border: 0;
       padding-left: 10px;
       font-size: 14px;
       outline: none;
-
+      &:focus{
+        outline:none;
+      }
       &::placeholder {
         color: $text-color;
       }
