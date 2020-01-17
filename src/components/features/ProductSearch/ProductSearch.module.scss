@@ -13,7 +13,7 @@
     position: relative;
 
     .icon:first-child {
-      color: $primary;
+      color: $productSearch-category-iconFirst-color;
       position: absolute;
       left: 10px;
       z-index: 0;
@@ -36,13 +36,13 @@
       outline: none;
 
       &:hover {
-        color: $white;
+        color: $productSearch-category-select-hover;
       }
     }
 
     &:hover {
-      background-color: $primary;
-      color: $white;
+      background-color: $productSearch-category-hover-bg;
+      color: $productSearch-category-hover;
     }
   }
 
