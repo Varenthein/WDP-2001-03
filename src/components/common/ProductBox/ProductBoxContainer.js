@@ -2,8 +2,12 @@ import { connect } from 'react-redux';
 import ProductBox from './ProductBox';
 import { setFavorite } from '../../../redux/productsRedux';
 
-const mapDispatchToProps = dispatch => ({
-  setFavorite: isFav => dispatch(setFavorite(isFav)),
+const mapStateToProps = (state, props) => ({
+  favorite: state.favorite,
 });
 
-export default connect(mapDispatchToProps)(ProductBox);
+const mapDispatchToProps = dispatch => ({
+  setFavorite: (id, isFav) => dispatch(setFavorite({ id, isFav })),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductBox);
