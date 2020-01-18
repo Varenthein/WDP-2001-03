@@ -1,7 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const StickyBar = ({ comparison }) => (comparison.length > 0 ? <div></div> : '');
+import Button from '../../common/Button/Button';
+
+const StickyBar = ({ comparison }) =>
+  comparison.length > 0 ? (
+    <div>
+      <Button>Compare</Button>
+    </div>
+  ) : (
+    ''
+  );
 
 StickyBar.propTypes = {
   comparison: PropTypes.array,
