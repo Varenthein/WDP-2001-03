@@ -8,10 +8,12 @@ import ComparedProduct from '../../common/ComparedProduct/ComparedProduct';
 const StickyBar = ({ comparison }) =>
   comparison.length > 0 ? (
     <div className={styles.component}>
-      {comparison.map(productData => (
-        <ComparedProduct key={productData.id} {...productData} />
-      ))}
-      <Button>Compare</Button>
+      <div>
+        {comparison.map(productData => (
+          <ComparedProduct key={productData.id} {...productData} />
+        ))}
+      </div>
+      <Button className={styles.button}>Compare</Button>
     </div>
   ) : (
     ''

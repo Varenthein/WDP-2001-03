@@ -1,9 +1,30 @@
+@import '../../../styles/settings.scss';
+
 .component {
     position: fixed;
     bottom: 0;
     width: 100vw;
-    height: 70px;
-    background-color: #000000;
+    padding: $base-padding / 4;
+    background-color: $footer-claim-bg;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    border-top: 1px solid $white;
+}
+
+.button {
+  display: block;
+  background: $header-topbar-bg;
+  color: $white;
+  margin-right: $base-padding * 2;
+  padding: ($base-padding / 4) ($base-padding / 2);
+  height: 50%;
+  border-radius: 6px;
+
+  &:hover {
+    background: $primary;
+    text-decoration: none;
+    color: $white;
+  }
 }
