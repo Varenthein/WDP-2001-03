@@ -2,10 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ComparedProduct.module.scss';
 
-const ComparedProduct = () => <div className={styles.component}>{/* <img /> */}</div>;
+const ComparedProduct = ({ image }) => (
+  <div className={styles.component}>
+    <img src={image} alt='comparison-img' />
+  </div>
+);
 
 ComparedProduct.propTypes = {
-  // comparison: PropTypes.array,
+  image: PropTypes.string,
 };
 
 export default ComparedProduct;
