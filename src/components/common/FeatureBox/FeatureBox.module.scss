@@ -29,7 +29,7 @@
       width: 76px;
       height: 76px;
       border-radius: 100%;
-      background-color: #ffffff;
+      background-color: $white;
       z-index: -1;
     }
 
@@ -64,7 +64,7 @@
 
   &:hover {
     .iconWrapper {
-      color: #ffffff;
+      color: $white;
 
       &::before {
         border-color: $primary;
