@@ -1,7 +1,12 @@
+
+@import '../../../styles/settings.scss';
+
 .component {
     height: 60px;
     width: 60px;
-    border: 1px solid #ccc;
+    border: 1px solid $white;
+    margin: $base-padding / 4;
+    display: inline-block;
 }
 
 img {
