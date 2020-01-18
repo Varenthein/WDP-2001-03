@@ -11,20 +11,26 @@ const ProductSearch = () => (
     <div className={styles.category}>
       <FontAwesomeIcon className={styles.icon} icon={faListUl} />
       <ul className={styles.list}>
-        <li>
-          <option value='Select a category'>Select a category</option>
+        <li className={styles.defaulta}>
+          <a value='Select a category'>Select a category</a>
         </li>
-        <li>
-          <option value=''>Select a category</option>
+        <li className={styles.active}>
+          <a value=''>Furniture</a>
         </li>
-        <li>
-          <option value=''>Select a category</option>
+        <li className={styles.active}>
+          <a value=''>Chair</a>
         </li>
-        <li>
-          <option value=''>Select a category</option>
+        <li className={styles.active} activeClassName={styles.ActiveLink}>
+          <a value=''>Table</a>
         </li>
-        <li>
-          <option value=''>Select a category</option>
+        <li className={styles.active}>
+          <a value=''>Sofa</a>
+        </li>
+        <li className={styles.active}>
+          <a value=''>Bedroom</a>
+        </li>
+        <li className={styles.active}>
+          <a value=''>Blog</a>
         </li>
       </ul>
       <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
