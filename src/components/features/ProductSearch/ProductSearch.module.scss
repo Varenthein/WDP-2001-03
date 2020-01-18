@@ -12,6 +12,37 @@
     align-items: center;
     position: relative;
 
+    .list{
+      -webkit-appearance: none;
+      border: 0;
+      background-color: transparent;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      list-style-type: none;
+      //overflow: hidden;
+
+      li{
+        position: relative;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        margin-right: 25px;
+
+      }
+      li:hover li{
+        background-color:blue;
+      }
+      option{
+        position: relative;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+      }
+    }
     .icon:first-child {
       color: $primary;
       position: absolute;
