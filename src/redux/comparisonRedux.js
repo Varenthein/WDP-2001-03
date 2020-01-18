@@ -16,7 +16,9 @@ export const addToCompare = payload => ({ payload, type: ADD_TO_COMPARE });
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case ADD_TO_COMPARE: {
-      return [...statePart, { ...action.payload, id: action.payload.id }];
+      return statePart.length < 4
+        ? [...statePart, { ...action.payload, id: action.payload.id }]
+        : [...statePart];
     }
     default:
       return statePart;
