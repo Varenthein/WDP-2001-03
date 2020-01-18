@@ -11,10 +11,11 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const ProductBox = ({ name, price, promo, stars, addToCompare }) => (
+const ProductBox = ({ name, price, promo, stars, addToCompare, image, oldprice }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
       {promo && <div className={styles.sale}>{promo}</div>}
+      <img className={styles.image} src={image} alt='Trouble'></img>
       <div className={styles.buttons}>
         <Button variant='small'>Quick View</Button>
         <Button variant='small'>
@@ -39,12 +40,18 @@ const ProductBox = ({ name, price, promo, stars, addToCompare }) => (
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
-        <Button variant='outline'>
+        <Button variant={Math.round(Math.random() + 1) <= 1.5 ? 'outline' : 'outline1'}>
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button onClick={() => addToCompare()} variant='outline'>
+        <Button
+          onClick={() => addToCompare()}
+          variant={Math.round(Math.random() + 1) <= 1.5 ? 'outline' : 'outline1'}
+        >
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
+      </div>
+      <div>
+        {oldprice !== 0 && <span className={styles.oldprice}> $ {oldprice}</span>}
       </div>
       <div className={styles.price}>
         <Button noHover variant='small'>
@@ -63,6 +70,8 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   comparison: PropTypes.array,
   addToCompare: PropTypes.func,
+  image: PropTypes.string,
+  oldprice: PropTypes.number,
 };
 
 export default ProductBox;
