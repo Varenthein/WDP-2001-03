@@ -44,7 +44,7 @@
       }
     }
     .icon:first-child {
-      color: $primary;
+      color: $productSearch-category-iconFirst-color;
       position: absolute;
       left: 10px;
       z-index: 0;
@@ -63,6 +63,17 @@
       padding: 5px 30px 5px 35px;
       position: relative;
       z-index: 1;
+      font-size: 14px;
+      outline: none;
+
+      &:hover {
+        color: $productSearch-category-select-hover;
+      }
+    }
+
+    &:hover {
+      background-color: $productSearch-category-hover-bg;
+      color: $productSearch-category-hover;
     }
   }
 
@@ -71,12 +82,15 @@
     align-items: center;
     position: relative;
 
+
     input {
       border: 0;
       padding-left: 10px;
       font-size: 14px;
       outline: none;
-
+      &:focus{
+        outline:none;
+      }
       &::placeholder {
         color: $text-color;
       }
