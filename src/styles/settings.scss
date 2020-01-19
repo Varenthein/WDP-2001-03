@@ -18,3 +18,8 @@ $productSearch-category-iconFirst-color: $primary;
 $productSearch-category-select-hover: $white;
 $productSearch-category-hover: $white;
 $productSearch-category-hover-bg: $primary;
+
+%hoverEffects {
+  transition: 2500ms;
+  transform: rotate(20deg);
+}

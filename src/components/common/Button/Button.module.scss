@@ -15,6 +15,7 @@
     color: #ffffff !important;
     background-color: $primary;
     text-decoration: none;
+    @extend %hoverEffects;
 
   }
 }
@@ -42,6 +43,7 @@
     background-color: $primary;
     color: #ffffff;
     cursor: pointer;
+    @extend %hoverEffects;
   }
 }
 .outline1{
@@ -57,5 +59,6 @@
     background-color: red;
     color: #ffffff;
     cursor: pointer;
+    @extend %hoverEffects;
   }
 }
