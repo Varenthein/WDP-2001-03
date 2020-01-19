@@ -6,11 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import Button from '../Button/Button';
 
-const ComparedProduct = ({ image }) => (
+const ComparedProduct = ({ image, removeFromCompare }) => (
   <div className={styles.component}>
     <img src={image} alt='comparison-img' />
     <div className={styles.imageHover}>
-      <Button>
+      <Button onClick={() => removeFromCompare()}>
         <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
       </Button>
     </div>
@@ -19,6 +19,7 @@ const ComparedProduct = ({ image }) => (
 
 ComparedProduct.propTypes = {
   image: PropTypes.string,
+  removeFromCompare: PropTypes.func,
 };
 
 export default ComparedProduct;
