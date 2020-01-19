@@ -81,3 +81,13 @@
     }
   }
 }
+
+@media (max-width: 575px) {
+
+  .root {
+    height: 110px;
+  }
+  h5, p {
+    font-size: 0.7rem;
+  }
+}
