@@ -16,13 +16,13 @@
       color: $primary;
       position: absolute;
       left: 10px;
-      z-index: 0;
+      z-index: 2;
     }
 
     .icon:last-child {
       position: absolute;
       right: 10px;
-      z-index: 0;
+      z-index: 2;
     }
 
     select {
@@ -32,6 +32,7 @@
       padding: 5px 30px 5px 35px;
       position: relative;
       z-index: 1;
+      background-color: #ffffff;
     }
   }
 
@@ -39,6 +40,8 @@
     display: flex;
     align-items: center;
     position: relative;
+    background-color: #ffffff;
+    z-index: 1;
 
     input {
       border: 0;
@@ -57,4 +60,28 @@
       outline: none;
     }
   }
+}
+
+.mobile {
+    display: block;
+    min-height: 80px;
+
+  .category {
+    border-right: 0;
+  }
+
+  .searchField {
+    border-top: 1px solid $form-border-color;
+    padding-top: 10px;
+    margin-bottom: 10px;
+
+    button {
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+.wrapMd {
+  flex: 0 0 90%;
 }
