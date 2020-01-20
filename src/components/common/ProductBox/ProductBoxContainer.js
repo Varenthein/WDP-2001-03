@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import ProductBox from './ProductBox';
-import { setFavorite } from '../../../redux/productsRedux';
+import { getAll, setFavorite } from '../../../redux/productsRedux';
 
-const mapStateToProps = (state, props) => ({
-  favorite: state.favorite,
+const mapStateToProps = state => ({
+  products: getAll(state),
 });
 
 const mapDispatchToProps = dispatch => ({
