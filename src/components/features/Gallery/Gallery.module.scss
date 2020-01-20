@@ -4,9 +4,10 @@
   .heading {
     position: relative;
     margin-bottom: 30px;
+    border-bottom: 4px solid $gallery-heading-border;
 
     h3 {
-      color: $newFurn-heading;
+      color: $gallery-heading;
       text-transform: uppercase;
       font-size: 20px;
       line-height: 38px;
@@ -20,7 +21,7 @@
       bottom: -4px;
       left: 0;
       width: 45px;
-      border-bottom: 4px solid $newFurn-heading-before-border;
+      border-bottom: 4px solid $gallery-heading-before;
     }
   }
 }
