@@ -16,7 +16,6 @@ const toggleFav = favorite => {
 };
 
 const ProductBox = ({ id, name, price, promo, stars, favorite, setFavorite }) => {
-  console.log('isFav?', favorite);
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
