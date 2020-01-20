@@ -15,6 +15,7 @@
     color: $main-noHover-color !important;
     background-color: $main-noHover-bg;
     text-decoration: none;
+
   }
 }
 
@@ -24,6 +25,7 @@
   line-height: 24px;
   padding: 5px 10px;
   font-weight: 400;
+
 }
 
 .outline {
@@ -33,9 +35,27 @@
   color: $outline-color;
   font-size: 13px;
   line-height: 22px;
+  border-radius: 50%;
 
+
+  &:not(.noHover):hover {
+    background-color: $primary;
+    color: #ffffff;
+    cursor: pointer;
+  }
+}
+.outline1{
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #2a2a2a;
+  color: #ffffff;
+  background-color: $primary;
+  font-size: 13px;
+  line-height: 22px;
+  border-radius: 50%;
   &:not(.noHover):hover {
     background-color: $outline-noHover-bg;
     color: $outline-noHover-color;
+    cursor: pointer;
   }
 }
