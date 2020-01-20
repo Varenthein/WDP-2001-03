@@ -37,7 +37,6 @@
       li {
         display: inline-block;
         margin: 0;
-        padding: 15px;
         font-weight: 600;
         background-color: $gallery-link-bg;
         border: 1px solid $gallery-link-border;
@@ -49,19 +48,14 @@
           text-decoration: none;
           text-transform: uppercase;
           font-size: 16px;
+          padding: 15px;
           display: block;
 
           &.active,
           &:hover {
-            &::before {
-              content: "";
-              position: absolute;
-              bottom: -4px;
-              left: 0;
-              width: 100%;
-              background: $gallery-link-active-bg;
-              border-top: 4px solid $gallery-link-active-border;
-            }
+            background: $gallery-link-active-bg;
+            border-top: 4px solid $gallery-link-active-border;
+            color: $gallery-link-active;
           }
         }
       }

@@ -13,7 +13,7 @@ const Gallery = () => {
             <div className={styles.menu}>
               <ul>
                 <li>
-                  <a>Featured</a>
+                  <a className={styles.active}>Featured</a>
                 </li>
                 <li>
                   <a>Top seller</a>
