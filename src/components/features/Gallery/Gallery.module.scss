@@ -1,0 +1,26 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  .heading {
+    position: relative;
+    margin-bottom: 30px;
+
+    h3 {
+      color: $newFurn-heading;
+      text-transform: uppercase;
+      font-size: 20px;
+      line-height: 38px;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 45px;
+      border-bottom: 4px solid $newFurn-heading-before-border;
+    }
+  }
+}
