@@ -11,7 +11,20 @@ const Gallery = () => {
               <h3>Furniture gallery</h3>
             </div>
             <div className={styles.menu}>
-              <a>category</a>
+              <ul>
+                <li>
+                  <a>Featured</a>
+                </li>
+                <li>
+                  <a>Top seller</a>
+                </li>
+                <li>
+                  <a>Sale off</a>
+                </li>
+                <li>
+                  <a>Top rated</a>
+                </li>
+              </ul>
             </div>
             <div className={styles.product}>product</div>
             <div className={styles.slider}>slider</div>
