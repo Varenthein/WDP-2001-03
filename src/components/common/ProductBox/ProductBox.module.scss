@@ -6,7 +6,7 @@
   margin-bottom: 2rem;
   transition:0.3s linear all;
 
-  &:hover{
+  &:hover {
     .photo .buttons {
       display:flex;
       justify-content: space-between;
@@ -15,7 +15,7 @@
       background-color: $primary;
     }
   }
-  &:hover{
+  &:hover {
     transform:translate(5%,-5%);
     box-shadow: -12px 14px 49px -14px rgba(0,0,0,.5);
 
