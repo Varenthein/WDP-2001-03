@@ -15,6 +15,7 @@
     color: #ffffff !important;
     background-color: $primary;
     text-decoration: none;
+
   }
 }
 
@@ -24,6 +25,7 @@
   line-height: 24px;
   padding: 5px 10px;
   font-weight: 400;
+
 }
 
 .outline {
@@ -33,10 +35,28 @@
   color: #2a2a2a;
   font-size: 13px;
   line-height: 22px;
+  border-radius: 50%;
+
 
   &:not(.noHover):hover {
-    background-color: #2a2a2a;
+    background-color: $primary;
     color: #ffffff;
+    cursor: pointer;
+  }
+}
+.outline1{
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #2a2a2a;
+  color: #ffffff;
+  background-color: $primary;
+  font-size: 13px;
+  line-height: 22px;
+  border-radius: 50%;
+  &:not(.noHover):hover {
+    background-color: red;
+    color: #ffffff;
+    cursor: pointer;
   }
 }
 
