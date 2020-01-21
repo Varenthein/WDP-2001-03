@@ -29,7 +29,7 @@ const initialState = {
       hotDeals: 'hotDeals',
       stars: 2,
       promo: 'sale',
-      newFurniture: true,
+      //newFurniture: true,
       promotion: true,
       image:
         'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -289,20 +289,6 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2016/06/03/14/31/dinner-1433494_1280.jpg',
-    },
-  ],
-  hotproducts: [
-    {
-      id: 'aenean-ru-bristique-1',
-      name: 'Aenean Ru Bristique 1',
-      category: 'bed',
-      price: 30,
-      oldprice: 35,
-      stars: 2,
-      promo: 'sale',
-      hotDeals: 'hotDeals',
-      promotion: true,
-      image: 'https://cdn.pixabay.com/photo/2016/11/19/13/06/bed-1839183_1280.jpg',
     },
   ],
   cart: {

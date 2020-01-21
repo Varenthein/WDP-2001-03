@@ -18,15 +18,13 @@ class Promotion extends React.Component {
   }
 
   render() {
-    const { hotproducts } = this.props;
+    const { products } = this.props;
     const { activeHotDeals, activePage } = this.state;
 
-    const categoryProducts = hotproducts.filter(
-      item => item.hotDeals === activeHotDeals
-    );
+    const categoryProducts = products.filter(item => item.hotDeals === activeHotDeals);
 
     // eslint-disable-next-line no-console
-    console.log(hotproducts);
+    console.log(products);
     const dots = [];
     for (let i = 0; i <= 0; i++) {
       dots
@@ -68,11 +66,12 @@ class Promotion extends React.Component {
 
 Promotion.propTypes = {
   children: PropTypes.node,
-  hotproducts: PropTypes.arrayOf(
+  products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
       name: PropTypes.string,
       category: PropTypes.string,
+      oldprice: PropTypes.number,
       price: PropTypes.number,
       stars: PropTypes.number,
       promo: PropTypes.string,
@@ -84,7 +83,7 @@ Promotion.propTypes = {
 };
 
 Promotion.defaultProps = {
-  hotproducts: [],
+  products: [],
 };
 
 export default Promotion;

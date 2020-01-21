@@ -2,11 +2,10 @@ import { connect } from 'react-redux';
 
 import Promotion from './Promotion';
 
-import { getNew } from '../../../redux/promotionRedux.js';
+import { getNewHot } from '../../../redux/productsRedux';
 
 const mapStateToProps = state => ({
-  hotproducts: getNew(state),
+  products: getNewHot(state),
 });
-// eslint-disable-next-line no-console
-console.log(getNew);
+
 export default connect(mapStateToProps)(Promotion);
