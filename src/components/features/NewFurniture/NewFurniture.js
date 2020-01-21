@@ -24,7 +24,8 @@ class NewFurniture extends React.Component {
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
-
+    // eslint-disable-next-line no-console
+    console.log(products);
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(

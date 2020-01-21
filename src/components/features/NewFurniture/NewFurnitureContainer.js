@@ -10,4 +10,7 @@ const mapStateToProps = state => ({
   products: getNew(state),
 });
 
+// eslint-disable-next-line no-console
+console.log(getNew);
+
 export default connect(mapStateToProps)(NewFurniture);
