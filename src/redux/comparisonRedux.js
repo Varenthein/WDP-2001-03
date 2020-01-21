@@ -18,7 +18,9 @@ export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case ADD_TO_COMPARE: {
       let index = statePart.findIndex(product => product.id === action.payload.id);
-      return statePart.length < 4 && index === -1
+      const maxAmountToCompare = 4;
+
+      return statePart.length < maxAmountToCompare && index === -1
         ? [...statePart, { ...action.payload, id: action.payload.id }]
         : [...statePart];
     }
