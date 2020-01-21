@@ -58,4 +58,23 @@
     color: $outline-noHover-color;
     cursor: pointer;
   }
+
+}
+
+.gallery {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid $outline-border;
+  color: $outline-color;
+  font-size: 13px;
+  line-height: 22px;
+  border-radius: 50%;
+  background-color: $gallery-bg;
+  margin-bottom: 5px;
+
+  &:not(.noHover):hover {
+    background-color: $primary;
+    color: #ffffff;
+    cursor: pointer;
+  }
 }
