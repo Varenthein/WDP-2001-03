@@ -19,11 +19,14 @@ export const setFavorite = payload => ({ payload, type: SET_FAVORITE });
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case SET_FAVORITE:
-      return [
-        ...statePart,
-        (statePart[statePart.findIndex(el => el.id === action.payload.id)].favorite =
-          action.payload.isFav),
-      ];
+      return statePart.map(el => {
+        return el.id === action.payload.id
+          ? {
+              ...el,
+              favorite: action.payload.isFav,
+            }
+          : el;
+      });
     default:
       return statePart;
   }
