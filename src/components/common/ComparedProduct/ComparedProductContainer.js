@@ -6,7 +6,6 @@ const mapDispatchToProps = (dispatch, props) => ({
   removeFromCompare: () =>
     dispatch(
       removeFromCompare({
-        id: props.id,
         ...props,
       })
     ),
