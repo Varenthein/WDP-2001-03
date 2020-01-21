@@ -64,14 +64,14 @@
       }
     }
     .icon:first-child {
-      color: $productSearch-category-iconFirst-color;
+      color: $productSearch-icon-first;
       position: absolute;
       left: 10px;
       z-index: 0;
     }
 
     .icon:last-child {
-      color: $productSearch-category-iconFirst-color;
+      color: $productSearch-icon-first;
       position: absolute;
       right: 10px;
       z-index: 0;
