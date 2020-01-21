@@ -22,7 +22,7 @@ export default function reducer(statePart = [], action = {}) {
 
       return statePart.length < maxAmountToCompare && index === -1
         ? [...statePart, { ...action.payload, id: action.payload.id }]
-        : [...statePart];
+        : statePart;
     }
     case REMOVE_FROM_COMPARE: {
       return statePart.filter(product => product.id !== action.payload.id);
