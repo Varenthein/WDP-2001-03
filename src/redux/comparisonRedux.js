@@ -23,7 +23,7 @@ export default function reducer(statePart = [], action = {}) {
         : [...statePart];
     }
     case REMOVE_FROM_COMPARE: {
-      return [...statePart.filter(product => product.id !== action.payload.id)];
+      return statePart.filter(product => product.id !== action.payload.id);
     }
     default:
       return statePart;
