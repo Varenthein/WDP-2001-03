@@ -1,13 +1,103 @@
-$base-padding: 24px;
-
-$header-topbar-bg: #434343;
-$header-bg: #363636;
-
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
+/* Global color variables - DO NOT USE IN OTHER FILES */
 
 $primary: #d58e32;
+$white: #ffffff;
+$lightestGrey: #f4f5f7;
+$lighterGrey: #D8D8D8;
+$grey: #A9A9A9;
+$darkGrey: #363636;
+$darkestGrey: #2a2a2a;
 
-$text-color: #2a2a2a;
+/* Global variables */
 
-$form-border-color: #292929;
+$base-padding: 24px;
+
+$text-color: $darkestGrey;
+
+/* Colors for Button component */
+
+$main-bg: $darkestGrey;
+$main-color: $white;
+$main-noHover-bg: $primary;
+$main-noHover-color: $white;
+$outline-border: $darkestGrey;
+$outline-color: $darkestGrey;
+$outline-noHover-bg: $darkestGrey;
+$outline-noHover-color: $white;
+
+/* Colors for FeatureBox component */
+
+$feature-border: $grey;
+$feature-active-iconWrapper: $white;
+$feature-active-after: $primary;
+$feature-active-content: $primary;
+$feature-icon-before-border: $grey;
+$feature-icon-before-bg: $white;
+$feature-icon-after-border: $grey;
+
+/* Colors for ProductBox component */
+
+$productBox-bg: $white;
+$productBox-border: $lighterGrey;
+$productBox-photo-bg: $lightestGrey;
+$productBox-sale-bg: $darkGrey;
+$productBox-sale-color: $white;
+$productBox-header: $primary;
+$productBox-line-border: $darkestGrey;
+$productBox-line-before-border: $primary;
+
+/* Colors for NewFurniture component */
+
+$newFurn-border: $lightestGrey;
+$newFurn-heading: $primary;
+$newFurn-heading-before-border: $primary;
+$newFurn-link: $darkestGrey;
+$newFurn-link-active-border: $primary;
+$newFurn-dots-ul-bg: $white;
+$newFurn-dots-link-bg: $lightestGrey;
+$newFurn-dots-link-active-bg: $primary;
+
+/* Colors for ProductSearch component */
+
+$prodSearch-border: $darkestGrey;
+$prodSearch-icon-first: $primary;
+$productSearch-category-select-hover: $white;
+$productSearch-category-hover: $white;
+$productSearch-category-hover-bg: $primary;
+
+/* Colors for CompanyClaim component */
+
+$company-bg: $darkGrey;
+$company-phone: $lighterGrey;
+$company-phone-icon: $primary;
+$company-cart: $white;
+$company-cart-bg: $primary;
+$company-cart-counter-bg: $darkGrey;
+$company-cart-counter-color: $lightestGrey;
+$company-cart-hover: $primary;
+
+/* Colors for Footer component */
+
+$footer-bg: $darkGrey;
+$footer-heading: $white;
+$footer-link: $grey;
+$footer-link-hover: $white;
+$footer-claim-bg: $darkestGrey;
+$footer-claim-color: $lightestGrey;
+$footer-media-color: $lightestGrey;
+$footer-media-hover: $primary;
+
+/* Colors for MenuBar component */
+
+$menu-bg: $white;
+$menu-link-border: $white;
+$menu-link-hover-bg: $primary;
+$menu-link-hover-border: $primary;
+$menu-link-hover-color: $white;
+$menu-link-active-border: $darkestGrey;
+
+/* Colors for TopBar component */
+
+$topBar-bg: $darkGrey;
+$topBar-link-color: $white;
+$topBar-link-hover: $primary;

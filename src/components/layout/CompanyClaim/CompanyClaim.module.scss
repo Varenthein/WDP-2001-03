@@ -1,7 +1,7 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  background-color: $header-bg;
+  background-color: $company-bg;
 
   :global(.container) > :global(.row) {
     height: 145px;
@@ -12,12 +12,12 @@
       margin: 0;
       font-size: 17px;
       line-height: 42px;
-      color: rgb(216, 216, 216);
+      color: $company-phone;
       font-weight: 500;
 
       .icon {
         font-size: 32px;
-        color: $primary;
+        color: $company-phone-icon;
         vertical-align: middle;
         margin-top: -3px;
         margin-right: 0.8rem;
@@ -29,10 +29,10 @@
     .cartBox {
       display: inline-block;
       position: relative;
-      color: #ffffff;
+      color: $company-cart;
 
       .cartIcon {
-        background-color: $primary;
+        background-color: $company-cart-bg;
         width: 55px;
         height: 50px;
         border-radius: 3px;
@@ -51,12 +51,13 @@
         height: 27px;
         border-radius: 14px;
         padding: 1px;
-        background-color: $header-bg;
+        font-size: 11px;
+        background-color: $company-cart-counter-bg;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 11px;
-        color: rgb(224, 227, 237);
+        font-size: 14px;
+        color: $company-cart-counter-color;
         position: absolute;
         top: 50%;
         right: 0;
@@ -65,7 +66,7 @@
 
       &:hover {
         .cartIcon {
-          background-color: lighten($primary, 10%);
+          background-color: lighten($company-cart-hover, 10%);
         }
       }
     }

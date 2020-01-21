@@ -4,17 +4,18 @@
 // }
 
 .main {
-  background-color: #2a2a2a;
-  color: #ffffff;
+  background-color: $main-bg;
+  color: $main-color;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
   padding: 10px 30px;
 
   &:not(.noHover):hover {
-    color: #ffffff !important;
-    background-color: $primary;
+    color: $main-noHover-color !important;
+    background-color: $main-noHover-bg;
     text-decoration: none;
+
   }
 }
 
@@ -24,18 +25,37 @@
   line-height: 24px;
   padding: 5px 10px;
   font-weight: 400;
+
 }
 
 .outline {
   display: inline-block;
   padding: 5px 10px;
-  border: 1px solid #2a2a2a;
-  color: #2a2a2a;
+  border: 1px solid $outline-border;
+  color: $outline-color;
   font-size: 13px;
   line-height: 22px;
+  border-radius: 50%;
+
 
   &:not(.noHover):hover {
-    background-color: #2a2a2a;
+    background-color: $primary;
     color: #ffffff;
+    cursor: pointer;
+  }
+}
+.outline1{
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #2a2a2a;
+  color: #ffffff;
+  background-color: $primary;
+  font-size: 13px;
+  line-height: 22px;
+  border-radius: 50%;
+  &:not(.noHover):hover {
+    background-color: $outline-noHover-bg;
+    color: $outline-noHover-color;
+    cursor: pointer;
   }
 }
