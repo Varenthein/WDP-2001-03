@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import FadeIn from 'react-fade-in';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 
@@ -53,7 +53,9 @@ class NewFurniture extends React.Component {
                     <li key={item.id}>
                       <a
                         className={item.id === activeCategory && styles.active}
-                        onClick={() => this.handleCategoryChange(item.id)}
+                        onClick={() => {
+                          this.handleCategoryChange(item.id);
+                        }}
                       >
                         {item.name}
                       </a>
@@ -69,7 +71,9 @@ class NewFurniture extends React.Component {
           <div className='row'>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
               <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
+                <FadeIn transitionDuration={2000}>
+                  <ProductBox {...item} />
+                </FadeIn>
               </div>
             ))}
           </div>
