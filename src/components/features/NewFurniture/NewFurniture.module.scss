@@ -6,14 +6,14 @@
     position: relative;
 
     :global(.row) > * {
-      border-bottom: 4px solid #e2e2e2;
+      border-bottom: 4px solid $newFurn-border;
     }
 
     .heading {
       position: relative;
 
       h3 {
-        color: $primary;
+        color: $newFurn-heading;
         text-transform: uppercase;
         font-size: 20px;
         line-height: 38px;
@@ -27,7 +27,7 @@
         bottom: -4px;
         left: 0;
         width: 45px;
-        border-bottom: 4px solid $primary;
+        border-bottom: 4px solid $newFurn-heading-before-border;
       }
     }
 
@@ -43,7 +43,7 @@
           font-weight: 600;
 
           a {
-            color: rgb(42, 42, 42);
+            color: $newFurn-link;
             position: relative;
             text-decoration: none;
             font-size: 18px;
@@ -57,7 +57,7 @@
                 bottom: -4px;
                 left: 0;
                 width: 100%;
-                border-bottom: 4px solid $primary;
+                border-bottom: 4px solid $newFurn-link-active-border;
               }
             }
           }
@@ -74,7 +74,7 @@
         margin: 0;
         padding: 0 0 0 1rem;
         list-style: none;
-        background-color: #ffffff;
+        background-color: $newFurn-dots-ul-bg;
         transform: translateY(15px);
 
         li {
@@ -86,12 +86,12 @@
             width: 13px;
             height: 13px;
             border-radius: 6px;
-            background-color: #e1e1e1;
+            background-color: $newFurn-dots-link-bg;
             font-size: 0;
 
             &.active,
             &:hover {
-              background-color: $primary;
+              background-color: $newFurn-dots-link-active-bg;
             }
           }
         }

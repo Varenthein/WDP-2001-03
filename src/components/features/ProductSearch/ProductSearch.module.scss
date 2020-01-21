@@ -1,13 +1,13 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  border: 1px solid $form-border-color;
+  border: 1px solid $prodSearch-border;
   display: inline-flex;
   height: 45px;
   color: $text-color;
 
   .category {
-    border-right: 1px solid $form-border-color;
+    border-right: 1px solid $prodSearch-border;
     display: flex;
     align-items: center;
     position: relative;
@@ -64,7 +64,7 @@
       }
     }
     .icon:first-child {
-      color: $productSearch-icon-first;
+      color: $prodSearch-icon-first;
       position: absolute;
       left: 10px;
       z-index: 0;
