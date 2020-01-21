@@ -11,10 +11,6 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const toggleFav = favorite => {
-  return favorite ? false : true;
-};
-
 const ProductBox = ({ id, name, price, promo, stars, favorite, setFavorite }) => {
   return (
     <div className={styles.root}>
@@ -48,7 +44,7 @@ const ProductBox = ({ id, name, price, promo, stars, favorite, setFavorite }) =>
             variant={favorite ? 'favorite' : 'outline'}
             onClick={e => {
               e.preventDefault();
-              setFavorite(id, toggleFav(favorite));
+              setFavorite(id, !favorite);
             }}
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
