@@ -4,9 +4,11 @@ import initialState from './initialState';
 import cartReducer from './cartRedux';
 import categoriesReducer from './categoriesRedux';
 import productsReducer from './productsRedux';
+import viewportRedux from './viewportRedux';
 
 // define reducers
 const reducers = {
+  viewportMode: viewportRedux,
   cart: cartReducer,
   categories: categoriesReducer,
   products: productsReducer,
