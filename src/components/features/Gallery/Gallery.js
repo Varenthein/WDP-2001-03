@@ -80,6 +80,11 @@ const Gallery = ({ products }) => {
           </div>
           <div className={'col-6 ' + styles.picture}>
             <img src={products[2].image} alt='prod3' />
+            <div className={styles.pictureDetails}>
+              <h3>from <span>${products[2].price}</span></h3>
+              <h1>{products[2].name}</h1>
+              <Button variant='green'>Shop now</Button>
+            </div>
           </div>
         </div>
       </div>

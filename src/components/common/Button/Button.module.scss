@@ -74,8 +74,20 @@
   margin-bottom: 5px;
 
   &:not(.noHover):hover {
-    background-color: $primary;
-    color: #ffffff;
+    background-color: $main-noHover-bg;
+    color: $main-color;
     cursor: pointer;
+  }
+}
+
+.green {
+  background-color: $gallery-picture;
+  color: $main-color;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: lighten($gallery-picture,20%);
+    text-decoration: none;
+    color: $main-color;
   }
 }
