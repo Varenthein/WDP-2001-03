@@ -2,10 +2,13 @@ import { connect } from 'react-redux';
 
 import MainLayout from './MainLayout';
 
-import { getViewportMode } from '../../../redux/viewportRedux.js';
+import { getViewportMode, changeViewport } from '../../../redux/viewportRedux.js';
 
 const mapStateToProps = state => ({
   viewportMode: getViewportMode(state),
 });
 
-export default connect(mapStateToProps)(MainLayout);
+const mapDispatchToProps = dispatch => ({
+  changeViewportMode: newMode => dispatch(changeViewport(newMode)),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(MainLayout);
