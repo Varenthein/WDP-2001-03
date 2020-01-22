@@ -78,7 +78,9 @@ const Gallery = ({ products }) => {
             </div>
             <div className={styles.slider}>slider</div>
           </div>
-          <div className='col-6'>picture</div>
+          <div className={'col-6 ' + styles.picture}>
+            <img src={products[2].image} alt='prod3' />
+          </div>
         </div>
       </div>
     </div>
