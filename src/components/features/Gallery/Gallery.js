@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './Gallery.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  //faStar,
+  faStar,
   faExchangeAlt,
   faShoppingBasket,
   faEye,
@@ -46,11 +46,29 @@ const Gallery = ({ products }) => {
                   <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
                 </Button>
                 <Button variant='gallery'>
-                  <FontAwesomeIcon icon={faEye}></FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faEye}>View details</FontAwesomeIcon>
                 </Button>
                 <Button variant='gallery'>
-                  <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faShoppingBasket}>
+                    Add to basket
+                  </FontAwesomeIcon>
                 </Button>
+              </div>
+              <div className={styles.content}>
+                <div className={styles.triangleTopLeft} />
+                <h5>{products[0].name}</h5>
+                <div className={styles.stars}>
+                  {[1, 2, 3, 4, 5].map(i => (
+                    <a key={i} href='#'>
+                      {i <= products[0].stars ? (
+                        <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
+                      ) : (
+                        <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+                      )}
+                    </a>
+                  ))}
+                </div>
+                <div className={styles.triangleBottomRight} />
               </div>
             </div>
             <div className={styles.slider}>slider</div>
