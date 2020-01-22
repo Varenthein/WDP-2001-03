@@ -5,25 +5,35 @@
     background-color: $footer-bg;
     padding: 3rem 0;
 
-    .menuWrapper {
-      h6 {
-        color: #ffffff;
-        text-transform: uppercase;
-        margin: 0 0 1rem 0;
+    .footerMenuElement {
+      flex: 0 0 25%;
+      max-width: 25%;
+      padding: 15px;
+
+      img {
+        width: 100%;
       }
 
-      ul {
-        margin: 0 0 1.5rem 0;
-        padding: 0;
-        list-style: none;
-        li {
-          a {
-            font-size: 14px;
-            line-height: 30px;
-            color: rgb(169, 169, 169);
+      .menuWrapper {
+        h6 {
+          color: #ffffff;
+          text-transform: uppercase;
+          margin: 0 0 1rem 0;
+        }
 
-            &:hover {
-              color: #ffffff;
+        ul {
+          margin: 0 0 1.5rem 0;
+          padding: 0;
+          list-style: none;
+          li {
+            a {
+              font-size: 14px;
+              line-height: 30px;
+              color: rgb(169, 169, 169);
+
+              &:hover {
+                color: #ffffff;
+              }
             }
           }
         }
@@ -43,6 +53,8 @@
 
   .bottomBar {
     background-color: $footer-claim-bg;
+    display: flex;
+    justify-content: start;
 
     :global(.container) > :global(.row) {
       height: 95px;
@@ -77,6 +89,31 @@
           }
         }
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .root .footerMenu .footerMenuElement {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .root .bottomBar .copyright {
+    p {
+      font-size: 10px;
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .root .footerMenu .footerMenuElement {
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    img {
+      width: 50%;
     }
   }
 }
