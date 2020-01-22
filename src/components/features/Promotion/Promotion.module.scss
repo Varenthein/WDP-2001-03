@@ -1,39 +1,46 @@
-@import "../NewFurniture/NewFurniture.module.scss";
+@import "../../../styles/settings.scss";
 
 
-.dots {
-  position: absolute;
-  right: 0;
-  bottom:10px;
-  background-color: transparent;
 
-  ul {
-    margin: 0;
-    padding: 0 0 0 1rem;
-    list-style: none;
-    background-color: $newFurn-dots-ul-bg;
-    transform: translateY(15px);
+.panelBar {
+  margin-bottom: 50px;
+  position: relative;
 
-    li {
-      display: inline-block;
-      margin-left: 0.5rem;
+  .dots {
+    transition: 0.3s linear all;
+    position: absolute;
+    left: 30%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    ul {
+      margin: 0;
+      padding: 0 0 0 1rem;
+      list-style: none;
+      transform: translateY(15px);
 
-      a {
-        display: block;
-        width: 13px;
-        height: 13px;
-        border-radius: 6px;
-        background-color: $newFurn-dots-link-bg;
-        font-size: 0;
+      li {
+        display: inline-block;
+        margin-left: 0.5rem;
 
-        &.active,
-        &:hover {
-          background-color: $newFurn-dots-link-active-bg;
+        a {
+          display: block;
+          width: 13px;
+          height: 13px;
+          border-radius: 6px;
+          background-color: $newFurn-dots-link-bg;
+          font-size: 0;
+
+          &.active,
+          &:hover {
+            background-color: $newFurn-dots-link-active-bg;
+          }
         }
       }
     }
   }
 }
+
+
 .img{
   background-image: url(https://cdn.pixabay.com/photo/2017/08/02/01/01/living-room-2569325_1280.jpg);
   width:100%;
@@ -114,3 +121,5 @@
     }
   }
 }
+
+

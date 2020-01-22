@@ -44,11 +44,11 @@ class Promotion extends React.Component {
       <div className={styles.root}>
         <div className='container'>
           <div className={styles.panelBar}>
-            <div className='row align-items-start'>
-              <div className={'col-5' + styles.hotDeals}></div>
+            <div className={'col-2 ' + styles.dots}>
+              <ul>{dots}</ul>
             </div>
           </div>
-          <div className='row'>
+          <div className={'row'}>
             {categoryProducts.slice(activePage * 1, (activePage + 1) * 1).map(item => (
               <div key={item.id} className='col-4'>
                 <ProductBoxPromotion {...item} />
