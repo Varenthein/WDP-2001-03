@@ -132,6 +132,27 @@
           color: $text-color;
         }
       }
+
+      .price {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(50%, -90%);
+        background-color: $gallery-price-bg;
+        padding: 20px;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+
+        h3, h5 {
+          margin: 0;
+          color: $gallery-price;
+        }
+
+        h5 {
+          text-decoration: line-through;
+        }
+      }
     }
   }
 

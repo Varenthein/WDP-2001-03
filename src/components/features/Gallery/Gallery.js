@@ -12,6 +12,7 @@ import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons'
 import Button from '../../common/Button/Button';
 
 const Gallery = ({ products }) => {
+  console.log('products', products);
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -69,6 +70,10 @@ const Gallery = ({ products }) => {
                   ))}
                 </div>
                 <div className={styles.triangleBottomRight} />
+                <div className={styles.price}>
+                  <h3>${products[0].price}</h3>
+                  <h5>${products[0].oldprice}</h5>
+                </div>
               </div>
             </div>
             <div className={styles.slider}>slider</div>
@@ -92,6 +97,7 @@ Gallery.propTypes = {
       newFurniture: PropTypes.bool,
       favorite: PropTypes.bool,
       image: PropTypes.string,
+      oldprice: PropTypes.number,
     })
   ),
 };
