@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Promotion.module.scss';
-import ProductBox from '../../common/ProductBox/ProductBox';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ProductBoxPromotion from '../../common/ProductBoxPromotion/ProductBoxPromotion';
+import Button from '../../common/Button/Button';
+import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 class Promotion extends React.Component {
   state = {
@@ -22,41 +25,54 @@ class Promotion extends React.Component {
     const { activeHotDeals, activePage } = this.state;
 
     const categoryProducts = products.filter(item => item.hotDeals === activeHotDeals);
+    const pagesCount = Math.ceil(categoryProducts.length - 1);
 
-    // eslint-disable-next-line no-console
-    console.log(products);
     const dots = [];
-    for (let i = 0; i <= 0; i++) {
-      dots
-        .push
-        // <li>
-        //   <a
-        //     onClick={()=>this.handlePageChange(i)}
-        //     className={i ===activePage && styles.active}
-        //   >
-        //     page{i}
-        //   </a>
-        // </li>
-        ();
+    for (let i = 0; i <= pagesCount; i++) {
+      dots.push(
+        <li>
+          <a
+            onClick={() => this.handlePageChange(i)}
+            className={i === activePage && styles.active}
+          >
+            page{i}
+          </a>
+        </li>
+      );
     }
     return (
       <div className={styles.root}>
         <div className='container'>
           <div className={styles.panelBar}>
-            <div className='row no-gutters align-items-end'>
-              <div className={'col-auto ' + styles.heading}>
-                <h3>Promotion</h3>
-              </div>
-              <div className={'col ' + styles.menu}></div>
-              <div className={'col-auto ' + styles.dots}>{/* <ul>{dots}</ul> */}</div>
+            <div className='row align-items-start'>
+              <div className={'col-5' + styles.hotDeals}></div>
             </div>
           </div>
           <div className='row'>
             {categoryProducts.slice(activePage * 1, (activePage + 1) * 1).map(item => (
-              <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
+              <div key={item.id} className='col-4'>
+                <ProductBoxPromotion {...item} />
               </div>
             ))}
+            <div className={'col-8'}>
+              <div className={styles.img}>
+                <div className={styles.bgc}>
+                  <h3 className={styles.tittle}>
+                    indoor <b>furniture</b>
+                  </h3>
+                  <p className={styles.subtittle}>save up to 50% of all furniture</p>
+                  <Button className={styles.white}>SHOP NOW</Button>
+                </div>
+                <div className={styles.arrow}>
+                  <div className={styles.arrowLeft}>
+                    <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
+                  </div>
+                  <div className={styles.arrowRight}>
+                    <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
