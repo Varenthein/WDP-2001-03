@@ -76,7 +76,18 @@ const Gallery = ({ products }) => {
                 </div>
               </div>
             </div>
-            <div className={styles.slider}>slider</div>
+            <div className={styles.slider}>
+              <div className={styles.prev}>{'<'}</div>
+              <div className={styles.slides}>
+                <img src={products[0].image} alt='pic' className={styles.slidePic + ' ' + styles.active}/>
+                <img src={products[1].image} alt='pic' className={styles.slidePic}/>
+                <img src={products[2].image} alt='pic' className={styles.slidePic}/>
+                <img src={products[3].image} alt='pic' className={styles.slidePic}/>
+                <img src={products[4].image} alt='pic' className={styles.slidePic}/>
+                <img src={products[5].image} alt='pic' className={styles.slidePic}/>
+              </div>
+              <div className={styles.next}>{'>'}</div>
+            </div>
           </div>
           <div className={'col-6 ' + styles.picture}>
             <img src={products[2].image} alt='prod3' />

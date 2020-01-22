@@ -29,6 +29,7 @@
 
   .menu {
     text-align: center;
+
     ul {
       margin: 0;
       padding: 0;
@@ -154,6 +155,40 @@
           text-decoration: line-through;
         }
       }
+    }
+  }
+
+  .slider {
+    display: flex;
+    padding: 5px;
+    justify-content: space-around;
+    border: 1px solid $gallery-link-border;
+
+    .prev, .next {
+      width: 20px;
+      background-color: black;
+      color: white;
+      text-align: center;
+    }
+
+    .slides {
+      display: flex;
+      justify-content: space-around;
+
+      .slidePic {
+        width: 75px;
+        height: 75px;
+        object-fit: cover;
+        margin: 2px;
+        position: relative;
+        opacity: 0.5;
+
+        &.active {
+          opacity: 1;
+        }
+      }
+
+
     }
   }
 
