@@ -91,3 +91,13 @@
     color: $main-color;
   }
 }
+
+.favorite {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: $favorite-bg;
+  color: $favorite-color;
+  font-size: 13px;
+  line-height: 22px;
+  border-radius: 50%;
+}
