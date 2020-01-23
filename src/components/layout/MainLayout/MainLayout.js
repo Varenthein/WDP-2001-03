@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import Header from '../Header/Header';
@@ -20,7 +20,10 @@ const checkWidth = () => {
   }
 };
 
-const MainLayout = ({ children }) => {
+const MainLayout = ({ children, changeViewportMode }) => {
+  useEffect(() => {
+    changeViewportMode(checkWidth());
+  });
   return (
     <div>
       <Header />
@@ -32,6 +35,7 @@ const MainLayout = ({ children }) => {
 
 MainLayout.propTypes = {
   children: PropTypes.node,
+  changeViewportMode: PropTypes.func,
 };
 
 export default MainLayout;
