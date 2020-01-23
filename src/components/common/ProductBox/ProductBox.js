@@ -11,7 +11,18 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const ProductBox = ({ name, price, promo, stars, addToCompare, image, oldprice }) => (
+const ProductBox = ({
+  id,
+  name,
+  price,
+  promo,
+  stars,
+  image,
+  favorite,
+  setFavorite,
+  addToCompare,
+  oldprice,
+}) => (
   <div className={styles.root}>
     <div className={styles.photo}>
       {promo && <div className={styles.sale}>{promo}</div>}
@@ -40,7 +51,13 @@ const ProductBox = ({ name, price, promo, stars, addToCompare, image, oldprice }
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
-        <Button variant={Math.round(Math.random() + 1) <= 1.5 ? 'outline' : 'outline1'}>
+        <Button
+          variant={favorite ? 'favorite' : 'outline'}
+          onClick={e => {
+            e.preventDefault();
+            setFavorite(id, !favorite);
+          }}
+        >
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
         <Button
@@ -64,10 +81,13 @@ const ProductBox = ({ name, price, promo, stars, addToCompare, image, oldprice }
 
 ProductBox.propTypes = {
   children: PropTypes.node,
+  id: PropTypes.string,
   name: PropTypes.string,
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  setFavorite: PropTypes.func,
+  favorite: PropTypes.bool,
   comparison: PropTypes.array,
   addToCompare: PropTypes.func,
   image: PropTypes.string,
