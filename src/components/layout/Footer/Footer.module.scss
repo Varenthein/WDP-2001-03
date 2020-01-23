@@ -83,6 +83,16 @@
   }
 }
 
+.footerMenuElement {
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding: 15px;
+
+  img {
+    width: 100%
+  }
+}
+
 @media (max-width: 768px) {
   .root .footerMenu .footerMenuElement {
     flex: 0 0 50%;
@@ -97,7 +107,7 @@
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 400px) {
   .root .footerMenu .footerMenuElement {
     flex: 0 0 100%;
     max-width: 100%;
