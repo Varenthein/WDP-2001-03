@@ -23,7 +23,9 @@ const checkWidth = () => {
 const MainLayout = ({ children, changeViewportMode }) => {
   useEffect(() => {
     changeViewportMode(checkWidth());
+    window.addEventListener('resize', newMode => changeViewportMode(checkWidth()));
   });
+
   return (
     <div>
       <Header />
