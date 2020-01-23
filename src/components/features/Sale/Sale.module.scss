@@ -1,9 +1,8 @@
 @import "../../../styles/settings.scss";
 
-
 .root {
-
   padding-bottom: 5rem;
+
   .bigbox {
     background-image: url(https://cdn.pixabay.com/photo/2014/09/15/21/46/couch-447484_1280.jpg);
     width: 100%;
@@ -11,13 +10,15 @@
     background-size: cover;
     padding:30px;
     text-transform: uppercase;
+
     .bgc {
       position: relative;
       height: 100%;
       width: 100%;
       background-color: rgba($color: #6a6a6a, $alpha: 0.5);
     }
-    .title{
+
+    .title {
       position: absolute;
       top:38%;
       left:5%;
@@ -27,7 +28,8 @@
       color: #ffffff;
       font-family: "Poppins";
     }
-    .product{
+
+    .product {
       position: absolute;
       top:50%;
       left:5%;
@@ -37,7 +39,8 @@
       color: #ffffff;
       font-family: "Poppins";
     }
-    .discount{
+
+    .discount {
       position: absolute;
       left:5%;
       top:70%;
@@ -61,7 +64,6 @@
     background-color: #e8edf7;
     text-transform: uppercase;
 
-
     span {
       font-weight: bold;
     }
@@ -73,7 +75,8 @@
       color: #000000;
       font-family: "Poppins";
     }
-    .position{
+
+    .position {
       display: inline-block;
       width: 40%;
       position: relative;
@@ -81,6 +84,7 @@
       left:50%;
       transform: translateX(-50%);
     }
+
     .subOffice {
       margin:0;
       font-size: 18px;
@@ -99,6 +103,7 @@
       font-weight: 600;
     }
   }
+
   .box2 {
     overflow: hidden;
     position: relative;
@@ -106,14 +111,14 @@
     background-color: #fbf3f7;
     text-transform: uppercase;
 
-    .position{
+    .position {
       position: relative;
-
       width: 60%;
       top:40%;
       left:50%;
       transform: translateY(-50%);
     }
+
     span {
       font-weight: bold;
     }
@@ -125,6 +130,7 @@
       color: #d58e32;
       font-family: "Poppins";
     }
+
     .describe {
       margin:0  0 0 20px;
       font-size: 18px;
@@ -133,20 +139,22 @@
       font-weight: 300;
     }
   }
-  .img{
+
+  .img {
     position: absolute;
     width: 140px;
     height: 195px;
     display: inline-block;
 
-    .bed{
+    .bed {
       width: 250%;
       position: absolute;
       top:-34%;
       left:0;
 
     }
-    .chair1{
+
+    .chair1 {
       position: absolute;
       top:0;
       left:-30%;
@@ -154,7 +162,8 @@
       min-height: 175px;
 
     }
-    .chair2{
+
+    .chair2 {
       position: absolute;
       top:0;
       left:90%;
