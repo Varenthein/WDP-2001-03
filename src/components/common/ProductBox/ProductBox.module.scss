@@ -1,11 +1,12 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  background-color: #ffffff;
-  border: 1px solid #e1e1e1;
+  background-color: $productBox-bg;
+  border: 1px solid $productBox-border;
   margin-bottom: 2rem;
+  transition:0.3s linear all;
 
-  &:hover{
+  &:hover {
     .photo .buttons {
       display:flex;
       justify-content: space-between;
@@ -14,13 +15,20 @@
       background-color: $primary;
     }
   }
+  &:hover {
+    transform:translate(5%,-5%);
+    box-shadow: -12px 14px 49px -14px rgba(0,0,0,.5);
 
+
+
+
+  }
 
   .photo {
     position: relative;
     padding: 80% 10px 0 10px;
     background: {
-      color: #f4f5f7;
+      color: $productBox-photo-bg;
       size: contain;
       position: center;
       repeat: no-repeat;
@@ -33,9 +41,9 @@
       top: -30px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: #292929;
+      background-color: $productBox-sale-bg;
       border-radius: 50%;
-      color: #ffffff;
+      color: $productBox-sale-color;
       padding: 30px 15px 5px 15px;
     }
 
@@ -54,7 +62,7 @@
     padding: 20px;
 
     h5 {
-      color: $primary;
+      color: $productBox-header;
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
@@ -63,14 +71,14 @@
     .stars {
       a {
         text-decoration: none;
-        color: rgb(42, 42, 42);
+        color: $text-color;
       }
     }
   }
 
   .line {
     margin: 0 10px;
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid $productBox-line-border;
     position: relative;
 
     &::before {
@@ -79,7 +87,7 @@
       bottom: -1px;
       left: 50%;
       width: 30px;
-      border-bottom: 4px solid $primary;
+      border-bottom: 4px solid $productBox-line-before-border;
       transform: translateX(-50%);
     }
   }
