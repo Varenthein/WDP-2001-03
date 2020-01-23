@@ -17,6 +17,8 @@ const initialState = {
       promo: 'sale',
       hotDeals: 'hotDeals',
       promotion: true,
+      newFurniture: true,
+      favorite: true,
       image: 'https://cdn.pixabay.com/photo/2016/11/19/13/06/bed-1839183_1280.jpg',
     },
     {
@@ -29,6 +31,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       promotion: true,
+      newFurniture: true,
+      favorite: false,
       image:
         'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
@@ -43,6 +47,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       promotion: true,
+      favorite: false,
       image:
         'https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
@@ -55,6 +60,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image:
         'https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
@@ -67,6 +73,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image:
         'https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
@@ -79,6 +86,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image:
         'https://images.pexels.com/photos/1267438/pexels-photo-1267438.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
@@ -91,6 +99,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image:
         'https://images.pexels.com/photos/2705/bed-bedroom-room-furniture.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
@@ -103,6 +112,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image:
         'https://images.pexels.com/photos/262048/pexels-photo-262048.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
     },
@@ -115,6 +125,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image:
         'https://cdn.pixabay.com/photo/2017/03/19/01/43/living-room-2155376_1280.jpg',
     },
@@ -127,6 +138,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image:
         'https://cdn.pixabay.com/photo/2017/08/03/15/38/architecture-2576906_1280.jpg',
     },
@@ -139,6 +151,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image: 'https://cdn.pixabay.com/photo/2015/06/19/21/33/beach-815303_1280.jpg',
     },
     {
@@ -150,6 +163,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image: 'https://cdn.pixabay.com/photo/2017/03/28/12/15/chairs-2181977_1280.jpg',
     },
     {
@@ -161,6 +175,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image: 'https://cdn.pixabay.com/photo/2015/02/09/14/56/table-629772_1280.jpg',
     },
     {
@@ -172,8 +187,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      image:
-        'https://cdn.pixabay.com/photo/2015/04/06/16/04/beach-chair-709592_1280.jpg',
+      favorite: false,
+      image: 'https://cdn.pixabay.com/photo/2016/11/18/17/20/couch-1835923_1280.jpg',
     },
     {
       id: 'aenean-ru-bristique-15',
@@ -184,6 +199,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image: 'https://cdn.pixabay.com/photo/2016/11/18/17/20/couch-1835923_1280.jpg',
     },
     {
@@ -195,7 +211,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      image: 'https://cdn.pixabay.com/photo/2014/09/15/21/46/couch-447484_1280.jpg',
+      favorite: false,
+      image: 'https://cdn.pixabay.com/photo/2016/08/26/15/06/home-1622401_1280.jpg',
     },
     {
       id: 'aenean-ru-bristique-17',
@@ -206,6 +223,7 @@ const initialState = {
       oldprice: 0,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image: 'https://cdn.pixabay.com/photo/2016/08/26/15/06/home-1622401_1280.jpg',
     },
     {
@@ -217,6 +235,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image: 'https://cdn.pixabay.com/photo/2016/11/29/01/24/adorable-1866530_1280.jpg',
     },
     {
@@ -228,6 +247,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image: 'https://cdn.pixabay.com/photo/2019/12/11/20/49/table-4689268_1280.jpg',
     },
     {
@@ -239,6 +259,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image:
         'https://cdn.pixabay.com/photo/2015/11/07/11/48/conservatory-1031494_1280.jpg',
     },
@@ -251,6 +272,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image: 'https://cdn.pixabay.com/photo/2015/04/20/06/46/office-730681_1280.jpg',
     },
     {
@@ -262,6 +284,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image:
         'https://cdn.pixabay.com/photo/2015/05/15/14/22/conference-room-768441_1280.jpg',
     },
@@ -274,6 +297,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image:
         'https://cdn.pixabay.com/photo/2018/01/26/08/15/dining-room-3108037_1280.jpg',
     },
@@ -286,12 +310,14 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
       image: 'https://cdn.pixabay.com/photo/2016/06/03/14/31/dinner-1433494_1280.jpg',
     },
   ],
   cart: {
     products: [],
   },
+  comparison: [],
 };
 
 export default initialState;
