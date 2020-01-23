@@ -77,22 +77,32 @@ const Gallery = ({ products }) => {
               </div>
             </div>
             <div className={styles.slider}>
-              <div className={styles.prev}>{'<'}</div>
+              <Button className={styles.prev}>
+                <p>{'<'}</p>
+              </Button>
               <div className={styles.slides}>
-                <img src={products[0].image} alt='pic' className={styles.slidePic + ' ' + styles.active}/>
-                <img src={products[1].image} alt='pic' className={styles.slidePic}/>
-                <img src={products[2].image} alt='pic' className={styles.slidePic}/>
-                <img src={products[3].image} alt='pic' className={styles.slidePic}/>
-                <img src={products[4].image} alt='pic' className={styles.slidePic}/>
-                <img src={products[5].image} alt='pic' className={styles.slidePic}/>
+                <img
+                  src={products[0].image}
+                  alt='pic'
+                  className={styles.slidePic + ' ' + styles.active}
+                />
+                <img src={products[1].image} alt='pic' className={styles.slidePic} />
+                <img src={products[2].image} alt='pic' className={styles.slidePic} />
+                <img src={products[3].image} alt='pic' className={styles.slidePic} />
+                <img src={products[4].image} alt='pic' className={styles.slidePic} />
+                <img src={products[5].image} alt='pic' className={styles.slidePic} />
               </div>
-              <div className={styles.next}>{'>'}</div>
+              <Button className={styles.next}>
+                <p>{'>'}</p>
+              </Button>
             </div>
           </div>
           <div className={'col-6 ' + styles.picture}>
             <img src={products[2].image} alt='prod3' />
             <div className={styles.pictureDetails}>
-              <h3>from <span>${products[2].price}</span></h3>
+              <h3>
+                from <span>${products[2].price}</span>
+              </h3>
               <h1>{products[2].name}</h1>
               <Button variant='green'>Shop now</Button>
             </div>

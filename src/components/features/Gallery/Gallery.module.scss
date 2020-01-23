@@ -166,9 +166,17 @@
 
     .prev, .next {
       width: 20px;
-      background-color: black;
-      color: white;
+      background-color: $nextPrev-bg;
+      color: $nextPrev-color;
       text-align: center;
+
+      p {
+        margin: 28px 0;
+      }
+      
+      &:hover {
+        background-color: lighten($nextPrev-bg, 20%);
+      }
     }
 
     .slides {
