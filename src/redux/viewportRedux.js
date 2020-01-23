@@ -15,10 +15,7 @@ export const changeViewport = payload => ({ payload, type: CHANGE_VIEWPORT });
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case CHANGE_VIEWPORT: {
-      return {
-        ...statePart,
-        viewportMode: action.payload,
-      };
+      return action.payload;
     }
     default:
       return statePart;
