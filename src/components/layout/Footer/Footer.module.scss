@@ -43,6 +43,8 @@
 
   .bottomBar {
     background-color: $footer-claim-bg;
+    display: flex;
+    justify-content: start;
 
     :global(.container) > :global(.row) {
       height: 95px;
@@ -77,6 +79,31 @@
           }
         }
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .root .footerMenu .footerMenuElement {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .root .bottomBar .copyright {
+    p {
+      font-size: 10px;
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .root .footerMenu .footerMenuElement {
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    img {
+      width: 50%;
     }
   }
 }
