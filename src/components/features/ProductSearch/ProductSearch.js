@@ -20,7 +20,7 @@ const ProductSearch = () => (
         <li className={styles.active}>
           <a value=''>Chair</a>
         </li>
-        <li className={styles.active} activeClassName={styles.ActiveLink}>
+        <li className={styles.active}>
           <a value=''>Table</a>
         </li>
         <li className={styles.active}>

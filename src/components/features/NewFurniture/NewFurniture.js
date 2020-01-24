@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import FadeIn from 'react-fade-in';
 import styles from './NewFurniture.module.scss';
-import ProductBox from '../../common/ProductBox/ProductBox';
+import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 
 class NewFurniture extends React.Component {
   state = {
@@ -44,7 +44,7 @@ class NewFurniture extends React.Component {
         <div className='container'>
           <div className={styles.panelBar}>
             <div className='row no-gutters align-items-end'>
-              <div className={'col-auto ' + styles.heading}>
+              <div className={'col-lg-auto col-12' + styles.heading}>
                 <h3>New furniture</h3>
               </div>
               <div className={'col ' + styles.menu}>
@@ -53,7 +53,9 @@ class NewFurniture extends React.Component {
                     <li key={item.id}>
                       <a
                         className={item.id === activeCategory && styles.active}
-                        onClick={() => this.handleCategoryChange(item.id)}
+                        onClick={() => {
+                          this.handleCategoryChange(item.id);
+                        }}
                       >
                         {item.name}
                       </a>
@@ -68,8 +70,10 @@ class NewFurniture extends React.Component {
           </div>
           <div className='row'>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
+              <div key={item.id} className='col-lg-3 col-12'>
+                <FadeIn transitionDuration={2000}>
+                  <ProductBox {...item} />
+                </FadeIn>
               </div>
             ))}
           </div>
@@ -96,6 +100,7 @@ NewFurniture.propTypes = {
       stars: PropTypes.number,
       promo: PropTypes.string,
       newFurniture: PropTypes.bool,
+      favorite: PropTypes.bool,
     })
   ),
 };
