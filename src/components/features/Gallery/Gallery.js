@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Tooltip from 'rc-tooltip';
-import 'rc-tooltip/assets/bootstrap_white.css';
+import ReactTooltip from 'react-tooltip';
 import styles from './Gallery.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -41,46 +40,21 @@ const Gallery = ({ products }) => {
             <div className={styles.product}>
               <img src={products[0].image} alt='product 1' />
               <div className={styles.buttons}>
-                <Tooltip
-                  placement='right'
-                  overlay='Add to favorite'
-                  arrowContent={<div className='rc-tooltip-arrow-inner' />}
-                >
-                  <Button variant='gallery'>
-                    <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-                  </Button>
-                </Tooltip>
-                <Tooltip
-                  placement='right'
-                  overlay='Add to compare'
-                  arrowContent={<div className='rc-tooltip-arrow-inner' />}
-                >
-                  <Button variant='gallery'>
-                    <FontAwesomeIcon icon={faExchangeAlt}>
-                      Add to compare
-                    </FontAwesomeIcon>
-                  </Button>
-                </Tooltip>
-                <Tooltip
-                  placement='right'
-                  overlay='View details'
-                  arrowContent={<div className='rc-tooltip-arrow-inner' />}
-                >
-                  <Button variant='gallery'>
-                    <FontAwesomeIcon icon={faEye}>View details</FontAwesomeIcon>
-                  </Button>
-                </Tooltip>
-                <Tooltip
-                  placement='right'
-                  overlay='Add to basket'
-                  arrowContent={<div className='rc-tooltip-arrow-inner' />}
-                >
-                  <Button variant='gallery'>
-                    <FontAwesomeIcon icon={faShoppingBasket}>
-                      Add to basket
-                    </FontAwesomeIcon>
-                  </Button>
-                </Tooltip>
+                <ReactTooltip type='light' place='right' />
+                <Button variant='gallery' data-tip='Add to favorites'>
+                  <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+                </Button>
+                <Button variant='gallery' data-tip='Add to compare'>
+                  <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
+                </Button>
+                <Button variant='gallery' data-tip='View details'>
+                  <FontAwesomeIcon icon={faEye}>View details</FontAwesomeIcon>
+                </Button>
+                <Button variant='gallery' data-tip='Add to basket'>
+                  <FontAwesomeIcon icon={faShoppingBasket}>
+                    Add to basket
+                  </FontAwesomeIcon>
+                </Button>
               </div>
               <div className={styles.content}>
                 <div className={styles.triangleTopLeft} />
