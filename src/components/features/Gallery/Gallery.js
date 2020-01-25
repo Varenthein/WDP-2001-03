@@ -30,8 +30,9 @@ class Gallery extends React.Component {
     }
   }
 
-  handleTabChange(newTab) {
+  handleTabChange(arr, newTab) {
     this.setState({ activeTab: newTab });
+    this.filterProducts(arr, newTab);
   }
 
   render() {
@@ -43,6 +44,8 @@ class Gallery extends React.Component {
       { id: 'saleOff', name: 'sale off' },
       { id: 'topRated', name: 'top rated' },
     ];
+
+    console.log('activeTab', activeTab);
 
     return (
       <div className={styles.root}>
@@ -59,8 +62,7 @@ class Gallery extends React.Component {
                       <a
                         className={el.id === activeTab && styles.active}
                         onClick={() => {
-                          this.handleTabChange(el.id);
-                          this.filterProducts(products, activeTab);
+                          this.handleTabChange(products, el.id);
                         }}
                       >
                         {el.name}
