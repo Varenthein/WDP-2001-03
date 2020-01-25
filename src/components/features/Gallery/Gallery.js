@@ -1,30 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReactTooltip from 'react-tooltip';
+import FadeIn from 'react-fade-in';
+import GalleryBox from '../../common/GalleryBox/GalleryBoxContainer';
 import styles from './Gallery.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faStar,
-  faExchangeAlt,
-  faShoppingBasket,
-  faEye,
-} from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
 
 class Gallery extends React.Component {
   state = {
     activeTab: 'featured',
+    filteredArr: this.props.products.filter(el => el.newFurniture === true),
   };
+
+  filterProducts(arr, activeTab) {
+    switch (activeTab) {
+      case 'featured':
+        this.setState({ filteredArr: arr.filter(el => el.newFurniture === true) });
+        break;
+      case 'topSeller':
+        this.setState({ filteredArr: arr.filter(el => el.favorite === true) });
+        break;
+      case 'saleOff':
+        this.setState({ filteredArr: arr.filter(el => el.promo === 'sale') });
+        break;
+      case 'topRated':
+        this.setState({ filteredArr: arr.filter(el => el.stars === 5) });
+        break;
+      default:
+        this.setState({ filteredArr: arr.filter(el => el.newFurniture === true) });
+    }
+  }
 
   handleTabChange(newTab) {
     this.setState({ activeTab: newTab });
-    console.log('state', newTab);
   }
 
   render() {
     const { products } = this.props;
-    const { activeTab } = this.state;
+    const { activeTab, filteredArr } = this.state;
     const categories = [
       { id: 'featured', name: 'featured' },
       { id: 'topSeller', name: 'top seller' },
@@ -48,6 +60,7 @@ class Gallery extends React.Component {
                         className={el.id === activeTab && styles.active}
                         onClick={() => {
                           this.handleTabChange(el.id);
+                          this.filterProducts(products, activeTab);
                         }}
                       >
                         {el.name}
@@ -56,67 +69,32 @@ class Gallery extends React.Component {
                   ))}
                 </ul>
               </div>
-              <div className={styles.product}>
-                <img src={products[0].image} alt='product 1' />
-                <div className={styles.buttons}>
-                  <ReactTooltip type='light' place='right' />
-                  <Button variant='gallery' data-tip='Add to favorites'>
-                    <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+              <div className={styles.productSlider}>
+                {filteredArr.map(el => (
+                  <div key={el.id}>
+                    <FadeIn transitionDuration={2000}>
+                      <GalleryBox {...el} />
+                    </FadeIn>
+                  </div>
+                ))}
+                <div className={styles.slider}>
+                  <Button className={styles.prev}>
+                    <p>{'<'}</p>
                   </Button>
-                  <Button variant='gallery' data-tip='Add to compare'>
-                    <FontAwesomeIcon icon={faExchangeAlt}>
-                      Add to compare
-                    </FontAwesomeIcon>
-                  </Button>
-                  <Button variant='gallery' data-tip='View details'>
-                    <FontAwesomeIcon icon={faEye}>View details</FontAwesomeIcon>
-                  </Button>
-                  <Button variant='gallery' data-tip='Add to basket'>
-                    <FontAwesomeIcon icon={faShoppingBasket}>
-                      Add to basket
-                    </FontAwesomeIcon>
-                  </Button>
-                </div>
-                <div className={styles.content}>
-                  <div className={styles.triangleTopLeft} />
-                  <h5>{products[0].name}</h5>
-                  <div className={styles.stars}>
-                    {[1, 2, 3, 4, 5].map(i => (
-                      <a key={i} href='#'>
-                        {i <= products[0].stars ? (
-                          <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-                        ) : (
-                          <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-                        )}
-                      </a>
+                  <div className={styles.slides}>
+                    {filteredArr.map(el => (
+                      <img
+                        key={el.id}
+                        src={el.image}
+                        alt='pic'
+                        className={styles.slidePic}
+                      />
                     ))}
                   </div>
-                  <div className={styles.triangleBottomRight} />
-                  <div className={styles.price}>
-                    <h3>${products[0].price}</h3>
-                    <h5>${products[0].oldprice}</h5>
-                  </div>
+                  <Button className={styles.next}>
+                    <p>{'>'}</p>
+                  </Button>
                 </div>
-              </div>
-              <div className={styles.slider}>
-                <Button className={styles.prev}>
-                  <p>{'<'}</p>
-                </Button>
-                <div className={styles.slides}>
-                  <img
-                    src={products[0].image}
-                    alt='pic'
-                    className={styles.slidePic + ' ' + styles.active}
-                  />
-                  <img src={products[1].image} alt='pic' className={styles.slidePic} />
-                  <img src={products[2].image} alt='pic' className={styles.slidePic} />
-                  <img src={products[3].image} alt='pic' className={styles.slidePic} />
-                  <img src={products[4].image} alt='pic' className={styles.slidePic} />
-                  <img src={products[5].image} alt='pic' className={styles.slidePic} />
-                </div>
-                <Button className={styles.next}>
-                  <p>{'>'}</p>
-                </Button>
               </div>
             </div>
             <div className={'col-6 ' + styles.picture}>

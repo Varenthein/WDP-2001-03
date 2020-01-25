@@ -57,7 +57,7 @@
           &.active,
           &:hover {
             background-color: $gallery-link-active-bg;
-            
+
             &::before {
               content: "";
               position: absolute;
@@ -240,6 +240,10 @@
         margin-bottom: 20px;
       }
     }
+  }
+
+  .productSlider {
+    
   }
 
 }
