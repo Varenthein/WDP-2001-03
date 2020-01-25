@@ -44,7 +44,7 @@ class NewFurniture extends React.Component {
         <div className='container'>
           <div className={styles.panelBar}>
             <div className='row no-gutters align-items-end'>
-              <div className={'col-auto ' + styles.heading}>
+              <div className={'col-lg-auto col-12' + styles.heading}>
                 <h3>New furniture</h3>
               </div>
               <div className={'col ' + styles.menu}>
@@ -70,7 +70,7 @@ class NewFurniture extends React.Component {
           </div>
           <div className='row'>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-3'>
+              <div key={item.id} className='col-lg-3 col-12'>
                 <FadeIn transitionDuration={2000}>
                   <ProductBox {...item} />
                 </FadeIn>
@@ -100,6 +100,7 @@ NewFurniture.propTypes = {
       stars: PropTypes.number,
       promo: PropTypes.string,
       newFurniture: PropTypes.bool,
+      favorite: PropTypes.bool,
     })
   ),
 };

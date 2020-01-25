@@ -7,6 +7,7 @@ $lighterGrey: #D8D8D8;
 $grey: #A9A9A9;
 $darkGrey: #363636;
 $darkestGrey: #2a2a2a;
+$green: #44bd32;
 
 /* Global variables */
 
@@ -24,6 +25,9 @@ $outline-border: $darkestGrey;
 $outline-color: $darkestGrey;
 $outline-noHover-bg: $darkestGrey;
 $outline-noHover-color: $white;
+$gallery-bg: $lightestGrey;
+$favorite-bg: $primary;
+$favorite-color: $white;
 
 /* Colors for FeatureBox component */
 
@@ -101,3 +105,22 @@ $menu-link-active-border: $darkestGrey;
 $topBar-bg: $darkGrey;
 $topBar-link-color: $white;
 $topBar-link-hover: $primary;
+
+/* Colors for Gallery component */
+
+$gallery-heading-border: $lightestGrey;
+$gallery-heading-before: $primary;
+$gallery-heading: $primary;
+$gallery-link: $darkestGrey;
+$gallery-link-active: $primary;
+$gallery-link-active-border: $primary;
+$gallery-link-active-bg: $lightestGrey;
+$gallery-link-bg: $white;
+$gallery-link-border: $lighterGrey;
+$gallery-content-bg: $white;
+$gallery-triangle: $darkestGrey;
+$gallery-price-bg: $grey;
+$gallery-price: $lightestGrey;
+$gallery-picture: $green;
+$nextPrev-bg: $darkestGrey;
+$nextPrev-color: $white;

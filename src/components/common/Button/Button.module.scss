@@ -44,6 +44,7 @@
     cursor: pointer;
   }
 }
+
 .outline1{
   display: inline-block;
   padding: 5px 10px;
@@ -58,4 +59,45 @@
     color: $outline-noHover-color;
     cursor: pointer;
   }
+
+}
+
+.gallery {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid $outline-border;
+  color: $outline-color;
+  font-size: 13px;
+  line-height: 22px;
+  border-radius: 50%;
+  background-color: $gallery-bg;
+  margin-bottom: 5px;
+
+  &:not(.noHover):hover {
+    background-color: $main-noHover-bg;
+    color: $main-color;
+    cursor: pointer;
+  }
+}
+
+.green {
+  background-color: $gallery-picture;
+  color: $main-color;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: lighten($gallery-picture,20%);
+    text-decoration: none;
+    color: $main-color;
+  }
+}
+
+.favorite {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: $favorite-bg;
+  color: $favorite-color;
+  font-size: 13px;
+  line-height: 22px;
+  border-radius: 50%;
 }
