@@ -56,9 +56,16 @@
 
           &.active,
           &:hover {
-            background: $gallery-link-active-bg;
-            border-top: 4px solid $gallery-link-active-border;
-            color: $gallery-link-active;
+            background-color: $gallery-link-active-bg;
+            
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              border-bottom: 4px solid $gallery-link-active-border;
+            }
           }
         }
       }
