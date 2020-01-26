@@ -2,7 +2,7 @@
 
 .root {
   box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
-  background-color: #ffffff;
+  background-color: $menu-bg;
 
   :global(.container) > :global(.row) {
     height: 84px;
@@ -32,15 +32,15 @@
       text-decoration: none;
       display: flex;
       align-items: center;
-      border-top: 4px solid #ffffff;
+      border-top: 4px solid $menu-link-border;
       font-weight: 500;
       letter-spacing: 1px;
 
       &:hover,
       &.active {
-        background-color: $primary;
-        color: #ffffff;
-        border-color: $primary;
+        background-color: $menu-link-hover-bg;
+        color: $menu-link-hover-color;
+        border-color: $menu-link-hover-border;
       }
 
       &:hover {
@@ -48,7 +48,7 @@
       }
 
       &.active {
-        border-color: $text-color;
+        border-color: $menu-link-active-border;
       }
     }
   }
