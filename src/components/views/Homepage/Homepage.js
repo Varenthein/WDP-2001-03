@@ -1,6 +1,8 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
+import Brands from '../../layout/Brands/BrandsContainer';
+
 import styles from './Homepage.module.scss';
 
 import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
@@ -12,6 +14,7 @@ const Homepage = () => (
     <FeatureBoxes />
     <NewFurniture />
     <StickyBar />
+    <Brands />
   </div>
 );
 

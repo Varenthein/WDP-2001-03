@@ -289,6 +289,64 @@ const initialState = {
     products: [],
   },
   comparison: [],
+  brands: [
+    {
+      image:
+        'https://images.unsplash.com/photo-1529861192387-e2170fb232d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+      key: '1',
+    },
+    {
+      image:
+        'https://images.unsplash.com/photo-1570716892027-8347dbdac4aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+      key: '2',
+    },
+    {
+      image:
+        'https://images.unsplash.com/photo-1509765066291-6b5dd612da2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+      key: '3',
+    },
+    {
+      image:
+        'https://cdn.pixabay.com/photo/2015/06/01/16/14/imagine-793719_960_720.jpg',
+      key: '4',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2015/05/03/17/49/design-751452_960_720.png',
+      key: '5',
+    },
+    {
+      image:
+        'https://cdn.pixabay.com/photo/2017/09/26/21/47/shopping-cart-2790225_960_720.png',
+      key: '6',
+    },
+    {
+      image:
+        'https://cdn.pixabay.com/photo/2016/09/25/14/10/rocket-1693791_960_720.png',
+      key: '7',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/color-752920_960_720.png',
+      key: '8',
+    },
+    {
+      image:
+        'https://cdn.pixabay.com/photo/2018/02/08/16/35/silhouette-3139806_960_720.png',
+      key: '9',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2017/09/07/10/26/logo-2724482_960_720.png',
+      key: '10',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2015/05/14/03/17/studio-766303_960_720.png',
+      key: '11',
+    },
+    {
+      image:
+        'https://cdn.pixabay.com/photo/2015/04/29/18/09/shopping-745840_960_720.png',
+      key: '12',
+    },
+  ],
 };
 
 export default initialState;
