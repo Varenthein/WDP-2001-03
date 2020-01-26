@@ -189,6 +189,7 @@
     .slides {
       display: flex;
       justify-content: space-around;
+      width: 100%;
 
       .slidePic {
         width: 75px;
@@ -243,7 +244,6 @@
   }
 
   .productSlider {
-    
   }
 
 }

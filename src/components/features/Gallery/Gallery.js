@@ -9,7 +9,20 @@ class Gallery extends React.Component {
   state = {
     activeTab: 'featured',
     filteredArr: this.props.products.filter(el => el.newFurniture === true),
+    activePage: 0,
   };
+
+  moveRight() {
+    this.setState(prevState => ({
+      activePage: prevState.activePage + 1,
+    }));
+  }
+
+  moveLeft() {
+    this.setState(prevState => ({
+      activePage: prevState.activePage - 1,
+    }));
+  }
 
   filterProducts(arr, activeTab) {
     switch (activeTab) {
@@ -37,15 +50,14 @@ class Gallery extends React.Component {
 
   render() {
     const { products } = this.props;
-    const { activeTab, filteredArr } = this.state;
+    const { activeTab, filteredArr, activePage } = this.state;
     const categories = [
       { id: 'featured', name: 'featured' },
       { id: 'topSeller', name: 'top seller' },
       { id: 'saleOff', name: 'sale off' },
       { id: 'topRated', name: 'top rated' },
     ];
-
-    console.log('activeTab', activeTab);
+    const images = filteredArr.map(el => el.image);
 
     return (
       <div className={styles.root}>
@@ -72,28 +84,37 @@ class Gallery extends React.Component {
                 </ul>
               </div>
               <div className={styles.productSlider}>
-                {filteredArr.map(el => (
-                  <div key={el.id}>
-                    <FadeIn transitionDuration={2000}>
-                      <GalleryBox {...el} />
-                    </FadeIn>
-                  </div>
-                ))}
+                <div className={styles.productWrapper}>
+                  {filteredArr.map(el => (
+                    <div key={el.id}>
+                      <FadeIn transitionDuration={2000}>
+                        <GalleryBox {...el} />
+                      </FadeIn>
+                    </div>
+                  ))}
+                </div>
                 <div className={styles.slider}>
-                  <Button className={styles.prev}>
+                  <Button
+                    className={styles.prev}
+                    onClick={e => {
+                      e.preventDefault();
+                      this.moveLeft();
+                    }}
+                  >
                     <p>{'<'}</p>
                   </Button>
                   <div className={styles.slides}>
-                    {filteredArr.map(el => (
-                      <img
-                        key={el.id}
-                        src={el.image}
-                        alt='pic'
-                        className={styles.slidePic}
-                      />
+                    {images.slice(activePage * 6, (activePage + 1) * 6).map((el, i) => (
+                      <img key={i} src={el} alt='pic' className={styles.slidePic} />
                     ))}
                   </div>
-                  <Button className={styles.next}>
+                  <Button
+                    className={styles.next}
+                    onClick={e => {
+                      e.preventDefault();
+                      this.moveRight(images);
+                    }}
+                  >
                     <p>{'>'}</p>
                   </Button>
                 </div>
