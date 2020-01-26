@@ -3,7 +3,13 @@ import React from 'react';
 
 import styles from './Feedback.module.scss';
 
-const Feedback = props => <div className={styles.root}></div>;
+const Feedback = props => (
+  <div className={styles.root}>
+    <div className={styles.heading}>
+      <h3>Client Feedback</h3>
+    </div>
+  </div>
+);
 
 // Feedback.propTypes = {};
 
