@@ -5,8 +5,9 @@ import styles from './Homepage.module.scss';
 import Sale from '../../features/Sale/Sale.js';
 import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
-import Promotion from '../../features/Promotion/PromotionContainer';
+import Gallery from '../../features/Gallery/GalleryContainer';
 import StickyBar from '../../features/StickyBar/StickyBarContainer';
+import Promotion from '../../features/Promotion/PromotionContainer';
 
 const Homepage = () => (
   <div className={styles.root}>
@@ -14,6 +15,7 @@ const Homepage = () => (
     <FeatureBoxes />
     <Sale />
     <NewFurniture />
+    <Gallery />
     <StickyBar />
   </div>
 );
