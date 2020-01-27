@@ -17,7 +17,7 @@ const Gallery = ({ products }) => {
     <div className={styles.root}>
       <div className='container'>
         <div className='row'>
-          <div className='col-6'>
+          <div className='col-lg-6 col-sm-12'>
             <div className={styles.heading}>
               <h3>Furniture gallery</h3>
             </div>
@@ -98,7 +98,7 @@ const Gallery = ({ products }) => {
               </Button>
             </div>
           </div>
-          <div className={'col-6 ' + styles.picture}>
+          <div className={'col-lg-6 hidden-sm-down ' + styles.picture}>
             <img src={products[2].image} alt='prod3' />
             <div className={styles.pictureDetails}>
               <h3>
