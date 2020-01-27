@@ -8,9 +8,11 @@ import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Gallery from '../../features/Gallery/GalleryContainer';
 import StickyBar from '../../features/StickyBar/StickyBarContainer';
 import Feedback from '../../layout/Feedback/FeedbackContainer';
+import Promotion from '../../features/Promotion/PromotionContainer';
 
 const Homepage = () => (
   <div className={styles.root}>
+    <Promotion />
     <FeatureBoxes />
     <Sale />
     <NewFurniture />
