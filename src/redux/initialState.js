@@ -1,4 +1,5 @@
 const initialState = {
+  viewportMode: '',
   categories: [
     { id: 'bed', name: 'Bed' },
     { id: 'chair', name: 'Chair' },
