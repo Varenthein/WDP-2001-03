@@ -33,6 +33,7 @@ class Gallery extends React.Component {
   };
 
   setNewCurrentProduct(el) {
+    console.log('el', el);
     this.setState({
       currentProduct: {
         id: el.id,
@@ -66,7 +67,7 @@ class Gallery extends React.Component {
     }
   }
 
-  filterProducts(arr, activeTab) {
+  filterProducts(arr, activeTab, callback) {
     switch (activeTab) {
       case 'featured':
         this.setState({ filteredArr: arr.filter(el => el.newFurniture === true) });
@@ -88,6 +89,7 @@ class Gallery extends React.Component {
   handleTabChange(arr, newTab) {
     this.setState({ activeTab: newTab });
     this.filterProducts(arr, newTab);
+    this.setNewCurrentProduct(this.state.filteredArr[0]);
   }
 
   render() {
@@ -99,8 +101,6 @@ class Gallery extends React.Component {
       { id: 'saleOff', name: 'sale off' },
       { id: 'topRated', name: 'top rated' },
     ];
-    let isActive = false;
-    console.log('isActive', isActive);
 
     return (
       <div className={styles.root}>
