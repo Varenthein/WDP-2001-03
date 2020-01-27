@@ -1,0 +1,190 @@
+@import "../../../styles/settings.scss";
+
+
+.root {
+  background-color: $productBox-bg;
+  border: 1px solid $productBox-border;
+  margin-bottom:0;
+  transition:0.3s linear all;
+
+  &:hover {
+    .photo .hotButtons {
+      display:flex;
+      justify-content: space-between;
+    }
+    .actions .price> div{
+      background-color: $primary;
+    }
+    .circleContainer{
+      display:block;
+    }
+
+
+  }
+
+
+  }
+
+  .photo {
+    position: relative;
+    padding: 80% 10px 0 10px;
+    background: {
+    color: $productBox-photo-bg;
+    size: contain;
+    position: center;
+    repeat: no-repeat;
+    }
+    overflow: hidden;
+    align-items: flex-end;
+
+    .sale {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $productBox-sale-bg;
+      border-radius: 50%;
+      color: $productBox-sale-color;
+      padding: 30px 15px 5px 15px;
+    }
+
+    .buttons {
+      display:none;
+      width: 90%;
+      position: absolute;
+      justify-content: space-between;
+      bottom:0;
+    }
+  }
+
+
+  .content {
+    text-align: center;
+    padding: 20px;
+
+    h5 {
+      color: $productBox-header;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 1px;
+    }
+
+    .stars {
+      a {
+        text-decoration: none;
+        color: $text-color;
+      }
+    }
+  }
+
+  .line {
+    margin: 0 10px;
+    border-bottom: 1px solid $productBox-line-border;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      width: 30px;
+      border-bottom: 4px solid $productBox-line-before-border;
+      transform: translateX(-50%);
+    }
+  }
+  .image {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  }
+  .actions {
+    padding: 15px 10px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  .randomActive{
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #2a2a2a;
+    color: #2a2a2a;
+    font-size: 13px;
+    line-height: 22px;
+    border-radius: 50%;
+
+  }
+  .oldprice{
+    text-decoration: line-through;
+    font-size: 13px;
+    line-height: 24px;
+    padding: 5px 10px;
+    font-weight: 400;
+    color:gray;
+    position: relative;
+    left:60%;
+  }
+
+
+
+
+
+.hotDeals{
+  padding:10px;
+  color:white;
+  background-color:$darkestGrey ;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+.photo .hotButtons {
+  display:none;
+  transition: 1s all linear;
+  position: absolute;
+  justify-content: space-between;
+  bottom:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+.circleContainer{
+
+  position: absolute;
+  color:black;
+  display:none;
+  bottom:0 ;
+  .circle{
+
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: inline-block;
+    margin:5px;
+    padding:10px;
+    background-color: rgba($darkGrey, $alpha: 0.8);
+    color:white;
+    font-size: 18px;
+
+    & span{
+      font-weight: 500;
+      width:40px ;
+      display:block;
+      text-align: center;
+      width: 100%;
+      line-height: 1;
+
+    }
+    & span:nth-of-type(1){
+      font-weight: 700;
+      font-size: 24px;
+    }
+    & span:nth-of-type(2){
+      font-weight: 400;
+      font-size: 16px;
+
+    }
+  }
+}
+
+

@@ -6,7 +6,7 @@ import store from './redux/store';
 import './styles/bootstrap.scss';
 import './styles/global.scss';
 
-import MainLayout from './components/layout/MainLayout/MainLayout';
+import MainLayout from './components/layout/MainLayout/MainLayoutContainer';
 import Homepage from './components/views/Homepage/Homepage';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
