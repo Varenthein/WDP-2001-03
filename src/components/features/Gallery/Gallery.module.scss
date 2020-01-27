@@ -145,13 +145,16 @@
       .price {
         position: absolute;
         top: 0;
-        left: 0;
-        transform: translate(50%, -90%);
+        left: 50;
+        transform: translate(20%, -90%);
         background-color: $gallery-price-bg;
-        padding: 20px;
-        height: 100px;
-        width: 100px;
+        padding: 25px;
+        height: 150px;
+        width: 150px;
         border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
         h3, h5 {
           margin: 0;
