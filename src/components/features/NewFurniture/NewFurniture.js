@@ -10,6 +10,14 @@ class NewFurniture extends React.Component {
     activeCategory: 'bed',
   };
 
+  desktop = {
+    elemsPerPage: 8,
+  };
+
+  mobile = {
+    elemsPerPage: 1,
+  };
+
   handlePageChange(newPage) {
     this.setState({ activePage: newPage });
   }
@@ -19,13 +27,21 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, viewportMode } = this.props;
     const { activeCategory, activePage } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
-    // eslint-disable-next-line no-console
-    console.log(products);
+    const pagesCount = Math.ceil(
+      viewportMode === 'tablet' || viewportMode === 'mobile'
+        ? categoryProducts.length / this.mobile.elemsPerPage
+        : categoryProducts.length / this.desktop.elemsPerPage
+    );
+
+    const elemsToDisplay =
+      viewportMode === 'tablet' || viewportMode === 'mobile'
+        ? categoryProducts.slice(activePage, activePage + 1)
+        : categoryProducts.slice(activePage * 8, (activePage + 1) * 8);
+
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
@@ -70,7 +86,7 @@ class NewFurniture extends React.Component {
             </div>
           </div>
           <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
+            {elemsToDisplay.map(item => (
               <div key={item.id} className='col-lg-3 col-12'>
                 <FadeIn transitionDuration={2000}>
                   <ProductBox {...item} />
@@ -104,6 +120,7 @@ NewFurniture.propTypes = {
       favorite: PropTypes.bool,
     })
   ),
+  viewportMode: PropTypes.string,
 };
 
 NewFurniture.defaultProps = {
