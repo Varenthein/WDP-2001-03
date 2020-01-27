@@ -72,3 +72,48 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .root .wrapper {
+    display: block;
+    position: relative;
+
+    .logo {
+      width: auto;
+      position: absolute;
+      left: 0;
+      top: 20px;
+    }
+
+    .cart {
+      width: auto;
+      position: absolute;
+      top: 20px;
+      right: 0;
+    }
+
+    .phoneNumber {
+      width: auto;
+      position: absolute;
+      bottom: 30px;
+      right: 0;
+      text-align: right;
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .root .wrapper .phoneNumber p {
+    font-size: 8px;
+
+    svg {
+      margin-right: 3px;
+    }
+  }
+}
+
+
