@@ -98,7 +98,7 @@ const Gallery = ({ products }) => {
               </Button>
             </div>
           </div>
-          <div className={'col-lg-6 hidden-sm-down ' + styles.picture}>
+          <div className={'col-lg-6 ' + styles.picture}>
             <img src={products[2].image} alt='prod3' />
             <div className={styles.pictureDetails}>
               <h3>
