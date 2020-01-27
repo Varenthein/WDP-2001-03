@@ -13,6 +13,10 @@ class Feedback extends React.Component {
     activePage: 0,
   };
 
+  handlePageChange(newPage) {
+    this.setState({ activePage: newPage });
+  }
+
   render() {
     const { feedback } = this.props;
     const { activePage } = this.state;
@@ -23,7 +27,12 @@ class Feedback extends React.Component {
     for (let i = 0; i < commentsCount; i++) {
       dots.push(
         <li>
-          <a className={i === activePage && styles.active}>page {i}</a>
+          <a
+            onClick={() => this.handlePageChange(i)}
+            className={i === activePage && styles.active}
+          >
+            page {i}
+          </a>
         </li>
       );
     }
