@@ -8,25 +8,31 @@ import Comment from '../../common/Comment/Comment';
 
 import styles from './Feedback.module.scss';
 
-const Feedback = ({ feedback }) => (
-  <div className={styles.root}>
-    <div className='container'>
-      <div className='row'>
-        <div className='col-12'>
-          <div className={styles.heading}>
-            <h3>Client Feedback</h3>
+class Feedback extends React.Component {
+  render() {
+    const { feedback } = this.props;
+
+    return (
+      <div className={styles.root}>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-12'>
+              <div className={styles.heading}>
+                <h3>Client Feedback</h3>
+              </div>
+            </div>
           </div>
+          <div className='col-12'>
+            <FontAwesomeIcon icon={faQuoteRight} />
+          </div>
+          {feedback.map(comment => (
+            <Comment key={feedback.indexOf(comment)} {...comment} />
+          ))}
         </div>
       </div>
-      <div className='col-12'>
-        <FontAwesomeIcon icon={faQuoteRight} />
-      </div>
-      {feedback.map(comment => (
-        <Comment key={feedback.indexOf(comment)} {...comment} />
-      ))}
-    </div>
-  </div>
-);
+    );
+  }
+}
 
 Feedback.propTypes = {
   feedback: PropTypes.array,
