@@ -1,20 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import styles from './Comment.module.scss';
+import styles from './Comment.module.scss';
 
 const Comment = ({ name, description, image, comment }) => (
-  <div>
+  <div className={styles.root}>
     <p>{comment}</p>
-    <div>
-      <div>
+    <div className={styles.caption}>
+      <div className={styles.image}>
         <img src={image} alt='client' />
       </div>
-      <span>
-        <strong>{name}</strong>
-        <br />
-        {description}
-      </span>
+      <div className={styles.name}>
+        <p>
+          <strong>{name}</strong>
+        </p>
+        <p>{description}</p>
+      </div>
     </div>
   </div>
 );
