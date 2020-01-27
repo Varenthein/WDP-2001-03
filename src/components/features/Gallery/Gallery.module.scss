@@ -57,7 +57,7 @@
           &.active,
           &:hover {
             background-color: $gallery-link-active-bg;
-            
+
             &::before {
               content: "";
               position: absolute;
@@ -189,6 +189,7 @@
     .slides {
       display: flex;
       justify-content: space-around;
+      width: 100%;
 
       .slidePic {
         width: 75px;
@@ -197,6 +198,7 @@
         margin: 2px;
         position: relative;
         opacity: 0.5;
+        flex: 1;
 
         &.active {
           opacity: 1;
@@ -240,6 +242,9 @@
         margin-bottom: 20px;
       }
     }
+  }
+
+  .productSlider {
   }
 
 }
