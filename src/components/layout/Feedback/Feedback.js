@@ -9,8 +9,24 @@ import Comment from '../../common/Comment/Comment';
 import styles from './Feedback.module.scss';
 
 class Feedback extends React.Component {
+  state = {
+    activePage: 0,
+  };
+
   render() {
     const { feedback } = this.props;
+    const { activePage } = this.state;
+
+    const commentsCount = Math.ceil(feedback.length);
+
+    const dots = [];
+    for (let i = 0; i < commentsCount; i++) {
+      dots.push(
+        <li>
+          <a className={i === activePage && styles.active}>page {i}</a>
+        </li>
+      );
+    }
 
     return (
       <div className={styles.root}>
@@ -19,6 +35,9 @@ class Feedback extends React.Component {
             <div className='col-12'>
               <div className={styles.heading}>
                 <h3>Client Feedback</h3>
+              </div>
+              <div className={'col-auto ' + styles.dots}>
+                <ul>{dots}</ul>
               </div>
             </div>
           </div>
