@@ -10,6 +10,7 @@
     background-size: cover;
     padding:30px;
     text-transform: uppercase;
+    background-size: cover;
 
     .bgc {
       position: relative;
@@ -170,5 +171,12 @@
       width: 130%;
       transform:rotateY(180deg);
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .root .box2 .position {
+    left: 30%;
+    top: 50%;
   }
 }
