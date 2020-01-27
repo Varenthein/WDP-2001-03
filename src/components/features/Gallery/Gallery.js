@@ -13,15 +13,21 @@ class Gallery extends React.Component {
   };
 
   moveRight() {
-    this.setState(prevState => ({
-      activePage: prevState.activePage + 1,
-    }));
+    const pagesCount = Math.ceil(this.state.filteredArr.length / 6);
+    if (this.state.activePage < pagesCount - 1) {
+      this.setState(prevState => ({
+        activePage: prevState.activePage + 1,
+      }));
+    }
   }
 
   moveLeft() {
-    this.setState(prevState => ({
-      activePage: prevState.activePage - 1,
-    }));
+    const pagesCount = Math.ceil(this.state.filteredArr.length / 6);
+    if (this.state.activePage > 0 && this.state.activePage < pagesCount) {
+      this.setState(prevState => ({
+        activePage: prevState.activePage - 1,
+      }));
+    }
   }
 
   filterProducts(arr, activeTab) {
@@ -57,7 +63,6 @@ class Gallery extends React.Component {
       { id: 'saleOff', name: 'sale off' },
       { id: 'topRated', name: 'top rated' },
     ];
-    const images = filteredArr.map(el => el.image);
 
     return (
       <div className={styles.root}>
@@ -104,15 +109,20 @@ class Gallery extends React.Component {
                     <p>{'<'}</p>
                   </Button>
                   <div className={styles.slides}>
-                    {images.slice(activePage * 6, (activePage + 1) * 6).map((el, i) => (
-                      <img key={i} src={el} alt='pic' className={styles.slidePic} />
+                    {filteredArr.slice(activePage * 6, (activePage + 1) * 6).map(el => (
+                      <img
+                        key={el.id}
+                        src={el.image}
+                        alt='pic'
+                        className={styles.slidePic}
+                      />
                     ))}
                   </div>
                   <Button
                     className={styles.next}
                     onClick={e => {
                       e.preventDefault();
-                      this.moveRight(images);
+                      this.moveRight(filteredArr);
                     }}
                   >
                     <p>{'>'}</p>
