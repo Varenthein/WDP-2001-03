@@ -27,3 +27,36 @@
     border-bottom: 4px solid $gallery-heading-before;
   }
 }
+
+.dots {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  ul {
+    margin: 0;
+    padding: 0 0 0 1rem;
+    list-style: none;
+    background-color: $newFurn-dots-ul-bg;
+    transform: translateY(15px);
+
+    li {
+      display: inline-block;
+      margin-left: 0.5rem;
+
+      a {
+        display: block;
+        width: 13px;
+        height: 13px;
+        border-radius: 6px;
+        background-color: $newFurn-dots-link-bg;
+        font-size: 0;
+
+        &.active,
+        &:hover {
+          background-color: $newFurn-dots-link-active-bg;
+        }
+      }
+    }
+  }
+}
