@@ -17,6 +17,7 @@ const ProductBox = ({
   price,
   promo,
   stars,
+  ulubStars,
   image,
   favorite,
   setFavorite,
@@ -37,15 +38,29 @@ const ProductBox = ({
     <div className={styles.content}>
       <h5>{name}</h5>
       <div className={styles.stars}>
-        {[1, 2, 3, 4, 5].map(i => (
-          <a key={i} href='#'>
-            {i <= stars ? (
-              <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-            ) : (
-              <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-            )}
-          </a>
-        ))}
+        {ulubStars === 0
+          ? [1, 2, 3, 4, 5].map(i => (
+              <a key={i} href='#'>
+                {i <= stars ? (
+                  <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
+                ) : (
+                  <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+                )}
+              </a>
+            ))
+          : [1, 2, 3, 4, 5].map(i => (
+              <a key={i} href='#'>
+                {i <= ulubStars ? (
+                  <FontAwesomeIcon icon={faStar} className={styles.ulubStars}>
+                    {i} stars
+                  </FontAwesomeIcon>
+                ) : (
+                  <FontAwesomeIcon icon={farStar} className={styles.ulubStars}>
+                    {i} stars
+                  </FontAwesomeIcon>
+                )}
+              </a>
+            ))}
       </div>
     </div>
     <div className={styles.line}></div>
@@ -86,6 +101,7 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  ulubStars: PropTypes.number,
   setFavorite: PropTypes.func,
   favorite: PropTypes.bool,
   comparison: PropTypes.array,
