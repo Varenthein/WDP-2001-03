@@ -7,7 +7,7 @@ import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Gallery from '../../features/Gallery/GalleryContainer';
 import StickyBar from '../../features/StickyBar/StickyBarContainer';
-import Feedback from '../../layout/Feedback/Feedback';
+import Feedback from '../../layout/Feedback/FeedbackContainer';
 
 const Homepage = () => (
   <div className={styles.root}>
