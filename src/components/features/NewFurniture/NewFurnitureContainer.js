@@ -12,4 +12,7 @@ const mapStateToProps = state => ({
   viewportMode: getViewportMode(state),
 });
 
+// eslint-disable-next-line no-console
+console.log(getNew);
+
 export default connect(mapStateToProps)(NewFurniture);
