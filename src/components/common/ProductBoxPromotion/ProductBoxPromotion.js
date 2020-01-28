@@ -1,37 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './ProductBox.module.scss';
+import styles from './ProductBoxPromotion.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faStar,
   faExchangeAlt,
   faShoppingBasket,
+  faEye,
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const ProductBox = ({
-  id,
-  name,
-  price,
-  promo,
-  stars,
-  image,
-  favorite,
-  setFavorite,
-  addToCompare,
-  oldprice,
-}) => (
-  <div className={styles.root}>
+const ProductBoxPromotion = ({ name, price, stars, image, oldprice }) => (
+  <div noHover className={styles.root}>
+    <div className={styles.hotDeals}>Hot Deals</div>
     <div className={styles.photo}>
-      {promo && <div className={styles.sale}>{promo}</div>}
       <img className={styles.image} src={image} alt='Trouble'></img>
-      <div className={styles.buttons}>
-        <Button variant='small'>Quick View</Button>
+      <div className={styles.hotButtons}>
         <Button variant='small'>
           <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
         </Button>
+      </div>
+      <div className={styles.circleContainer}>
+        <div className={styles.circle}>
+          <span>25</span>
+          <span>DAYS</span>
+        </div>
+        <div className={styles.circle}>
+          <span>10 </span>
+          <span>HRS</span>
+        </div>
+        <div className={styles.circle}>
+          <span>45 </span>
+          <span>MINS</span>
+        </div>
+        <div className={styles.circle}>
+          <span>30 </span>
+          <span>SECS</span>
+        </div>
       </div>
     </div>
     <div className={styles.content}>
@@ -51,19 +58,13 @@ const ProductBox = ({
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
-        <Button
-          variant={favorite ? 'favorite' : 'outline'}
-          onClick={e => {
-            e.preventDefault();
-            setFavorite(id, !favorite);
-          }}
-        >
+        <Button variant={'outline'}>
+          <FontAwesomeIcon icon={faEye}>Favorite</FontAwesomeIcon>
+        </Button>
+        <Button variant={'outline'}>
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button
-          onClick={() => addToCompare()}
-          variant={Math.round(Math.random() + 1) <= 1.5 ? 'outline' : 'outline1'}
-        >
+        <Button variant={'outline'}>
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
@@ -79,20 +80,14 @@ const ProductBox = ({
   </div>
 );
 
-ProductBox.propTypes = {
+ProductBoxPromotion.propTypes = {
   children: PropTypes.node,
-  id: PropTypes.string,
   name: PropTypes.string,
   price: PropTypes.number,
-  promo: PropTypes.string,
   stars: PropTypes.number,
-  setFavorite: PropTypes.func,
-  favorite: PropTypes.bool,
-  comparison: PropTypes.array,
-  addToCompare: PropTypes.func,
   image: PropTypes.string,
   oldprice: PropTypes.number,
   HotDeals: PropTypes.number,
 };
 
-export default ProductBox;
+export default ProductBoxPromotion;

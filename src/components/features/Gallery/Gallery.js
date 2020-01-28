@@ -31,6 +31,14 @@ class Gallery extends React.Component {
     },
   };
 
+  desktop = {
+    elemsPerPage: 6,
+  };
+
+  mobile = {
+    elemsPerPage: 3,
+  };
+
   setNewCurrentProduct(el) {
     this.setState({
       currentProduct: {
@@ -57,7 +65,11 @@ class Gallery extends React.Component {
   }
 
   moveLeft() {
-    const pagesCount = Math.ceil(this.state.filteredArr.length / 6);
+    const pagesCount = Math.ceil(
+      this.props.viewportMode === 'tablet' || this.props.viewportMode === 'mobile'
+        ? this.state.filteredArr.length / this.mobile.elemsPerPage
+        : this.state.filteredArr.length / this.desktop.elemsPerPage
+    );
     if (this.state.activePage > 0 && this.state.activePage < pagesCount) {
       this.setState(prevState => ({
         activePage: prevState.activePage - 1,
@@ -91,7 +103,7 @@ class Gallery extends React.Component {
   }
 
   render() {
-    const { products } = this.props;
+    const { products, viewportMode } = this.props;
     const { activeTab, filteredArr, activePage, currentProduct } = this.state;
     const categories = [
       { id: 'featured', name: 'featured' },
@@ -99,6 +111,10 @@ class Gallery extends React.Component {
       { id: 'saleOff', name: 'sale off' },
       { id: 'topRated', name: 'top rated' },
     ];
+    const elemsToDisplay =
+      viewportMode === 'tablet' || viewportMode === 'mobile'
+        ? filteredArr.slice(activePage, activePage + 3)
+        : filteredArr.slice(activePage * 6, (activePage + 1) * 6);
 
     return (
       <div className={styles.root}>
@@ -181,24 +197,22 @@ class Gallery extends React.Component {
                       <p>{'<'}</p>
                     </Button>
                     <div className={styles.slides}>
-                      {filteredArr
-                        .slice(activePage * 6, (activePage + 1) * 6)
-                        .map(el => (
-                          <img
-                            key={el.id}
-                            src={el.image}
-                            alt='pic'
-                            className={
-                              el.image === currentProduct.image
-                                ? styles.slidePic + ' ' + styles.active
-                                : styles.slidePic
-                            }
-                            onClick={e => {
-                              e.preventDefault();
-                              this.setNewCurrentProduct(el);
-                            }}
-                          />
-                        ))}
+                      {elemsToDisplay.map(el => (
+                        <img
+                          key={el.id}
+                          src={el.image}
+                          alt='pic'
+                          className={
+                            el.image === currentProduct.image
+                              ? styles.slidePic + ' ' + styles.active
+                              : styles.slidePic
+                          }
+                          onClick={e => {
+                            e.preventDefault();
+                            this.setNewCurrentProduct(el);
+                          }}
+                        />
+                      ))}
                     </div>
                     <Button
                       className={styles.next}
@@ -245,6 +259,7 @@ Gallery.propTypes = {
       oldprice: PropTypes.number,
     })
   ),
+  viewportMode: PropTypes.func,
 };
 
 export default Gallery;
