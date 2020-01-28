@@ -108,6 +108,7 @@ ProductBox.propTypes = {
   addToCompare: PropTypes.func,
   image: PropTypes.string,
   oldprice: PropTypes.number,
+  HotDeals: PropTypes.number,
 };
 
 export default ProductBox;

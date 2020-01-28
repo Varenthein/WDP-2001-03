@@ -43,6 +43,10 @@
         border-color: $menu-link-hover-border;
       }
 
+      &:hover {
+        @extend %hoverEffects;
+      }
+
       &.active {
         border-color: $menu-link-active-border;
       }

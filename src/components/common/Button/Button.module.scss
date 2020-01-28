@@ -15,6 +15,7 @@
     color: $main-noHover-color !important;
     background-color: $main-noHover-bg;
     text-decoration: none;
+    @extend %hoverEffects;
 
   }
 }
@@ -42,6 +43,7 @@
     background-color: $primary;
     color: #ffffff;
     cursor: pointer;
+    @extend %hoverEffects;
   }
 }
 
@@ -58,6 +60,7 @@
     background-color: $outline-noHover-bg;
     color: $outline-noHover-color;
     cursor: pointer;
+    @extend %hoverEffects;
   }
 
 }
