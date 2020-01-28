@@ -50,7 +50,7 @@ class Feedback extends React.Component {
               </div>
             </div>
           </div>
-          <div className='col-12'>
+          <div className={styles.icon}>
             <FontAwesomeIcon icon={faQuoteRight} />
           </div>
           {feedback.map(comment => (
