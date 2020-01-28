@@ -124,7 +124,13 @@ class Gallery extends React.Component {
               <div className={styles.heading}>
                 <h3>Furniture gallery</h3>
               </div>
-              <div className={styles.menu}>
+              <div
+                className={
+                  viewportMode === 'tablet' || viewportMode === 'mobile'
+                    ? styles.menuMobile
+                    : styles.menu
+                }
+              >
                 <ul>
                   {categories.map(el => (
                     <li key={el.id}>
