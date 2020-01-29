@@ -10,6 +10,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+import { setStars } from '../../../redux/productsRedux';
 
 const ProductBox = ({
   id,
@@ -40,7 +41,14 @@ const ProductBox = ({
       <div className={styles.stars}>
         {ulubStars === 0
           ? [1, 2, 3, 4, 5].map(i => (
-              <a key={i} href='#'>
+              <a
+                key={i}
+                href={i}
+                onClick={e => {
+                  e.preventDefault();
+                  setStars(id, ulubStars);
+                }}
+              >
                 {i <= stars ? (
                   <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
                 ) : (
@@ -49,7 +57,14 @@ const ProductBox = ({
               </a>
             ))
           : [1, 2, 3, 4, 5].map(i => (
-              <a key={i} href='#'>
+              <a
+                key={i}
+                href='#'
+                onClick={e => {
+                  e.preventDefault();
+                  setStars(id, ulubStars);
+                }}
+              >
                 {i <= ulubStars ? (
                   <FontAwesomeIcon icon={faStar} className={styles.ulubStars}>
                     {i} stars
@@ -103,6 +118,7 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   ulubStars: PropTypes.number,
   setFavorite: PropTypes.func,
+  setStars: PropTypes.func,
   favorite: PropTypes.bool,
   comparison: PropTypes.array,
   addToCompare: PropTypes.func,
