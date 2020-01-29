@@ -21,6 +21,7 @@ export const SET_STARS = createActionName('SET_STARS');
 /* action creators */
 export const setFavorite = payload => ({ payload, type: SET_FAVORITE });
 export const setStars = payload => ({ payload, type: SET_STARS });
+
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {

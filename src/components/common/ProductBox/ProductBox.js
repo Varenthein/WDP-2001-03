@@ -10,7 +10,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
-import { setStars } from '../../../redux/productsRedux';
 
 const ProductBox = ({
   id,
@@ -22,6 +21,7 @@ const ProductBox = ({
   image,
   favorite,
   setFavorite,
+  setStars,
   addToCompare,
   oldprice,
 }) => (
