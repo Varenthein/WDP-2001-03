@@ -9,7 +9,8 @@ DO UZUPEŁNIENIA
 
 ## Demo
 
-DO UZUPEŁNIENIA
+Demo projektu znajduje się pod poniższym linkiem:
+[Furniture Shop](https://clever-khorana-32be99.netlify.com/)
 
 ## Inicjacja projektu
 
