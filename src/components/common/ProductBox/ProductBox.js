@@ -46,7 +46,12 @@ const ProductBox = ({
                 href={i}
                 onClick={e => {
                   e.preventDefault();
-                  setStars(id, ulubStars);
+                  let elem =
+                    e.target.tagName === 'svg' ? e.target.parentNode : e.target;
+                  elem =
+                    e.target.tagName === 'path' ? e.target.parentNode.parentNode : elem;
+
+                  setStars(id, elem.getAttribute('href'));
                 }}
               >
                 {i <= stars ? (
@@ -59,10 +64,15 @@ const ProductBox = ({
           : [1, 2, 3, 4, 5].map(i => (
               <a
                 key={i}
-                href='#'
+                href={i}
                 onClick={e => {
                   e.preventDefault();
-                  setStars(id, ulubStars);
+                  let elem =
+                    e.target.tagName === 'svg' ? e.target.parentNode : e.target;
+                  elem =
+                    e.target.tagName === 'path' ? e.target.parentNode.parentNode : elem;
+
+                  setStars(id, elem.getAttribute('href'));
                 }}
               >
                 {i <= ulubStars ? (
