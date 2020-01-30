@@ -77,28 +77,42 @@ class Gallery extends React.Component {
     }
   }
 
-  filterProducts(arr, activeTab, callback) {
-    switch (activeTab) {
-      case 'featured':
-        this.setState({ filteredArr: arr.filter(el => el.newFurniture === true) });
-        break;
-      case 'topSeller':
-        this.setState({ filteredArr: arr.filter(el => el.favorite === true) });
-        break;
-      case 'saleOff':
-        this.setState({ filteredArr: arr.filter(el => el.promo === 'sale') });
-        break;
-      case 'topRated':
-        this.setState({ filteredArr: arr.filter(el => el.stars === 5) });
-        break;
-      default:
-        this.setState({ filteredArr: arr.filter(el => el.newFurniture === true) });
-    }
+  filterProducts(arr, activeTab) {
+    return new Promise((resolve, reject) => {
+      switch (activeTab) {
+        case 'featured':
+          this.setState(
+            { filteredArr: arr.filter(el => el.newFurniture === true) },
+            resolve()
+          );
+          break;
+        case 'topSeller':
+          this.setState(
+            { filteredArr: arr.filter(el => el.favorite === true) },
+            resolve()
+          );
+          break;
+        case 'saleOff':
+          this.setState(
+            { filteredArr: arr.filter(el => el.promo === 'sale') },
+            resolve()
+          );
+          break;
+        case 'topRated':
+          this.setState({ filteredArr: arr.filter(el => el.stars === 5) }, resolve());
+          break;
+        default:
+          this.setState(
+            { filteredArr: arr.filter(el => el.newFurniture === true) },
+            resolve()
+          );
+      }
+    });
   }
 
-  handleTabChange(arr, newTab) {
+  async handleTabChange(arr, newTab) {
     this.setState({ activeTab: newTab });
-    this.filterProducts(arr, newTab);
+    await this.filterProducts(arr, newTab);
     this.setNewCurrentProduct(this.state.filteredArr[0]);
   }
 

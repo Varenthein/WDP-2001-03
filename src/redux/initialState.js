@@ -19,7 +19,7 @@ const initialState = {
       hotDeals: 'hotDeals',
       promotion: true,
       newFurniture: true,
-      favorite: true,
+      favorite: false,
       image: 'https://cdn.pixabay.com/photo/2016/11/19/13/06/bed-1839183_1280.jpg',
     },
     {
@@ -33,7 +33,7 @@ const initialState = {
       promo: '',
       promotion: true,
       newFurniture: true,
-      favorite: false,
+      favorite: true,
       image:
         'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
@@ -48,7 +48,7 @@ const initialState = {
       promo: '',
       newFurniture: true,
       promotion: true,
-      favorite: false,
+      favorite: true,
       image:
         'https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
