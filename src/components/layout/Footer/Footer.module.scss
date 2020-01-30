@@ -7,7 +7,7 @@
 
     .menuWrapper {
       h6 {
-        color: #ffffff;
+        color: $footer-heading;
         text-transform: uppercase;
         margin: 0 0 1rem 0;
       }
@@ -20,10 +20,10 @@
           a {
             font-size: 14px;
             line-height: 30px;
-            color: rgb(169, 169, 169);
+            color: $footer-link;
 
             &:hover {
-              color: #ffffff;
+              color: $footer-link-hover;
             }
           }
         }
@@ -43,6 +43,8 @@
 
   .bottomBar {
     background-color: $footer-claim-bg;
+    display: flex;
+    justify-content: start;
 
     :global(.container) > :global(.row) {
       height: 95px;
@@ -51,7 +53,7 @@
     .copyright {
       p {
         margin: 0;
-        color: rgb(169, 169, 169);
+        color: $footer-claim-color;
         font-size: 14px;
         line-height: 26px;
       }
@@ -68,15 +70,50 @@
           margin-left: 1rem;
 
           a {
-            color: rgb(169, 169, 169);
+            color: $footer-media-color;
             text-decoration: none;
 
             &:hover {
-              color: $primary;
+              color: $footer-media-hover;
             }
           }
         }
       }
+    }
+  }
+}
+
+.footerMenuElement {
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding: 15px;
+
+  img {
+    width: 100%
+  }
+}
+
+@media (max-width: 768px) {
+  .root .footerMenu .footerMenuElement {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .root .bottomBar .copyright {
+    p {
+      font-size: 10px;
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .root .footerMenu .footerMenuElement {
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    img {
+      width: 50%;
     }
   }
 }
