@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FadeIn from 'react-fade-in';
+import { Swipeable } from 'react-swipeable';
 import styles from './Gallery.module.scss';
 import Button from '../../common/Button/Button';
 import ReactTooltip from 'react-tooltip';
@@ -192,44 +193,49 @@ class Gallery extends React.Component {
                       </div>
                     </div>
                   </div>
-                  <div className={styles.slider}>
-                    <Button
-                      className={styles.prev}
-                      onClick={e => {
-                        e.preventDefault();
-                        this.moveLeft();
-                      }}
-                    >
-                      <p>{'<'}</p>
-                    </Button>
-                    <div className={styles.slides}>
-                      {elemsToDisplay.map(el => (
-                        <img
-                          key={el.id}
-                          src={el.image}
-                          alt='pic'
-                          className={
-                            el.image === currentProduct.image
-                              ? styles.slidePic + ' ' + styles.active
-                              : styles.slidePic
-                          }
-                          onClick={e => {
-                            e.preventDefault();
-                            this.setNewCurrentProduct(el);
-                          }}
-                        />
-                      ))}
+                  <Swipeable
+                    onSwipedLeft={e => this.moveLeft()}
+                    onSwipedRight={e => this.moveRight()}
+                  >
+                    <div className={styles.slider}>
+                      <Button
+                        className={styles.prev}
+                        onClick={e => {
+                          e.preventDefault();
+                          this.moveLeft();
+                        }}
+                      >
+                        <p>{'<'}</p>
+                      </Button>
+                      <div className={styles.slides}>
+                        {elemsToDisplay.map(el => (
+                          <img
+                            key={el.id}
+                            src={el.image}
+                            alt='pic'
+                            className={
+                              el.image === currentProduct.image
+                                ? styles.slidePic + ' ' + styles.active
+                                : styles.slidePic
+                            }
+                            onClick={e => {
+                              e.preventDefault();
+                              this.setNewCurrentProduct(el);
+                            }}
+                          />
+                        ))}
+                      </div>
+                      <Button
+                        className={styles.next}
+                        onClick={e => {
+                          e.preventDefault();
+                          this.moveRight();
+                        }}
+                      >
+                        <p>{'>'}</p>
+                      </Button>
                     </div>
-                    <Button
-                      className={styles.next}
-                      onClick={e => {
-                        e.preventDefault();
-                        this.moveRight();
-                      }}
-                    >
-                      <p>{'>'}</p>
-                    </Button>
-                  </div>
+                  </Swipeable>
                 </div>
               </FadeIn>
             </div>
