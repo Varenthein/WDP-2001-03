@@ -39,7 +39,7 @@ export default function reducer(statePart = [], action = {}) {
         return star.id === action.payload.id
           ? {
               ...star,
-              ulubStars: action.payload.isUlub,
+              favoriteStars: action.payload.isUlub,
             }
           : star;
       });

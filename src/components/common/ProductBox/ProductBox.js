@@ -17,7 +17,7 @@ const ProductBox = ({
   price,
   promo,
   stars,
-  ulubStars,
+  favoriteStars,
   image,
   favorite,
   setFavorite,
@@ -39,7 +39,7 @@ const ProductBox = ({
     <div className={styles.content}>
       <h5>{name}</h5>
       <div className={styles.stars}>
-        {ulubStars === 0
+        {favoriteStars === 0
           ? [1, 2, 3, 4, 5].map(i => (
               <a
                 key={i}
@@ -75,12 +75,12 @@ const ProductBox = ({
                   setStars(id, elem.getAttribute('href'));
                 }}
               >
-                {i <= ulubStars ? (
-                  <FontAwesomeIcon icon={faStar} className={styles.ulubStars}>
+                {i <= favoriteStars ? (
+                  <FontAwesomeIcon icon={faStar} className={styles.favoriteStars}>
                     {i} stars
                   </FontAwesomeIcon>
                 ) : (
-                  <FontAwesomeIcon icon={farStar} className={styles.ulubStars}>
+                  <FontAwesomeIcon icon={farStar} className={styles.favoriteStars}>
                     {i} stars
                   </FontAwesomeIcon>
                 )}
@@ -126,7 +126,7 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
-  ulubStars: PropTypes.number,
+  favoriteStars: PropTypes.number,
   setFavorite: PropTypes.func,
   setStars: PropTypes.func,
   favorite: PropTypes.bool,
