@@ -194,8 +194,8 @@ class Gallery extends React.Component {
                     </div>
                   </div>
                   <Swipeable
-                    onSwipedLeft={e => this.moveLeft()}
-                    onSwipedRight={e => this.moveRight()}
+                    onSwipedLeft={e => this.moveRight()}
+                    onSwipedRight={e => this.moveLeft()}
                   >
                     <div className={styles.slider}>
                       <Button
