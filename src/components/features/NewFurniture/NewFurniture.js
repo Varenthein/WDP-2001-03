@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FadeIn from 'react-fade-in';
+// import FadeIn from 'react-fade-in';
 import styles from './NewFurniture.module.scss';
-import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+//import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import Carousel from '../../layout/Swipe/Swipe';
 
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
+    oldPage: 0,
     activeCategory: 'bed',
   };
 
@@ -19,6 +21,7 @@ class NewFurniture extends React.Component {
   };
 
   handlePageChange(newPage) {
+    this.setState({ oldPage: this.state.activePage });
     this.setState({ activePage: newPage });
   }
 
@@ -85,15 +88,12 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
-            {elemsToDisplay.map(item => (
-              <div key={item.id} className='col-lg-3 col-12'>
-                <FadeIn transitionDuration={2000}>
-                  <ProductBox {...item} />
-                </FadeIn>
-              </div>
-            ))}
-          </div>
+          <Carousel
+            newPage={this.state.activePage}
+            oldPage={this.state.oldPage}
+            name={'NewFurniture'}
+            pages={categoryProducts}
+          />
         </div>
       </div>
     );
