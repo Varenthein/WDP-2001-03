@@ -5,6 +5,11 @@ export const getCount = ({ products }) => products.length;
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
+export const getNewHot = ({ products }) =>
+  products.filter(item => item.promotion === true);
+// eslint-disable-next-line no-console
+console.log(getNewHot);
+
 /* action name creator */
 const reducerName = 'products';
 const createActionName = name => `app/${reducerName}/${name}`;
