@@ -11,6 +11,19 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
+const renderActions = e => {
+  let elem = e.tagName;
+  switch (elem) {
+    case 'href':
+      return e.getAttribute('href');
+    case 'svg':
+      return e.parentNode.getAttribute('href');
+    case 'path':
+      return e.parentNode.parentNode.getAttribute('href');
+    default:
+      return e.getAttribute('href');
+  }
+};
 const ProductBox = ({
   id,
   name,
@@ -46,12 +59,7 @@ const ProductBox = ({
                 href={i}
                 onClick={e => {
                   e.preventDefault();
-                  let elem =
-                    e.target.tagName === 'svg' ? e.target.parentNode : e.target;
-                  elem =
-                    e.target.tagName === 'path' ? e.target.parentNode.parentNode : elem;
-
-                  setStars(id, elem.getAttribute('href'));
+                  setStars(id, renderActions(e.target));
                 }}
               >
                 {i <= stars ? (
@@ -67,12 +75,7 @@ const ProductBox = ({
                 href={i}
                 onClick={e => {
                   e.preventDefault();
-                  let elem =
-                    e.target.tagName === 'svg' ? e.target.parentNode : e.target;
-                  elem =
-                    e.target.tagName === 'path' ? e.target.parentNode.parentNode : elem;
-
-                  setStars(id, elem.getAttribute('href'));
+                  setStars(id, renderActions(e.target));
                 }}
               >
                 {i <= favoriteStars ? (
