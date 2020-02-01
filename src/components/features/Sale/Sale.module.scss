@@ -180,3 +180,9 @@
     top: 50%;
   }
 }
+
+@media (max-width: 575px) {
+  .box1, .box2 {
+    margin: 15px 15px;
+  }
+}

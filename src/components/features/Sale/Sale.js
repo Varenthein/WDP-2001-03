@@ -14,7 +14,7 @@ const Sale = () => (
             </div>
           </div>
         </div>
-        <div className='col-sm-12 col-md-6'>
+        <div className='col-sm-12 col-md-6 mt-sm-2'>
           <div className='row ml-sm-0 mr-sm-0'>
             <div className={'col-md-12 col-sm-6 ' + styles.box1}>
               <div className={styles.img}>
