@@ -5,7 +5,8 @@
 
 ## Opis projektu
 
-DO UZUPEŁNIENIA
+Projekt jest przykładową stroną sklepu zakodowaną z darmowego szablonu PSD.
+Projekt został stworzony w celu nauki kodowania stron oraz pracy w zespole.
 
 ## Demo
 
