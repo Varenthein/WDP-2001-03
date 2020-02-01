@@ -23,19 +23,16 @@ class Feedback extends React.Component {
 
     const commentsCount = Math.ceil(feedback.length);
 
-    const dots = [];
-    for (let i = 0; i < commentsCount; i++) {
-      dots.push(
-        <li>
-          <a
-            onClick={() => this.handlePageChange(i)}
-            className={i === activePage && styles.active}
-          >
-            page {i}
-          </a>
-        </li>
-      );
-    }
+    const dots = [...Array(commentsCount).keys()].map(i => (
+      <li key={i}>
+        <a
+          onClick={() => this.handlePageChange(i)}
+          className={i === activePage && styles.active}
+        >
+          page {i}
+        </a>
+      </li>
+    ));
 
     return (
       <div className={styles.root}>
