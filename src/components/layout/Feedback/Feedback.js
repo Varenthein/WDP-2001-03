@@ -51,7 +51,7 @@ class Feedback extends React.Component {
             <FontAwesomeIcon icon={faQuoteRight} />
           </div>
           {feedback.map(comment => (
-            <Comment key={feedback.indexOf(comment)} {...comment} />
+            <Comment key={comment.id} {...comment} />
           ))}
         </div>
       </div>

@@ -321,6 +321,7 @@ const initialState = {
   comparison: [],
   feedback: [
     {
+      id: 0,
       name: 'John Smith',
       description: 'Furniture client',
       comment:
@@ -329,6 +330,7 @@ const initialState = {
         'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
+      id: 1,
       name: 'Danny Lawrence',
       description: 'MySpace GmbH',
       comment:
@@ -337,6 +339,7 @@ const initialState = {
         'https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
+      id: 2,
       name: 'Melissa Ray',
       description: 'yourOffice.com',
       comment:
