@@ -1,0 +1,15 @@
+@import "../../../styles/settings.scss";
+
+.sortBy  {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+}
+p {
+    display: inline-block;
+    margin-right: 10px;
+}
+container {
+    position: relative;
+    left: 200px;
+}

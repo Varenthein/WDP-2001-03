@@ -1,0 +1,28 @@
+@import "../../../styles/settings.scss";
+
+.show {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  }
+
+p {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+select {
+  margin-right: 80px;
+}
+
+.icons {
+  display: inline-block;
+  border: 0.5px solid;
+  padding: 5px;    
+  .icon {
+    &:hover {
+      color: $prodSearch-icon-first;
+    }
+  }
+}
+  
