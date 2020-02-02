@@ -3,7 +3,6 @@ import React from 'react';
 import styles from './ProductList.module.scss';
 import Banner from '../../layout/Banner/Banner';
 import Breadcrumb from '../../common/Breadcrumb/Breadcrumb';
-import Button from '../../common/Button/Button';
 
 const breadcumbLinks = [
   { id: 'home', label: 'Home' },
@@ -16,7 +15,7 @@ const ProductList = () => {
       <Banner />
       <Breadcrumb>
         {breadcumbLinks.map(el => (
-          <Button key={el.id}>{el.label}</Button>
+          <a key={el.id}>{el.label}</a>
         ))}
       </Breadcrumb>
     </div>
