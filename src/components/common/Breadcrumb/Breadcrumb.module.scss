@@ -5,3 +5,9 @@ ol {
   display: flex;
   align-items: center;
 }
+
+.separator {
+  color: $text-color;
+  margin: auto 15px;
+  user-select: none;
+}
