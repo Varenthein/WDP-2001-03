@@ -4,8 +4,8 @@ import styles from './Sale.module.scss';
 const Sale = () => (
   <div className={styles.root}>
     <div className='container'>
-      <div className='row'>
-        <div className='col-6 '>
+      <div className='row ml-sm-0 mr-sm-0'>
+        <div className='col-sm-12 col-md-6'>
           <div className={styles.bigbox}>
             <div className={styles.bgc}>
               <h3 className={styles.title}>Guest room</h3>
@@ -14,9 +14,9 @@ const Sale = () => (
             </div>
           </div>
         </div>
-        <div className='col-6'>
-          <div className='row'>
-            <div className={'col-12 ' + styles.box1}>
+        <div className='col-sm-12 col-md-6 mt-sm-2'>
+          <div className='row ml-sm-0 mr-sm-0'>
+            <div className={'col-md-12 col-sm-6 ' + styles.box1}>
               <div className={styles.img}>
                 <img src='/images/chair2.png' alt='chair' className={styles.chair1} />
               </div>
@@ -31,9 +31,7 @@ const Sale = () => (
                 <img src='/images/chair1.png' alt='chair' className={styles.chair2} />
               </div>
             </div>
-          </div>
-          <div className='row'>
-            <div className={'col-12 ' + styles.box2}>
+            <div className={'col-sm-6 col-md-12 ' + styles.box2}>
               <div className={styles.img}>
                 <img src='/images/bed.png' alt='bed' className={styles.bed} />
               </div>
