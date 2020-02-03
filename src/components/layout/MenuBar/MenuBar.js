@@ -16,7 +16,7 @@ const MenuBar = ({ children }) => (
         <div className={'col-auto ' + styles.menu}>
           <ul>
             <li>
-              <NavLink to='/home' activeClassName={styles.active}>
+              <NavLink exact to='/' activeClassName={styles.active}>
                 Home
               </NavLink>
             </li>
