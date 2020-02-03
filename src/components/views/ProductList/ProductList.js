@@ -12,12 +12,14 @@ const breadcumbLinks = [
 const ProductList = () => {
   return (
     <div className={styles.root}>
-      <Banner />
-      <Breadcrumb>
-        {breadcumbLinks.map(el => (
-          <a key={el.id}>{el.label}</a>
-        ))}
-      </Breadcrumb>
+      <div className='container'>
+        <Banner />
+        <Breadcrumb>
+          {breadcumbLinks.map(el => (
+            <a key={el.id}>{el.label}</a>
+          ))}
+        </Breadcrumb>
+      </div>
     </div>
   );
 };
