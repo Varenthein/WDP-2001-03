@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
@@ -15,27 +16,39 @@ const MenuBar = ({ children }) => (
         <div className={'col-auto ' + styles.menu}>
           <ul>
             <li>
-              <a href='#' className={styles.active}>
+              <NavLink exact to='/' activeClassName={styles.active}>
                 Home
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='#'>Furniture</a>
+              <NavLink to='/shop/furniture' activeClassName={styles.active}>
+                Furniture
+              </NavLink>
             </li>
             <li>
-              <a href='#'>Chair</a>
+              <NavLink to='/shop/chair' activeClassName={styles.active}>
+                Chair
+              </NavLink>
             </li>
             <li>
-              <a href='#'>Table</a>
+              <NavLink to='/shop/table' activeClassName={styles.active}>
+                Table
+              </NavLink>
             </li>
             <li>
-              <a href='#'>Sofa</a>
+              <NavLink to='/shop/sofa' activeClassName={styles.active}>
+                Sofa
+              </NavLink>
             </li>
             <li>
-              <a href='#'>Bedroom</a>
+              <NavLink to='/shop/bedroom' activeClassName={styles.active}>
+                Bedroom
+              </NavLink>
             </li>
             <li>
-              <a href='#'>Blog</a>
+              <NavLink to='/shop/blog' activeClassName={styles.active}>
+                Blog
+              </NavLink>
             </li>
           </ul>
         </div>
