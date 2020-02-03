@@ -6,7 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import Button from '../Button/Button';
 
-const closeWindow = () => {
+const closeWindow = e => {
+  e.preventDefault();
   document.getElementById('cookies-info').style.display = 'none';
   localStorage.noFirstVisit = true;
 };
@@ -15,7 +16,7 @@ const PopUp = ({ message }) =>
   !localStorage.noFirstVisit ? (
     <div id='cookies-info' className={styles.component}>
       <p>{message}</p>
-      <Button onClick={() => closeWindow()}>
+      <Button onClick={e => closeWindow(e)}>
         <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
       </Button>
     </div>
