@@ -1,16 +1,14 @@
 import React from 'react';
-import styles from './SortBy.modules.scss';
 
 const SortBy = () => (
-  <container className={styles.sortBy}>
-    <p>Sort By</p>
+  <form>
+    <label>Show</label>
     <select>
-      <option selected value='Price: Lowest first'>
-        Price: Lowest first
-      </option>
-      <option value='Price: Highest first'>Price: Highest first</option>
+      <option>14</option>
+      <option>8</option>
+      <option>4</option>
     </select>
-  </container>
+  </form>
 );
 
 export default SortBy;

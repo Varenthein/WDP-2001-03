@@ -1,0 +1,27 @@
+@import "../../../styles/settings.scss";
+
+.displayType {
+    color:  grey;
+    border: 1px solid grey;
+    height: 33px;
+    margin-top: -2px;
+    
+    form {
+      padding-top: 4px;
+    }
+
+    .Grid {
+      margin: auto 8px;
+      &:hover {
+        color: $prodSearch-icon-first;
+      }
+    }
+
+    .List {
+      margin: auto 8px;
+      &:hover {
+        color: $prodSearch-icon-first;
+      }
+
+    }
+  }

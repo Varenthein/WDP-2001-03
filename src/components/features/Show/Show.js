@@ -1,30 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faThLarge, faThList } from '@fortawesome/free-solid-svg-icons';
-
-import styles from './Show.module.scss';
 
 const Show = () => (
-  <div className={styles.show}>
-    <p>Show</p>
+  <form>
+    <label>Sort By</label>
     <select>
-      <option selected value='14'>
-        14
-      </option>
-      <option value='8'>8</option>
-      <option value='4'>4</option>
+      <option>Price: Lowest first</option>
+      <option>Price: Highest first</option>
     </select>
-    <div className={styles.icons}>
-      <FontAwesomeIcon className={styles.icon} icon={faThLarge} />
-      <p />
-      <FontAwesomeIcon className={styles.icon} icon={faThList} />
-    </div>
-  </div>
+  </form>
 );
-
-Show.propTypes = {
-  children: PropTypes.node,
-};
 
 export default Show;
