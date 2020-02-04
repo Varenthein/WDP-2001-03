@@ -1,0 +1,40 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  text-align: center;
+
+  p {
+    font-size: 0.95rem;
+    margin: 10px auto;
+  }
+}
+
+.caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > * {
+    display: inline-block;
+    margin: 0 10px;
+  }
+}
+.image {
+  width: 70px;
+  height: 65px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+}
+
+.name {
+  p {
+    margin: 2px 0;
+    text-align: left;
+    font-size: 0.85rem;
+  }
+}
