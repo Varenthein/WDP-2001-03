@@ -16,7 +16,7 @@ const PopUp = ({ message }) =>
   !localStorage.noFirstVisit ? (
     <div id='cookies-info' className={styles.component}>
       <p>{message}</p>
-      <Button onClick={e => closeWindow(e)}>
+      <Button variant='small' onClick={e => closeWindow(e)}>
         <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
       </Button>
     </div>
