@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import FadeIn from 'react-fade-in';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import Swipe from '../../features/Swipe/Swipe';
 
 class NewFurniture extends React.Component {
   state = {
@@ -57,45 +58,47 @@ class NewFurniture extends React.Component {
     }
 
     return (
-      <div className={styles.root}>
-        <div className='container'>
-          <div className={styles.panelBar}>
-            <div className='row no-gutters align-items-end'>
-              <div className={'col-lg-auto col-12' + styles.heading}>
-                <h3>New furniture</h3>
-              </div>
-              <div className={'col ' + styles.menu}>
-                <ul>
-                  {categories.map(item => (
-                    <li key={item.id}>
-                      <a
-                        className={item.id === activeCategory && styles.active}
-                        onClick={() => {
-                          this.handleCategoryChange(item.id);
-                        }}
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className={'col-auto ' + styles.dots}>
-                <ul>{dots}</ul>
+      <Swipe>
+        <div className={styles.root}>
+          <div className='container'>
+            <div className={styles.panelBar}>
+              <div className='row no-gutters align-items-end'>
+                <div className={'col-lg-auto col-12' + styles.heading}>
+                  <h3>New furniture</h3>
+                </div>
+                <div className={'col ' + styles.menu}>
+                  <ul>
+                    {categories.map(item => (
+                      <li key={item.id}>
+                        <a
+                          className={item.id === activeCategory && styles.active}
+                          onClick={() => {
+                            this.handleCategoryChange(item.id);
+                          }}
+                        >
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className={'col-auto ' + styles.dots}>
+                  <ul>{dots}</ul>
+                </div>
               </div>
             </div>
-          </div>
-          <div className='row'>
-            {elemsToDisplay.map(item => (
-              <div key={item.id} className='col-lg-3 col-12'>
-                <FadeIn transitionDuration={2000}>
-                  <ProductBox {...item} />
-                </FadeIn>
-              </div>
-            ))}
+            <div className='row'>
+              {elemsToDisplay.map(item => (
+                <div key={item.id} className='col-lg-3 col-12'>
+                  <FadeIn transitionDuration={2000}>
+                    <ProductBox {...item} />
+                  </FadeIn>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </Swipe>
     );
   }
 }
