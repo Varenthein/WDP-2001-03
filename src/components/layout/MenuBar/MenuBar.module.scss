@@ -35,16 +35,18 @@
       border-top: 4px solid $menu-link-border;
       font-weight: 500;
       letter-spacing: 1px;
+      transition: all 1s;
 
       &:hover,
       &.active {
         background-color: $menu-link-hover-bg;
         color: $menu-link-hover-color;
-        border-color: $menu-link-hover-border;
       }
 
       &:hover {
-        @extend %hoverEffects;
+        background-color: lighten($menu-link-hover-bg, 20%);
+        border-color: lighten($menu-link-hover-bg, 20%);
+        color: $main-color;
       }
 
       &.active {
