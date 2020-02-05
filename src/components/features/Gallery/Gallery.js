@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FadeIn from 'react-fade-in';
+import { Swipeable } from 'react-swipeable';
 import styles from './Gallery.module.scss';
 import Button from '../../common/Button/Button';
 import ReactTooltip from 'react-tooltip';
@@ -31,6 +32,14 @@ class Gallery extends React.Component {
     },
   };
 
+  desktop = {
+    elemsPerPage: 6,
+  };
+
+  mobile = {
+    elemsPerPage: 3,
+  };
+
   setNewCurrentProduct(el) {
     this.setState({
       currentProduct: {
@@ -57,7 +66,11 @@ class Gallery extends React.Component {
   }
 
   moveLeft() {
-    const pagesCount = Math.ceil(this.state.filteredArr.length / 6);
+    const pagesCount = Math.ceil(
+      this.props.viewportMode === 'tablet' || this.props.viewportMode === 'mobile'
+        ? this.state.filteredArr.length / this.mobile.elemsPerPage
+        : this.state.filteredArr.length / this.desktop.elemsPerPage
+    );
     if (this.state.activePage > 0 && this.state.activePage < pagesCount) {
       this.setState(prevState => ({
         activePage: prevState.activePage - 1,
@@ -105,7 +118,7 @@ class Gallery extends React.Component {
   }
 
   render() {
-    const { products } = this.props;
+    const { products, viewportMode } = this.props;
     const { activeTab, filteredArr, activePage, currentProduct } = this.state;
     const categories = [
       { id: 'featured', name: 'featured' },
@@ -113,16 +126,26 @@ class Gallery extends React.Component {
       { id: 'saleOff', name: 'sale off' },
       { id: 'topRated', name: 'top rated' },
     ];
+    const elemsToDisplay =
+      viewportMode === 'tablet' || viewportMode === 'mobile'
+        ? filteredArr.slice(activePage, activePage + 3)
+        : filteredArr.slice(activePage * 6, (activePage + 1) * 6);
 
     return (
       <div className={styles.root}>
         <div className='container'>
           <div className='row'>
-            <div className='col-6'>
+            <div className='col-lg-6 col-sm-12'>
               <div className={styles.heading}>
                 <h3>Furniture gallery</h3>
               </div>
-              <div className={styles.menu}>
+              <div
+                className={
+                  viewportMode === 'tablet' || viewportMode === 'mobile'
+                    ? styles.menuMobile
+                    : styles.menu
+                }
+              >
                 <ul>
                   {categories.map(el => (
                     <li key={el.id}>
@@ -184,20 +207,22 @@ class Gallery extends React.Component {
                       </div>
                     </div>
                   </div>
-                  <div className={styles.slider}>
-                    <Button
-                      className={styles.prev}
-                      onClick={e => {
-                        e.preventDefault();
-                        this.moveLeft();
-                      }}
-                    >
-                      <p>{'<'}</p>
-                    </Button>
-                    <div className={styles.slides}>
-                      {filteredArr
-                        .slice(activePage * 6, (activePage + 1) * 6)
-                        .map(el => (
+                  <Swipeable
+                    onSwipedLeft={e => this.moveRight()}
+                    onSwipedRight={e => this.moveLeft()}
+                  >
+                    <div className={styles.slider}>
+                      <Button
+                        className={styles.prev}
+                        onClick={e => {
+                          e.preventDefault();
+                          this.moveLeft();
+                        }}
+                      >
+                        <p>{'<'}</p>
+                      </Button>
+                      <div className={styles.slides}>
+                        {elemsToDisplay.map(el => (
                           <img
                             key={el.id}
                             src={el.image}
@@ -213,17 +238,18 @@ class Gallery extends React.Component {
                             }}
                           />
                         ))}
+                      </div>
+                      <Button
+                        className={styles.next}
+                        onClick={e => {
+                          e.preventDefault();
+                          this.moveRight();
+                        }}
+                      >
+                        <p>{'>'}</p>
+                      </Button>
                     </div>
-                    <Button
-                      className={styles.next}
-                      onClick={e => {
-                        e.preventDefault();
-                        this.moveRight();
-                      }}
-                    >
-                      <p>{'>'}</p>
-                    </Button>
-                  </div>
+                  </Swipeable>
                 </div>
               </FadeIn>
             </div>
@@ -259,6 +285,7 @@ Gallery.propTypes = {
       oldprice: PropTypes.number,
     })
   ),
+  viewportMode: PropTypes.func,
 };
 
 export default Gallery;

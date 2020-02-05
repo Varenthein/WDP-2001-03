@@ -1,5 +1,52 @@
 @import "../../../styles/settings.scss";
 
+@mixin menu {
+  text-align: center;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      display: flex;
+      margin: 0;
+      font-weight: 600;
+      background-color: $gallery-link-bg;
+      border: 1px solid $gallery-link-border;
+      width: 25%;
+      justify-content: center;
+
+      a {
+        color: $gallery-link;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 16px;
+        padding: 15px;
+        display: block;
+        width: 100%;
+
+        &.active,
+        &:hover {
+          background-color: $gallery-link-active-bg;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border-bottom: 4px solid $gallery-link-active-border;
+          }
+        }
+      }
+    }
+  }
+}
+
 .root {
   margin-bottom: 30px;
 
@@ -27,47 +74,20 @@
     }
   }
 
+
   .menu {
-    text-align: center;
+    @include menu;
+  }
 
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
+  .menuMobile {
+    @include menu;
 
-      li {
-        display: inline-block;
-        margin: 0;
-        font-weight: 600;
-        background-color: $gallery-link-bg;
-        border: 1px solid $gallery-link-border;
-        width: 25%;
+    ul li {
+      align-items: stretch;
 
-        a {
-          color: $gallery-link;
-          position: relative;
-          text-decoration: none;
-          text-transform: uppercase;
-          font-size: 16px;
-          padding: 15px;
-          display: block;
-
-          &.active,
-          &:hover {
-            background-color: $gallery-link-active-bg;
-
-            &::before {
-              content: "";
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              border-bottom: 4px solid $gallery-link-active-border;
-            }
-          }
-        }
+      a {
+        font-size: 13px;
+        padding: 10px;
       }
     }
   }
@@ -145,8 +165,8 @@
       .price {
         position: absolute;
         top: 0;
-        left: 50;
-        transform: translate(20%, -90%);
+        left: 0;
+        transform: translate(25%, -90%);
         background-color: $gallery-price-bg;
         padding: 25px;
         height: 150px;
@@ -201,6 +221,7 @@
         margin: 2px;
         position: relative;
         opacity: 0.5;
+        flex: 1;
 
         &.active {
           opacity: 1;
@@ -249,4 +270,10 @@
   .productSlider {
   }
 
+}
+
+@media (max-width: 768px) {
+  .picture {
+    display: none;
+  }
 }

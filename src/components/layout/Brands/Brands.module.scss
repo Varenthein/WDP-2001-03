@@ -1,0 +1,52 @@
+@import '.././../../styles/settings.scss';
+
+.root {
+  .wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    height: 200px;
+    margin: 20px auto;
+
+    .slide {
+      height: 100%;
+      width: 5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $footer-bg;
+      font-size: 15px;
+      color: $footer-heading;
+      z-index: 50;
+
+      svg {
+        font-size: 20px;
+      }
+    }
+
+    .brandsWrapper {
+      width: 90%;
+      overflow: hidden;
+
+      .swipable {
+      display: flex;
+      height: 100%;
+      }
+
+
+      .brand {
+        min-width: 16.66667%;;
+        display: flex;
+        justify-content: center;
+
+        img{
+          width: 90%;
+          height: 100%;
+          object-fit: fill;
+        }
+      }
+    }
+  }
+}
+
+
