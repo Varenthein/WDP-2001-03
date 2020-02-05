@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // import styles from './Swipe.module.scss';
-import { Swipeable } from 'react-swipeable';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../common/Button/Button';
 
 const Swipe = ({ children, leftAction, rightAction }) => (
-  <Swipeable>
+  <div className='row'>
     {children}
     <Button
       onClick={e => {
@@ -26,7 +25,7 @@ const Swipe = ({ children, leftAction, rightAction }) => (
     >
       <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
     </Button>
-  </Swipeable>
+  </div>
 );
 
 Swipe.propTypes = {
