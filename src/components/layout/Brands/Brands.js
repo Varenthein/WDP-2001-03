@@ -4,11 +4,19 @@ import styles from './Brands.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
+const moveleft = () => {
+  const swipable = document.querySelector(styles.swipable);
+  if (swipable.classList.contains(styles.movedLeft)) {
+    swipable.classList.remove(styles.movedLeft);
+  }
+  swipable.classList.add(styles.movedLeft);
+};
+
 const Brands = ({ brands }) => (
   <div className={styles.root}>
     <div className='container'>
       <div className={styles.wrapper}>
-        <div className={styles.slide}>
+        <div className={styles.slide} onClick={e => moveleft()}>
           <FontAwesomeIcon className={styles.icon} icon={faAngleLeft} />
         </div>
         <div className={styles.brandsWrapper}>
