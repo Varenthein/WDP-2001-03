@@ -12,14 +12,12 @@
   justify-content: center;
   z-index: 3;
 
-  &>* {
+  p {
     display: inline;
     padding: 10px 20px;
     margin: 0;
+    font-size: 0.8rem;
+    color: $popUp-font-color;
   }
-   p {
-     font-size: 0.8rem;
-     color: $popUp-font-color;
-   }
 }
 
