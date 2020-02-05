@@ -37,7 +37,6 @@
     align-items: flex-end;
 
     .sale {
-      z-index: 1;
       position: absolute;
       top: -30px;
       left: 50%;
@@ -74,38 +73,8 @@
         text-decoration: none;
         color: $text-color;
       }
-      .favoriteStars {
-
-          text-decoration: none;
-          color:$primary;
-      }
-
-      a:hover ~ a {
-        color:#222;
-        text-shadow: none;
-        transition: color 200ms,
-        text-shadow 200ms;
-      }
-      &:hover a{
-        color: $primary;
-        text-shadow: $primary 0 0 20px;
-      }
-      &:hover a:nth-child(2){
-        transition-delay: 30ms;
-      }
-      &:hover a:nth-child(3){
-        transition-delay: 60ms;
-      }
-      &:hover a:nth-child(4){
-        transition-delay: 90ms;
-      }
-      &:hover a:nth-child(5){
-        transition-delay: 120ms;
-      }
     }
-
   }
-
 
   .line {
     margin: 0 10px;

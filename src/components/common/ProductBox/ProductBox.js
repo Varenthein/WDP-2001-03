@@ -11,30 +11,15 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const renderActions = e => {
-  let elem = e.tagName;
-  switch (elem) {
-    case 'href':
-      return e.getAttribute('href');
-    case 'svg':
-      return e.parentNode.getAttribute('href');
-    case 'path':
-      return e.parentNode.parentNode.getAttribute('href');
-    default:
-      return e.getAttribute('href');
-  }
-};
 const ProductBox = ({
   id,
   name,
   price,
   promo,
   stars,
-  favoriteStars,
   image,
   favorite,
   setFavorite,
-  setStars,
   addToCompare,
   oldprice,
 }) => (
@@ -52,43 +37,15 @@ const ProductBox = ({
     <div className={styles.content}>
       <h5>{name}</h5>
       <div className={styles.stars}>
-        {favoriteStars === 0
-          ? [1, 2, 3, 4, 5].map(i => (
-              <a
-                key={i}
-                href={i}
-                onClick={e => {
-                  e.preventDefault();
-                  setStars(id, renderActions(e.target));
-                }}
-              >
-                {i <= stars ? (
-                  <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-                ) : (
-                  <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-                )}
-              </a>
-            ))
-          : [1, 2, 3, 4, 5].map(i => (
-              <a
-                key={i}
-                href={i}
-                onClick={e => {
-                  e.preventDefault();
-                  setStars(id, renderActions(e.target));
-                }}
-              >
-                {i <= favoriteStars ? (
-                  <FontAwesomeIcon icon={faStar} className={styles.favoriteStars}>
-                    {i} stars
-                  </FontAwesomeIcon>
-                ) : (
-                  <FontAwesomeIcon icon={farStar} className={styles.favoriteStars}>
-                    {i} stars
-                  </FontAwesomeIcon>
-                )}
-              </a>
-            ))}
+        {[1, 2, 3, 4, 5].map(i => (
+          <a key={i} href='#'>
+            {i <= stars ? (
+              <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
+            ) : (
+              <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+            )}
+          </a>
+        ))}
       </div>
     </div>
     <div className={styles.line}></div>
@@ -129,9 +86,7 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
-  favoriteStars: PropTypes.number,
   setFavorite: PropTypes.func,
-  setStars: PropTypes.func,
   favorite: PropTypes.bool,
   comparison: PropTypes.array,
   addToCompare: PropTypes.func,
