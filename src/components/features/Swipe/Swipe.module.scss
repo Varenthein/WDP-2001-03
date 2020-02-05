@@ -1,0 +1,15 @@
+@import "../../../styles/settings.scss";
+
+.button {
+  width: 50%;
+  height: 40px;
+  line-height: 40px;
+  background-color: $main-bg;
+  color: $main-color;
+  display: inline-block;
+  text-align: center;
+
+  &:hover {
+    background-color: lighten($main-bg, 20%);
+  }
+}
