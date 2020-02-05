@@ -27,6 +27,14 @@ class NewFurniture extends React.Component {
     this.setState({ activeCategory: newCategory });
   }
 
+  handleMoveRight() {
+    console.log('right');
+  }
+
+  handleMoveLeft() {
+    console.log('left');
+  }
+
   render() {
     const { categories, products, viewportMode } = this.props;
     const { activeCategory, activePage } = this.state;
@@ -58,36 +66,39 @@ class NewFurniture extends React.Component {
     }
 
     return (
-      <Swipe>
-        <div className={styles.root}>
-          <div className='container'>
-            <div className={styles.panelBar}>
-              <div className='row no-gutters align-items-end'>
-                <div className={'col-lg-auto col-12' + styles.heading}>
-                  <h3>New furniture</h3>
-                </div>
-                <div className={'col ' + styles.menu}>
-                  <ul>
-                    {categories.map(item => (
-                      <li key={item.id}>
-                        <a
-                          className={item.id === activeCategory && styles.active}
-                          onClick={() => {
-                            this.handleCategoryChange(item.id);
-                          }}
-                        >
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className={'col-auto ' + styles.dots}>
-                  <ul>{dots}</ul>
-                </div>
+      <div className={styles.root}>
+        <div className='container'>
+          <div className={styles.panelBar}>
+            <div className='row no-gutters align-items-end'>
+              <div className={'col-lg-auto col-12' + styles.heading}>
+                <h3>New furniture</h3>
+              </div>
+              <div className={'col ' + styles.menu}>
+                <ul>
+                  {categories.map(item => (
+                    <li key={item.id}>
+                      <a
+                        className={item.id === activeCategory && styles.active}
+                        onClick={() => {
+                          this.handleCategoryChange(item.id);
+                        }}
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className={'col-auto ' + styles.dots}>
+                <ul>{dots}</ul>
               </div>
             </div>
-            <div className='row'>
+          </div>
+          <div className='row'>
+            <Swipe
+              leftAction={() => this.handleMoveLeft()}
+              rightAction={() => this.handleMoveRight()}
+            >
               {elemsToDisplay.map(item => (
                 <div key={item.id} className='col-lg-3 col-12'>
                   <FadeIn transitionDuration={2000}>
@@ -95,10 +106,10 @@ class NewFurniture extends React.Component {
                   </FadeIn>
                 </div>
               ))}
-            </div>
+            </Swipe>
           </div>
         </div>
-      </Swipe>
+      </div>
     );
   }
 }
