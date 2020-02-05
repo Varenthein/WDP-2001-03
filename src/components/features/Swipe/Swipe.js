@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import styles from './Swipe.module.scss';
+import styles from './Swipe.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
@@ -10,6 +10,7 @@ const Swipe = ({ children, leftAction, rightAction }) => (
   <div className='row'>
     {children}
     <Button
+      className={styles.button}
       onClick={e => {
         e.preventDefault();
         leftAction();
@@ -18,6 +19,7 @@ const Swipe = ({ children, leftAction, rightAction }) => (
       <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
     </Button>
     <Button
+      className={styles.button}
       onClick={e => {
         e.preventDefault();
         rightAction();
