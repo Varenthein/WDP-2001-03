@@ -12,7 +12,7 @@ const Swipe = ({ children, leftAction, rightAction, viewportMode }) => (
     <div className='row'>
       {children}
       {viewportMode === 'desktop' ? (
-        <div>
+        <div className={styles.buttons}>
           <Button
             className={styles.button}
             onClick={e => {
