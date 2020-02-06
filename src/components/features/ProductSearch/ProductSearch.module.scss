@@ -11,6 +11,8 @@
     display: flex;
     align-items: center;
     position: relative;
+    background-color: #ffffff;
+    z-index: 2;
 
     .list{
       -webkit-appearance: none;
@@ -93,6 +95,8 @@
     display: flex;
     align-items: center;
     position: relative;
+    background-color: #ffffff;
+    z-index: 2;
 
 
     input {
@@ -122,10 +126,22 @@
 
   .category {
     border-right: 0;
+
+    .list {
+      z-index: 2;
+
+      li a {
+        z-index: 2;
+        top: 0;
+        left: 0;
+        transform: translate(0, 20%);
+        min-height: 40px;
+      }
+    }
   }
 
   .searchField {
-    border-top: 1px solid #ffffff;
+    border-top: 1px solid #000000;
     padding-top: 10px;
     margin-bottom: 10px;
 

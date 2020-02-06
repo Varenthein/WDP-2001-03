@@ -10,16 +10,24 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 const MenuBar = ({ children }) => {
   let isCollapsed = false;
   let rotate = false;
+
   let [isMenuExpanded, setExpantion] = useState(false);
+
   const mqlPhones = window.matchMedia('(max-width: 767px)');
   const mqlTablets = window.matchMedia('(max-width: 991px)');
 
-  if (mqlPhones.matches) {
-    isCollapsed = true;
-  }
+  mediaqueryresponse(mqlPhones, mqlTablets);
+  mediaqueryresponse(mqlPhones, mqlTablets);
 
-  if (mqlTablets.matches && !mqlPhones.matches) {
-    rotate = true;
+  mqlPhones.addListener(mediaqueryresponse);
+  mqlTablets.addListener(mediaqueryresponse);
+
+  function mediaqueryresponse(mqlPhones, mqlTablets) {
+    if (mqlPhones.matches) {
+      isCollapsed = true;
+    } else if (mqlTablets.matches) {
+      rotate = true;
+    }
   }
 
   return (

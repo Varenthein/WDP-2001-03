@@ -9,7 +9,14 @@ import styles from './ProductSearch.module.scss';
 const ProductSearch = () => {
   const mql = window.matchMedia('(max-width: 767px)');
   let mobile = false;
-  if (mql.matches) mobile = true;
+  mediaqueryresponse(mql);
+  mql.addListener(mediaqueryresponse);
+  function mediaqueryresponse(mql) {
+    if (mql.matches) {
+      mobile = true;
+    }
+  }
+
   return (
     <div className={mobile ? styles.wrapMd : ''}>
       <form action='' className={styles.root + ' ' + (mobile ? styles.mobile : '')}>
