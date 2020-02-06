@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import FadeIn from 'react-fade-in';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
-import Swipe from '../../features/Swipe/Swipe';
+import Swipe from '../../features/Swipe/SwipeContainer';
 
 class NewFurniture extends React.Component {
   state = {
