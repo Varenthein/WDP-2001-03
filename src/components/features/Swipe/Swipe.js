@@ -7,28 +7,34 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../common/Button/Button';
 
-const Swipe = ({ children, leftAction, rightAction }) => (
+const Swipe = ({ children, leftAction, rightAction, viewportMode }) => (
   <Swipeable onSwipedLeft={() => rightAction()} onSwipedRight={() => leftAction()}>
     <div className='row'>
       {children}
-      <Button
-        className={styles.button}
-        onClick={e => {
-          e.preventDefault();
-          leftAction();
-        }}
-      >
-        <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
-      </Button>
-      <Button
-        className={styles.button}
-        onClick={e => {
-          e.preventDefault();
-          rightAction();
-        }}
-      >
-        <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
-      </Button>
+      {viewportMode === 'desktop' ? (
+        <div>
+          <Button
+            className={styles.button}
+            onClick={e => {
+              e.preventDefault();
+              leftAction();
+            }}
+          >
+            <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
+          </Button>
+          <Button
+            className={styles.button}
+            onClick={e => {
+              e.preventDefault();
+              rightAction();
+            }}
+          >
+            <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
+          </Button>
+        </div>
+      ) : (
+        ''
+      )}
     </div>
   </Swipeable>
 );
@@ -37,6 +43,7 @@ Swipe.propTypes = {
   children: PropTypes.node,
   rightAction: PropTypes.func,
   leftAction: PropTypes.func,
+  viewportMode: PropTypes.string,
 };
 
 export default Swipe;
