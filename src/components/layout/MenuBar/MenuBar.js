@@ -14,15 +14,14 @@ const MenuBar = ({ children }) => {
   let [isMenuExpanded, setExpantion] = useState(false);
 
   const mqlPhones = window.matchMedia('(max-width: 767px)');
-  const mqlTablets = window.matchMedia('(max-width: 991px)');
+  const mqlTablets = window.matchMedia('(max-width: 991px) AND (min-width: 767px)');
 
-  mediaqueryresponse(mqlPhones, mqlTablets);
   mediaqueryresponse(mqlPhones, mqlTablets);
 
   mqlPhones.addListener(mediaqueryresponse);
   mqlTablets.addListener(mediaqueryresponse);
 
-  function mediaqueryresponse(mqlPhones, mqlTablets) {
+  function mediaqueryresponse(mql) {
     if (mqlPhones.matches) {
       isCollapsed = true;
     } else if (mqlTablets.matches) {
