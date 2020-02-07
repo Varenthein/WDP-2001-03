@@ -5,6 +5,7 @@ import Show from '../../features/Show/Show';
 import ViewOptions from '../../features/ViewOptions/ViewOption';
 import Banner from '../../layout/Banner/Banner';
 import Breadcrumb from '../../common/Breadcrumb/Breadcrumb';
+import FilterByCategories from '../../features/FilterByCategories/FilterByCategoriesContainer';
 
 const breadcumbLinks = [
   { id: 'home', label: 'Home' },
@@ -38,7 +39,7 @@ const ProductList = () => (
           </div>
         </div>
         <div className='col-md-3'>
-          <div>Filter by categories </div>
+          <FilterByCategories />
           <div>Filter by price</div>
           <div>Filter by color</div>
           <div>Filter by size</div>
