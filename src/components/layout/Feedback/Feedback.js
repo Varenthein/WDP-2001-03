@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Swipeable } from 'react-swipeable';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteRight } from '@fortawesome/free-solid-svg-icons';
@@ -50,9 +51,19 @@ class Feedback extends React.Component {
           <div className={styles.icon}>
             <FontAwesomeIcon icon={faQuoteRight} />
           </div>
-          {feedback.map(comment => (
-            <Comment key={comment.id} {...comment} />
-          ))}
+          <Swipeable
+            onSwipedLeft={e =>
+              (activePage > 0) & (activePage <= commentsCount) &&
+              this.handlePageChange(activePage - 1)
+            }
+            onSwipedRight={e =>
+              activePage < commentsCount - 1 && this.handlePageChange(activePage + 1)
+            }
+          >
+            {feedback.slice(activePage, activePage + 1).map(comment => (
+              <Comment key={comment.id} {...comment} />
+            ))}
+          </Swipeable>
         </div>
       </div>
     );
