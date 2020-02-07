@@ -34,9 +34,10 @@
         width: calc(100% + 1px);
         height: 100%;
         border:  0.5px dotted #292929;
-        background-color: $productSearch-category-hover-bg ;
+        background-color: white ;
         border-left:1px solid #292929;
         border-right: 1px solid #292929;
+        color: black;
 
 
       }
@@ -50,8 +51,8 @@
         display:block;
       }
       .active:hover{
-        background-color: white;
-        color:black;
+        background-color: $productSearch-category-hover-bg;
+        color:white;
       }
 
       li a {

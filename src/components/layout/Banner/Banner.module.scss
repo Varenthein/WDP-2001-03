@@ -1,0 +1,29 @@
+@import "../../../styles/settings.scss";
+
+.banner {
+  background-color: $topBar-bg;
+  color: $topBar-link-color;
+  padding: 60px;
+  text-align: center;
+
+  .heading, .subheading {
+    text-transform: uppercase;
+  }
+
+  .heading {
+    letter-spacing: 10px;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  .subheading {
+    letter-spacing: 15px;
+
+    span {
+      color: $topBar-link-hover;
+    }
+  }
+
+}

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import PopUp from '../../common/PopUp/PopUp';
 
 const checkWidth = () => {
   const mobile = '(max-width: 576px)';
@@ -27,6 +28,7 @@ const MainLayout = ({ children, changeViewportMode }) => {
     <div>
       <Header />
       {children}
+      <PopUp message='This website uses own cookies to make sure it is user-friendly and to guarantee its high functionality.' />
       <Footer />
     </div>
   );
