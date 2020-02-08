@@ -6,43 +6,57 @@ import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-ico
 
 import styles from './ProductSearch.module.scss';
 
-const ProductSearch = () => (
-  <form action='' className={styles.root}>
-    <div className={styles.category}>
-      <FontAwesomeIcon className={styles.icon} icon={faListUl} />
-      <ul className={styles.list}>
-        <li className={styles.defaulta}>
-          <a value='Select a category'>Select a category</a>
-        </li>
-        <li className={styles.active}>
-          <a value=''>Furniture</a>
-        </li>
-        <li className={styles.active}>
-          <a value=''>Chair</a>
-        </li>
-        <li className={styles.active}>
-          <a value=''>Table</a>
-        </li>
-        <li className={styles.active}>
-          <a value=''>Sofa</a>
-        </li>
-        <li className={styles.active}>
-          <a value=''>Bedroom</a>
-        </li>
-        <li className={styles.active}>
-          <a value=''>Blog</a>
-        </li>
-      </ul>
-      <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
+const ProductSearch = () => {
+  const mql = window.matchMedia('(max-width: 767px)');
+  let mobile = false;
+  mediaqueryresponse(mql);
+  mql.addListener(mediaqueryresponse);
+  function mediaqueryresponse(mql) {
+    if (mql.matches) {
+      mobile = true;
+    }
+  }
+
+  return (
+    <div className={mobile ? styles.wrapMd : ''}>
+      <form action='' className={styles.root + ' ' + (mobile ? styles.mobile : '')}>
+        <div className={styles.category}>
+          <FontAwesomeIcon className={styles.icon} icon={faListUl} />
+          <ul className={styles.list}>
+            <li className={styles.defaulta}>
+              <a value='Select a category'>Select a category</a>
+            </li>
+            <li className={styles.active}>
+              <a value=''>Furniture</a>
+            </li>
+            <li className={styles.active}>
+              <a value=''>Chair</a>
+            </li>
+            <li className={styles.active}>
+              <a value=''>Table</a>
+            </li>
+            <li className={styles.active}>
+              <a value=''>Sofa</a>
+            </li>
+            <li className={styles.active}>
+              <a value=''>Bedroom</a>
+            </li>
+            <li className={styles.active}>
+              <a value=''>Blog</a>
+            </li>
+          </ul>
+          <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
+        </div>
+        <div className={styles.searchField}>
+          <input placeholder='Search products...' type='text' />
+          <button>
+            <FontAwesomeIcon className={styles.icon} icon={faSearch} />
+          </button>
+        </div>
+      </form>
     </div>
-    <div className={styles.searchField}>
-      <input placeholder='Search products...' type='text' />
-      <button>
-        <FontAwesomeIcon className={styles.icon} icon={faSearch} />
-      </button>
-    </div>
-  </form>
-);
+  );
+};
 
 ProductSearch.propTypes = {
   children: PropTypes.node,
