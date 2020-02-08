@@ -3,11 +3,20 @@ import PropTypes from 'prop-types';
 import FadeIn from 'react-fade-in';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import Swipe from '../../features/Swipe/SwipeContainer';
 
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+  };
+
+  desktop = {
+    elemsPerPage: 8,
+  };
+
+  mobile = {
+    elemsPerPage: 1,
   };
 
   handlePageChange(newPage) {
@@ -19,11 +28,20 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, viewportMode } = this.props;
     const { activeCategory, activePage } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(
+      viewportMode === 'tablet' || viewportMode === 'mobile'
+        ? categoryProducts.length / this.mobile.elemsPerPage
+        : categoryProducts.length / this.desktop.elemsPerPage
+    );
+
+    const elemsToDisplay =
+      viewportMode === 'tablet' || viewportMode === 'mobile'
+        ? categoryProducts.slice(activePage, activePage + 1)
+        : categoryProducts.slice(activePage * 8, (activePage + 1) * 8);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -68,15 +86,30 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
+          <Swipe
+            leftAction={() =>
+              activePage > 0 && activePage < pagesCount
+                ? this.setState(prevState => ({
+                    activePage: prevState.activePage - 1,
+                  }))
+                : ''
+            }
+            rightAction={() =>
+              activePage < pagesCount - 1
+                ? this.setState(prevState => ({
+                    activePage: prevState.activePage + 1,
+                  }))
+                : ''
+            }
+          >
+            {elemsToDisplay.map(item => (
               <div key={item.id} className='col-lg-3 col-12'>
                 <FadeIn transitionDuration={2000}>
                   <ProductBox {...item} />
                 </FadeIn>
               </div>
             ))}
-          </div>
+          </Swipe>
         </div>
       </div>
     );
@@ -103,6 +136,7 @@ NewFurniture.propTypes = {
       favorite: PropTypes.bool,
     })
   ),
+  viewportMode: PropTypes.string,
 };
 
 NewFurniture.defaultProps = {

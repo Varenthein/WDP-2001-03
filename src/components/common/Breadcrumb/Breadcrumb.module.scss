@@ -1,0 +1,23 @@
+@import "../../../styles/settings.scss";
+
+ol {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  background-color: $gallery-bg;
+  padding: 15px 20px;
+
+  .item {
+    color: $text-color;
+
+    &:last-child, :hover {
+      color: $topBar-link-hover;
+    }
+  }
+}
+
+.separator {
+  color: $text-color;
+  margin: auto 15px;
+  user-select: none;
+}

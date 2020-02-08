@@ -1,17 +1,20 @@
 import { combineReducers, createStore } from 'redux';
 import initialState from './initialState';
-
 import cartReducer from './cartRedux';
 import categoriesReducer from './categoriesRedux';
 import productsReducer from './productsRedux';
+import viewportRedux from './viewportRedux';
 import comparisonReducer from './comparisonRedux';
+import feedbackReducer from './feedbackRedux';
 
 // define reducers
 const reducers = {
+  viewportMode: viewportRedux,
   cart: cartReducer,
   categories: categoriesReducer,
   products: productsReducer,
   comparison: comparisonReducer,
+  feedback: feedbackReducer,
 };
 
 // add blank reducers for initial state properties without reducers
