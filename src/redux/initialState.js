@@ -430,6 +430,14 @@ const initialState = {
       key: '12',
     },
   ],
+  colors: [
+    { id: 'red', name: 'Red' },
+    { id: 'black', name: 'Black' },
+    { id: 'yellow', name: 'Yellow' },
+    { id: 'blue', name: 'Blue' },
+    { id: 'pink', name: 'Pink' },
+    { id: 'green', name: 'Green' },
+  ],
 };
 
 export default initialState;
