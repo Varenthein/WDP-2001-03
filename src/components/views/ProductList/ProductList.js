@@ -9,6 +9,7 @@ import FilterByPrice from '../../features/FilterByPrice/FilterByPrice';
 import FilterByCategories from '../../features/FilterByCategories/FilterByCategoriesContainer';
 import FilterByColor from '../../features/FilterByColor/FilterByColorContainter';
 import FilterBySize from '../../features/FilterBySize/FilterBySizeContainer';
+import FilterByTag from '../../features/FilterByTag/FilterByTagContainer';
 
 const breadcumbLinks = [
   { id: 'home', label: 'Home' },
@@ -46,7 +47,7 @@ const ProductList = () => (
           <FilterByPrice />
           <FilterByColor />
           <FilterBySize />
-          <div>Filter by tag</div>
+          <FilterByTag />
         </div>
       </div>
     </div>
