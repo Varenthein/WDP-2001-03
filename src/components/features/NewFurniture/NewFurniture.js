@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import FadeIn from 'react-fade-in';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import Swipe from '../../features/Swipe/SwipeContainer';
 
 class NewFurniture extends React.Component {
   state = {
@@ -85,7 +86,22 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
+          <Swipe
+            leftAction={() =>
+              activePage > 0 && activePage < pagesCount
+                ? this.setState(prevState => ({
+                    activePage: prevState.activePage - 1,
+                  }))
+                : ''
+            }
+            rightAction={() =>
+              activePage < pagesCount - 1
+                ? this.setState(prevState => ({
+                    activePage: prevState.activePage + 1,
+                  }))
+                : ''
+            }
+          >
             {elemsToDisplay.map(item => (
               <div key={item.id} className='col-lg-3 col-12'>
                 <FadeIn transitionDuration={2000}>
@@ -93,7 +109,7 @@ class NewFurniture extends React.Component {
                 </FadeIn>
               </div>
             ))}
-          </div>
+          </Swipe>
         </div>
       </div>
     );

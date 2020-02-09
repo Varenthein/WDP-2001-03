@@ -10,7 +10,7 @@ import FilterByCategories from '../../features/FilterByCategories/FilterByCatego
 import FilterByColor from '../../features/FilterByColor/FilterByColorContainter';
 import FilterBySize from '../../features/FilterBySize/FilterBySizeContainer';
 import FilterByTag from '../../features/FilterByTag/FilterByTagContainer';
-
+import PropTypes from 'prop-types';
 const breadcumbLinks = [
   { id: 'home', label: 'Home' },
   { id: 'furniture', label: 'Furniture' },
@@ -53,5 +53,9 @@ const ProductList = () => (
     </div>
   </div>
 );
+
+ProductList.propTypes = {
+  match: PropTypes.object,
+};
 
 export default ProductList;

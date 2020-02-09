@@ -1,48 +1,103 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
 import styles from './MenuBar.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-const MenuBar = ({ children }) => (
-  <div className={styles.root}>
-    <div className='container'>
-      <div className='row align-items-center'>
-        <div className='col'>
-          <ProductSearch />
-        </div>
-        <div className={'col-auto ' + styles.menu}>
-          <ul>
-            <li>
-              <a href='#' className={styles.active}>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href='shop/:categoryId'>Furniture</a>
-            </li>
-            <li>
-              <a href='#'>Chair</a>
-            </li>
-            <li>
-              <a href='#'>Table</a>
-            </li>
-            <li>
-              <a href='#'>Sofa</a>
-            </li>
-            <li>
-              <a href='#'>Bedroom</a>
-            </li>
-            <li>
-              <a href='#'>Blog</a>
-            </li>
-          </ul>
+const MenuBar = ({ children }) => {
+  let isCollapsed = false;
+  let rotate = false;
+
+  let [isMenuExpanded, setExpantion] = useState(false);
+
+  const mqlPhones = window.matchMedia('(max-width: 767px)');
+  const mqlTablets = window.matchMedia('(max-width: 991px) AND (min-width: 767px)');
+
+  mediaqueryresponse(mqlPhones, mqlTablets);
+
+  mqlPhones.addListener(mediaqueryresponse);
+  mqlTablets.addListener(mediaqueryresponse);
+
+  function mediaqueryresponse(mql) {
+    if (mqlPhones.matches) {
+      isCollapsed = true;
+    } else if (mqlTablets.matches) {
+      rotate = true;
+    }
+  }
+
+  return (
+    <div className={styles.root}>
+      <div className='container'>
+        <div className='row align-items-center'>
+          <div
+            className={
+              'col ' +
+              (isCollapsed ? styles.box : '') +
+              ' ' +
+              (rotate ? styles.hidden : '')
+            }
+          >
+            <ProductSearch />
+            <button
+              onClick={() => setExpantion(!isMenuExpanded)}
+              className={isCollapsed ? styles.hamburger : styles.hidden}
+            >
+              <FontAwesomeIcon className={styles.icon} icon={faBars} />
+            </button>
+          </div>
+          <div
+            className={
+              'col-auto ' +
+              (isCollapsed ? styles.mobileMenu : styles.menu) +
+              ' ' +
+              (isMenuExpanded ? styles.expandMobileMenu : '')
+            }
+          >
+            <ul>
+              <li>
+                <a href='#' className={styles.active}>
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href='/shop/:categoryId'>Furniture</a>
+              </li>
+              <li>
+                <a href='#'>Chair</a>
+              </li>
+              <li>
+                <a href='#'>Table</a>
+              </li>
+              <li>
+                <a href='#'>Sofa</a>
+              </li>
+              <li>
+                <a href='#'>Bedroom</a>
+              </li>
+              <li>
+                <a href='#'>Blog</a>
+              </li>
+            </ul>
+          </div>
+          <div
+            className={
+              'col ' +
+              (isCollapsed ? styles.box : '') +
+              ' ' +
+              (rotate ? '' : styles.hidden)
+            }
+          >
+            <ProductSearch />
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 MenuBar.propTypes = {
   children: PropTypes.node,
