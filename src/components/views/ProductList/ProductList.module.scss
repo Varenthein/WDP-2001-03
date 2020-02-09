@@ -2,6 +2,10 @@
 
 .root {
   padding: $base-padding 0;
+  a {
+    text-transform: capitalize;
+  }
+
 
   .heading {
     height: 80px;
@@ -34,5 +38,11 @@
           padding: 5px;
         }
       }
+  }
+}
+
+@media (max-width: 768px) {
+  .root .heading .category {
+    width: 100%;
   }
 }
