@@ -3,10 +3,10 @@ import styles from './ProductList.module.scss';
 import SortBy from '../../features/SortBy/SortBy';
 import Show from '../../features/Show/Show';
 import ViewOptions from '../../features/ViewOptions/ViewOption';
-import FilterByCategories from '../../features/FilterByCategories/FilterByCategories';
 import Banner from '../../layout/Banner/Banner';
 import Breadcrumb from '../../common/Breadcrumb/Breadcrumb';
 import FilterByPrice from '../../features/FilterByPrice/FilterByPrice';
+import FilterByCategories from '../../features/FilterByCategories/FilterByCategoriesContainer';
 
 const breadcumbLinks = [
   { id: 'home', label: 'Home' },

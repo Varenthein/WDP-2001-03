@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './FilterByCategories.module.scss';
-const FilterByCategories = () => (
+import PropTypes from 'prop-types';
+
+const FilterByCategories = ({ categories }) => (
   <div className={styles.root}>
     <div className='container'>
       <div className='row'>
@@ -14,29 +16,21 @@ const FilterByCategories = () => (
         </div>
         <container>
           <ul className={styles.byCat}>
-            <li>
-              Furniture<span className={styles.dot}>4</span>
-            </li>
-            <li>
-              Sofa<span className={styles.dot}>3</span>
-            </li>
-            <li>
-              Chair<span className={styles.dot}>1</span>
-            </li>
-            <li>
-              Table<span className={styles.dot}>6</span>
-            </li>
-            <li>
-              Bedroom<span className={styles.dot}>2</span>
-            </li>
-            <li>
-              Furniture <span className={styles.dot}>1</span>
-            </li>
+            {categories.map(category => (
+              <li key={category.id}>
+                {category.name}
+                <span className={styles.dot}>4</span>
+              </li>
+            ))}
           </ul>
         </container>
       </div>
     </div>
   </div>
 );
+
+FilterByCategories.propTypes = {
+  categories: PropTypes.array,
+};
 
 export default FilterByCategories;
