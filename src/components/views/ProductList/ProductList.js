@@ -16,7 +16,7 @@ const ProductList = ({ match }) => (
         <a key={match.params.categoryId}>{match.params.categoryId}</a>
       </Breadcrumb>
       <div className='row'>
-        <div className='col-12 col-md-9'>
+        <div className='col-md-9 col-sm-12'>
           <div
             className={
               'row no-gutters align-items-center justify-content-between ' +
@@ -33,12 +33,12 @@ const ProductList = ({ match }) => (
             <ViewOptions />
           </div>
         </div>
-        <div className='col-md-3'>
-          <div>Filter by categories </div>
-          <div>Filter by price</div>
-          <div>Filter by color</div>
-          <div>Filter by size</div>
-          <div>Filter by tag</div>
+        <div className='col-md-3 col-sm-12 row'>
+          <div className='col-sm-12'>Filter by categories </div>
+          <div className='col-sm-12'>Filter by price</div>
+          <div className='col-sm-12'>Filter by color</div>
+          <div className='col-sm-12'>Filter by size</div>
+          <div className='col-sm-12'>Filter by tag</div>
         </div>
       </div>
     </div>
