@@ -94,7 +94,6 @@ const MenuBar = ({ children }) => {
           >
             <ProductSearch />
           </div>
-
         </div>
       </div>
     </div>

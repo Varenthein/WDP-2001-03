@@ -343,6 +343,7 @@ const initialState = {
     products: [],
   },
   comparison: [],
+
   feedback: [
     {
       id: 0,
@@ -372,7 +373,7 @@ const initialState = {
         'https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
   ],
-  brands: [
+  brands1Desktop: [
     {
       image:
         'https://images.unsplash.com/photo-1529861192387-e2170fb232d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
@@ -402,6 +403,9 @@ const initialState = {
         'https://cdn.pixabay.com/photo/2017/09/26/21/47/shopping-cart-2790225_960_720.png',
       key: '6',
     },
+  ],
+
+  brands2Desktop: [
     {
       image:
         'https://cdn.pixabay.com/photo/2016/09/25/14/10/rocket-1693791_960_720.png',
