@@ -438,6 +438,13 @@ const initialState = {
     { id: 'pink', name: 'Pink' },
     { id: 'green', name: 'Green' },
   ],
+  sizes: [
+    { id: 's', name: 'S' },
+    { id: 'm', name: 'M' },
+    { id: 'l', name: 'L' },
+    { id: 'xl', name: 'XL' },
+    { id: 'xx', name: 'XX' },
+  ],
 };
 
 export default initialState;

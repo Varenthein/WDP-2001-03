@@ -7,6 +7,7 @@ import viewportRedux from './viewportRedux';
 import comparisonReducer from './comparisonRedux';
 import feedbackReducer from './feedbackRedux';
 import colorsReducer from './colorRedux';
+import sizesReducer from './sizeRedux';
 // define reducers
 const reducers = {
   viewportMode: viewportRedux,
@@ -16,6 +17,7 @@ const reducers = {
   comparison: comparisonReducer,
   feedback: feedbackReducer,
   colors: colorsReducer,
+  sizes: sizesReducer,
 };
 
 // add blank reducers for initial state properties without reducers

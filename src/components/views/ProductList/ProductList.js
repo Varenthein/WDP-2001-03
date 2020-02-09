@@ -8,6 +8,7 @@ import Breadcrumb from '../../common/Breadcrumb/Breadcrumb';
 import FilterByPrice from '../../features/FilterByPrice/FilterByPrice';
 import FilterByCategories from '../../features/FilterByCategories/FilterByCategoriesContainer';
 import FilterByColor from '../../features/FilterByColor/FilterByColorContainter';
+import FilterBySize from '../../features/FilterBySize/FilterBySizeContainer';
 
 const breadcumbLinks = [
   { id: 'home', label: 'Home' },
@@ -44,7 +45,7 @@ const ProductList = () => (
           <FilterByCategories />
           <FilterByPrice />
           <FilterByColor />
-          <div>Filter by size</div>
+          <FilterBySize />
           <div>Filter by tag</div>
         </div>
       </div>
