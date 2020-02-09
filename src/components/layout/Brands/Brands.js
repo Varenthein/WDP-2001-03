@@ -3,26 +3,44 @@ import PropTypes from 'prop-types';
 import styles from './Brands.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import ReactSwipe from 'react-swipe';
 
-const Brands = ({ brands }) => (
+let reactSwipeEl;
+
+const Brands = ({ brands1Desktop, brands2Desktop }) => (
   <div className={styles.root}>
     <div className='container'>
       <div className={styles.wrapper}>
-        <div className={styles.slide}>
+        <button className={styles.slide} onClick={() => reactSwipeEl.prev()}>
           <FontAwesomeIcon className={styles.icon} icon={faAngleLeft} />
-        </div>
+        </button>
         <div className={styles.brandsWrapper}>
           <div className={styles.swipable}>
-            {brands.map(brand => (
-              <div className={styles.brand} key={brand.key} {...brand}>
-                <img src={brand.image} alt='brand' />
+            <ReactSwipe
+              className={`'carousel' ${styles.swiper}`}
+              swipeOptions={{ continuous: false }}
+              ref={el => (reactSwipeEl = el)}
+            >
+              <div className={styles.elem}>
+                {brands1Desktop.map(brand => (
+                  <div className={styles.brand} key={brand.key} {...brand}>
+                    <img src={brand.image} alt='brand' />
+                  </div>
+                ))}
               </div>
-            ))}
+              <div className={styles.elem}>
+                {brands2Desktop.map(brand => (
+                  <div className={styles.brand} key={brand.key} {...brand}>
+                    <img src={brand.image} alt='brand' />
+                  </div>
+                ))}
+              </div>
+            </ReactSwipe>
           </div>
         </div>
-        <div className={styles.slide}>
+        <button className={styles.slide} onClick={() => reactSwipeEl.next()}>
           <FontAwesomeIcon className={styles.icon} icon={faAngleRight} />
-        </div>
+        </button>
       </div>
     </div>
   </div>
@@ -30,6 +48,7 @@ const Brands = ({ brands }) => (
 
 Brands.propTypes = {
   image: PropTypes.node,
-  brands: PropTypes.array,
+  brands1Desktop: PropTypes.array,
+  brands2Desktop: PropTypes.array,
 };
 export default Brands;
