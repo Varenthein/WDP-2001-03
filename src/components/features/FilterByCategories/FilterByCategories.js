@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './FilterByCategories.module.scss';
+
 const FilterByCategories = () => (
   <div className={styles.root}>
     <div className='container'>

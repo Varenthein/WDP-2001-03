@@ -4,6 +4,6 @@ import ProductList from './ProductList';
 
 describe('ProductList', () => {
   it('renders without crashing', () => {
-    shallow(<ProductList />);
+    shallow(<ProductList match={{ params: 'Furniture}' }} />);
   });
 });

@@ -1,24 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './ProductList.module.scss';
 import SortBy from '../../features/SortBy/SortBy';
 import Show from '../../features/Show/Show';
 import ViewOptions from '../../features/ViewOptions/ViewOption';
-import FilterByCategories from '../../features/FilterByCategories/FilterByCategories';
 import Banner from '../../layout/Banner/Banner';
 import Breadcrumb from '../../common/Breadcrumb/Breadcrumb';
+import FilterByCategories from '../../features/FilterByCategories/FilterByCategories';
 
-const breadcumbLinks = [
-  { id: 'home', label: 'Home' },
-  { id: 'furniture', label: 'Furniture' },
-];
-const ProductList = () => (
+const ProductList = ({ match }) => (
   <div className={styles.root}>
     <div className='container'>
       <Banner />
       <Breadcrumb>
-        {breadcumbLinks.map(el => (
-          <a key={el.id}>{el.label}</a>
-        ))}
+        <a>Home</a>
+        <a key={match.params.categoryId}>{match.params.categoryId}</a>
       </Breadcrumb>
       <div className='row'>
         <div className='col-12 col-md-9'>
@@ -49,5 +45,9 @@ const ProductList = () => (
     </div>
   </div>
 );
+
+ProductList.propTypes = {
+  match: PropTypes.object,
+};
 
 export default ProductList;
