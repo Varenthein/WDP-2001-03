@@ -18,8 +18,8 @@
 }
 
 
-.byCat{
-  list-style: ">";
+.bySize{
+  list-style: none;
   li{
     margin-top: 5px;
     padding: 5px;
@@ -27,13 +27,6 @@
     position: relative;
     top: -15px;
     padding-left: 15px;    
-    &:hover {
-      color: $prodSearch-icon-first;
-      transform: translateX(10px);
-      .dot{
-        background-color: $prodSearch-icon-first;
-      }
-    }
   }    
   .dot{
     color:white;
@@ -45,6 +38,19 @@
     text-align: center;
     margin-left: 60px;
   }
+}
+input[type=checkbox]:checked + label {
+  color: $prodSearch-icon-first;
+  transform: translateX(10px);
+  span{
+    background-color: $prodSearch-icon-first;
+    transform: translateX(10px);
+  }
+
+}
+input[type=checkbox]:checked + label + .dot{
+  background-color: $prodSearch-icon-first;
+  transform: translateX(10px);
 }
 
   

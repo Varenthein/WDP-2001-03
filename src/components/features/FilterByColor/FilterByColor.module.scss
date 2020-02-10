@@ -8,7 +8,6 @@
     border-bottom: 1px solid gray;
     margin-bottom: 10px;
     margin-right: 20px;
-    font-size: 14px;
     font-weight: 650;  
     position: relative;
     top: -15px;    
@@ -21,21 +20,29 @@
 .byCol{
   list-style: none;
   li{
-    margin-top: 5px;
     padding: 5px;
-    font-size: 14px;
     position: relative;
-    top: -15px;
-    padding-left: 15px;    
     &:hover {
       color: $prodSearch-icon-first;
       transform: translateX(10px);
       .dot{
-        background-color: $prodSearch-icon-first;
+        color: $prodSearch-icon-first;
       }
     }
   }    
-  
+  li .dot{
+    font-size: 16px;
+    position: relative;
+    color: grey;
+    padding-left: 15px ;
+
+  } 
+  .square{
+    width: 16px;
+    height: 16px;
+    border-radius: 5px;
+    display: inline-block;
+  }
 }
 
   

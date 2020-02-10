@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './FilterByCategories.module.scss';
+import styles from './FilterBySize.module.scss';
 import PropTypes from 'prop-types';
 
-const FilterByCategories = ({ categories }) => (
+const FilterBySize = ({ sizes }) => (
   <div className={styles.root}>
     <div className='container'>
       <div className='row'>
@@ -12,14 +12,14 @@ const FilterByCategories = ({ categories }) => (
             styles.heading
           }
         >
-          {'FILTER BY CATEGORIES'}
+          {'FILTER BY SIZE'}
         </div>
         <container>
-          <ul className={styles.byCat}>
-            {categories.map(category => (
-              <li key={category.id}>
-                {category.name}
-                <span className={styles.dot}>4</span>
+          <ul className={styles.bySize}>
+            {sizes.map(size => (
+              <li key={size.id}>
+                <input type='checkbox' {...size.name} />
+                <label>{size.name} </label> <span className={styles.dot}>5</span>
               </li>
             ))}
           </ul>
@@ -29,8 +29,8 @@ const FilterByCategories = ({ categories }) => (
   </div>
 );
 
-FilterByCategories.propTypes = {
-  categories: PropTypes.array,
+FilterBySize.propTypes = {
+  sizes: PropTypes.array,
 };
 
-export default FilterByCategories;
+export default FilterBySize;
