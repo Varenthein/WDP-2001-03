@@ -8,6 +8,8 @@ import Banner from '../../layout/Banner/Banner';
 import Breadcrumb from '../../common/Breadcrumb/Breadcrumb';
 import FilterByPrice from '../../features/FilterByPrice/FilterByPrice';
 import FilterByCategories from '../../features/FilterByCategories/FilterByCategoriesContainer';
+import FilterByColor from '../../features/FilterByColor/FilterByColorContainter';
+import FilterBySize from '../../features/FilterBySize/FilterBySizeContainer';
 
 const ProductList = ({ match }) => (
   <div className={styles.root}>
@@ -38,8 +40,8 @@ const ProductList = ({ match }) => (
         <div className='col-md-3'>
           <FilterByCategories />
           <FilterByPrice />
-          <div>Filter by color</div>
-          <div>Filter by size</div>
+          <FilterByColor />
+          <FilterBySize />
           <div>Filter by tag</div>
         </div>
       </div>
