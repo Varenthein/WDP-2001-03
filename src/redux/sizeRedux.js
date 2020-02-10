@@ -1,4 +1,4 @@
-export const colorsFilter = ({ colors }) => colors;
+export const sizesFilter = ({ sizes }) => sizes;
 
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {

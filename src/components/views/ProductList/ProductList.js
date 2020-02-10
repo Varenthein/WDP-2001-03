@@ -9,6 +9,7 @@ import Breadcrumb from '../../common/Breadcrumb/Breadcrumb';
 import FilterByPrice from '../../features/FilterByPrice/FilterByPrice';
 import FilterByCategories from '../../features/FilterByCategories/FilterByCategoriesContainer';
 import FilterByColor from '../../features/FilterByColor/FilterByColorContainter';
+import FilterBySize from '../../features/FilterBySize/FilterBySizeContainer';
 
 const ProductList = ({ match }) => (
   <div className={styles.root}>
@@ -40,7 +41,7 @@ const ProductList = ({ match }) => (
           <FilterByCategories />
           <FilterByPrice />
           <FilterByColor />
-          <div>Filter by size</div>
+          <FilterBySize />
           <div>Filter by tag</div>
         </div>
       </div>
