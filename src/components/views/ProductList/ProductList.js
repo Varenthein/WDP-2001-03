@@ -6,6 +6,8 @@ import Show from '../../features/Show/Show';
 import ViewOptions from '../../features/ViewOptions/ViewOption';
 import Banner from '../../layout/Banner/Banner';
 import Breadcrumb from '../../common/Breadcrumb/Breadcrumb';
+import FilterByPrice from '../../features/FilterByPrice/FilterByPrice';
+import FilterByCategories from '../../features/FilterByCategories/FilterByCategoriesContainer';
 
 const ProductList = ({ match }) => (
   <div className={styles.root}>
@@ -33,12 +35,12 @@ const ProductList = ({ match }) => (
             <ViewOptions />
           </div>
         </div>
-        <div className='col-md-3 col-sm-12 row'>
-          <div className='col-sm-12'>Filter by categories </div>
-          <div className='col-sm-12'>Filter by price</div>
-          <div className='col-sm-12'>Filter by color</div>
-          <div className='col-sm-12'>Filter by size</div>
-          <div className='col-sm-12'>Filter by tag</div>
+        <div className='col-md-3'>
+          <FilterByCategories />
+          <FilterByPrice />
+          <div>Filter by color</div>
+          <div>Filter by size</div>
+          <div>Filter by tag</div>
         </div>
       </div>
     </div>

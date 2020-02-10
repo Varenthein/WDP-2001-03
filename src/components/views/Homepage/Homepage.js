@@ -1,8 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-import Brands from '../../layout/Brands/BrandsContainer';
-
 import styles from './Homepage.module.scss';
 import Sale from '../../features/Sale/Sale.js';
 import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
@@ -21,7 +19,6 @@ const Homepage = () => (
     <Gallery />
     <Feedback />
     <StickyBar />
-    <Brands />
   </div>
 );
 
