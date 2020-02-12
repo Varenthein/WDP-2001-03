@@ -64,7 +64,7 @@ const MenuBar = ({ children }) => {
                 </a>
               </li>
               <li>
-                <a href='/shop/:categoryId'>Furniture</a>
+                <a href='shop/:categoryId'>Furniture</a>
               </li>
               <li>
                 <a href='#'>Chair</a>
