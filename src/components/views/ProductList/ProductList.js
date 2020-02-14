@@ -6,8 +6,11 @@ import Show from '../../features/Show/Show';
 import ViewOptions from '../../features/ViewOptions/ViewOption';
 import Banner from '../../layout/Banner/Banner';
 import Breadcrumb from '../../common/Breadcrumb/Breadcrumb';
+import FilterByPrice from '../../features/FilterByPrice/FilterByPrice';
 import FilterByCategories from '../../features/FilterByCategories/FilterByCategoriesContainer';
-
+import FilterByColor from '../../features/FilterByColor/FilterByColorContainter';
+import FilterBySize from '../../features/FilterBySize/FilterBySizeContainer';
+import FilterByTag from '../../features/FilterByTag/FilterByTagContainer';
 const ProductList = ({ match }) => (
   <div className={styles.root}>
     <div className='container'>
@@ -17,7 +20,7 @@ const ProductList = ({ match }) => (
         <a key={match.params.categoryId}>{match.params.categoryId}</a>
       </Breadcrumb>
       <div className='row'>
-        <div className='col-12 col-md-9'>
+        <div className='col-md-9 col-sm-12'>
           <div
             className={
               'row no-gutters align-items-center justify-content-between ' +
@@ -36,10 +39,10 @@ const ProductList = ({ match }) => (
         </div>
         <div className='col-md-3'>
           <FilterByCategories />
-          <div>Filter by price</div>
-          <div>Filter by color</div>
-          <div>Filter by size</div>
-          <div>Filter by tag</div>
+          <FilterByPrice />
+          <FilterByColor />
+          <FilterBySize />
+          <FilterByTag />
         </div>
       </div>
     </div>
