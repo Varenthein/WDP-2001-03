@@ -372,7 +372,6 @@ const initialState = {
         'https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
   ],
-
   brands1Desktop: [
     {
       image:
@@ -560,6 +559,21 @@ const initialState = {
         'https://cdn.pixabay.com/photo/2015/04/29/18/09/shopping-745840_960_720.png',
       key: '12',
     },
+  ],
+  colors: [
+    { id: 'red', name: 'Red' },
+    { id: 'black', name: 'Black' },
+    { id: 'yellow', name: 'Yellow' },
+    { id: 'blue', name: 'Blue' },
+    { id: 'pink', name: 'Pink' },
+    { id: 'green', name: 'Green' },
+  ],
+  sizes: [
+    { id: 's', name: 'S' },
+    { id: 'm', name: 'M' },
+    { id: 'l', name: 'L' },
+    { id: 'xl', name: 'XL' },
+    { id: 'xx', name: 'XX' },
   ],
 };
 
