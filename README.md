@@ -10,7 +10,7 @@ Projekt został stworzony w celu nauki kodowania stron oraz pracy w zespole.
 
 ## Demo
 
-Demo projektu znajduje się pod poniższym linkiem:
+Demo projektu znajduje się pod poniższym linkiem: test
 
 [Furniture Shop](https://clever-khorana-32be99.netlify.com/)
 
@@ -41,21 +41,15 @@ dla plików, które zostały wybrane za pomocą `git add` i mają być zapisane 
 
 ## Konwencje i dobre praktyki
 
-- Struktura plików: grupowanie plików według funkcjonalności 
+- Struktura plików: grupowanie plików według funkcjonalności
     - plik src dzieli się na components, redux oraz styles, nazwy plików odpowiadają konkretnym zawartościom
     - nazewnictwo w pliku components jest zgodne z notacją PascalCase, w pliku redux zastosowano camelCase
     - pliki .scss oraz .js są pogrupowane ze sobą zgodnie z powyższym
     - struktura pliku components dodatkowo została pogrupowana według funkcji jakie wykonują dane elementy
 
-- Nazewnictwo klas : 
+- Nazewnictwo klas :
     - wg konwencji OOCSS
 
 - Opis commitów: nazwa commit'a to również nazwa zadania, oraz branch'a w content informujemy jakie zmiany zostały dokonane, oraz dodajemy odpowiedni label.
 
 - Strona pisana była zgodnie z zasadami KISS i DRY.
-
-
-
-
-
-
