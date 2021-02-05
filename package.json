@@ -44,6 +44,9 @@
       "last 1 safari version"
     ]
   },
+  "resolutions": {
+    "**/@babel/runtime": "7.5.0"
+  },
   "dependencies": {
     "@babel/runtime": "^7.8.4",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
