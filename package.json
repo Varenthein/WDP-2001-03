@@ -67,8 +67,8 @@
     "react-router-transition": "^2.0.0",
     "react-scripts": "3.1.2",
     "react-spring": "^8.0.27",
-    "react-swipe": "^6.0.4",
     "react-swipeable": "^5.5.0",
+    "react-swipe": "^6.0.4",
     "react-test-renderer": "^16.9.0",
     "react-tooltip": "^3.11.3",
     "redux": "^4.0.4"

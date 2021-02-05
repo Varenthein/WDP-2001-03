@@ -67,3 +67,15 @@
     }
   }
 }
+
+@media (max-width: 968px) {
+  .root .wrapper .brandsWrapper .swipable  .brand {
+    width: 25%;
+  }
+}
+
+@media (max-width: 576px) {
+  .root .wrapper .brandsWrapper .swipable  .brand {
+    width: 33.33333%;
+  }
+}
